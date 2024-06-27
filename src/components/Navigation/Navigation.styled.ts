@@ -4,11 +4,11 @@ import styled from "styled-components"
 export const Navigation = styled(Menu)``
 
 export const NavigationItem = styled(MenuItem)`
-  &.active {
+  a.active {
     color: tomato;
   }
 
-  &:hover .active {
+  .ps-menu-button:hover {
     color: tomato;
     background-color: inherit !important;
   }

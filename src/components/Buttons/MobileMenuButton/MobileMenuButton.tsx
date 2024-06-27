@@ -1,10 +1,16 @@
 import * as SC from "./MobileMenuButton.styled"
 
-const MobileMenuButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+const MobileMenuButton: React.FC<{
+  onClick: () => void
+  mobileMenu: boolean
+}> = ({ onClick, mobileMenu }) => {
+  console.log("mobileMenu :>> ", mobileMenu)
   return (
-    <SC.MobileMenuButton onClick={onClick}>
-      <span></span>
-    </SC.MobileMenuButton>
+    <SC.MobileMenuButtonWrapper>
+      <SC.MobileMenuButton $mobileMenu={mobileMenu} onClick={onClick}>
+        <span></span>
+      </SC.MobileMenuButton>
+    </SC.MobileMenuButtonWrapper>
   )
 }
 

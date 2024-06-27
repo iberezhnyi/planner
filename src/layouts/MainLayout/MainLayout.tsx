@@ -5,22 +5,26 @@ import { Outlet } from "react-router-dom"
 import * as SC from "./MainLayout.styled"
 
 const MainLayout = () => {
-  const [toggled, setToggled] = useState(false)
+  const [mobileMenu, setMobileMenu] = useState(false)
   const [isMobile, setIsMobile] = useState(
     window.matchMedia("(max-width: 767px)").matches
   )
 
-  const handleClick = () => setToggled(!toggled)
+  const handleClick = () => setMobileMenu(!mobileMenu)
 
   return (
     <>
-      <Header isMobile={isMobile} handleClick={handleClick} />
+      <Header
+        isMobile={isMobile}
+        handleClick={handleClick}
+        mobileMenu={mobileMenu}
+      />
 
       <SC.MainLayoutInnerWrapper>
         <Sidebar
-          setToggled={setToggled}
+          setMobileMenu={setMobileMenu}
           setIsMobile={setIsMobile}
-          toggled={toggled}
+          mobileMenu={mobileMenu}
         />
 
         <main>
