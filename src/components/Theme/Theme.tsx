@@ -1,10 +1,10 @@
-import { useThemeToggle } from "hooks"
+import { useSelector } from "react-redux"
 import { ThemeProvider } from "styled-components"
+import { selectTheme } from "store"
 import { themes } from "styles"
-import { IChildren } from "types"
 
-const Theme: React.FC<IChildren> = ({ children }) => {
-  const [theme, themeToggler] = useThemeToggle()
+const Theme: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const theme = useSelector(selectTheme)
 
   const themeMode = theme === "light" ? themes.light : themes.dark
 

@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
-// import { tasksReducer, filtersReducer } from "./reducer"
+import { themeReducer } from "./themeSlice/themeSlice"
 
 export const store = configureStore({
   reducer: {
     // tasks: tasksReducer,
-    // filters: filtersReducer,
+    theme: themeReducer,
   },
 })
+
+export type RootState = ReturnType<typeof store.getState>

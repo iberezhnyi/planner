@@ -1,20 +1,14 @@
-import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { selectTheme, changeTheme } from "store"
 
-export const useThemeToggle = (): [string, () => void] => {
-  const [theme, setTheme] = useState("light")
+export const useThemeToggle: () => [string, () => void] = () => {
+  const dispatch = useDispatch()
+  const theme = useSelector(selectTheme)
 
-  const toggleTheme = (newTheme: string) => {
-    window.localStorage.setItem("theme", newTheme)
-    setTheme(newTheme)
-  }
+  const setTheme = (theme: string) =>
+    theme === "light"
+      ? dispatch(changeTheme("dark"))
+      : dispatch(changeTheme("light"))
 
-  const themeToggler = () =>
-    theme === "light" ? toggleTheme("dark") : toggleTheme("light")
-
-  useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme")
-    localTheme && setTheme(localTheme)
-  }, [])
-
-  return [theme, themeToggler]
+  return [theme, setTheme]
 }

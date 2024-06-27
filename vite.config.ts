@@ -13,7 +13,7 @@ export default defineConfig({
       // assets: "/src/assets",
       styles: "/src/styles",
       hooks: "/src/hooks",
-      // modal: "/src/modal",
+      store: "/src/store",
     },
   },
 })

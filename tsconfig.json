@@ -20,6 +20,7 @@
     "baseUrl": "src",
     "paths": {
       "components/*": ["components/*"]
+      // "redux/*": ["redux/*"]
       // "layouts/*": ["layouts/*"]
       // "src/*": ["src/*"],
       // "views/*": ["./src/views/*"],

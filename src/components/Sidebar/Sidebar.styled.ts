@@ -10,7 +10,6 @@ export const SidebarWrapper = styled.div`
     border: none;
   }
 `
-// sdfgsdgdfgdfhdf
 
 export const StyledSidebar = styled(Sidebar)`
   .${sidebarClasses.container} {
