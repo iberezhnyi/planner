@@ -8,24 +8,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    // "baseUrl": "./",
-    // "paths": {
-    //   "@/*": ["./src/*"],
-    //   "@components/*": ["./src/components/*"],
-    //   "@views/*": ["./src/views/*"],
-    //   "@assets/*": ["./src/assets/*"],
-    //   "@layouts/*": ["./src/layouts/*"]
-    // },
-
     "baseUrl": "src",
-    "paths": {
-      "components/*": ["components/*"]
-      // "redux/*": ["redux/*"]
-      // "layouts/*": ["layouts/*"]
-      // "src/*": ["src/*"],
-      // "views/*": ["./src/views/*"],
-      // "assets/*": ["./src/assets/*"],
-    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
