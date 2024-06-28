@@ -1,6 +1,6 @@
 import { useThemeToggle } from "hooks"
 
-export const ToggleThemeButton = () => {
+export const ToggleThemeButton: React.FC = () => {
   const [theme, setTheme] = useThemeToggle()
 
   return (

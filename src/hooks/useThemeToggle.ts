@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { selectTheme, changeTheme } from "store"
 
-export const useThemeToggle: () => [string, () => void] = () => {
+export const useThemeToggle = (): [string, (theme: string) => void] => {
   const dispatch = useDispatch()
   const theme = useSelector(selectTheme)
 
