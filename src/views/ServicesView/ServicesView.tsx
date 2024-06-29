@@ -1,13 +1,9 @@
-import { Container, Section } from "components/Common"
-
-const ServicesView = () => {
+export const ServicesView = () => {
   return (
-    <Section>
-      <Container>
+    <div className="section">
+      <div className="container">
         <div>ServicesView</div>
-      </Container>
-    </Section>
+      </div>
+    </div>
   )
 }
-
-export default ServicesView

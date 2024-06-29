@@ -1,6 +1,6 @@
 import * as SC from "./MobileMenuButton.styled"
 
-const MobileMenuButton: React.FC<{
+export const MobileMenuButton: React.FC<{
   onClick: () => void
   mobileMenu: boolean
 }> = ({ onClick, mobileMenu }) => {
@@ -13,5 +13,3 @@ const MobileMenuButton: React.FC<{
     </SC.MobileMenuButtonWrapper>
   )
 }
-
-export default MobileMenuButton

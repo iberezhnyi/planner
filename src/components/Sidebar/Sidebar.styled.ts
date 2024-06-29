@@ -16,7 +16,7 @@ export const StyledSidebar = styled(Sidebar)`
     background-color: grey;
     padding: 60px 10px 10px 10px;
 
-    box-shadow: -20px 0px 10px -20px rgba(0, 0, 0, 0.45) inset;
+    /* box-shadow: -20px 0px 10px -20px rgba(0, 0, 0, 0.45) inset; */
 
     /* @media (min-width: 768px) {
       top: 0;

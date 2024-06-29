@@ -1,1 +1,1 @@
-export { default } from "./ServicesView"
+export * from "./ServicesView"

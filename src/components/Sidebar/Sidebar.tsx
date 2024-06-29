@@ -1,10 +1,6 @@
-// import { useDispatch, useSelector } from "react-redux"
-// import { selectTheme, setTheme } from "store"
-
-import { ToggleThemeButton } from "components/Buttons/ToggleThemeButton/ToggleThemeButton"
+import { ToggleThemeButton } from "components/buttons"
 import * as SC from "./Sidebar.styled"
-import Navigation from "components/Navigation"
-// import ToggleThemeButton from "components/Buttons"
+import { Navigation } from "components/Navigation"
 
 interface SidebarProps {
   mobileMenu: boolean
@@ -12,20 +8,11 @@ interface SidebarProps {
   setMobileMenu: (mobileMenu: boolean) => void
 }
 
-const Sidebar: React.FC<SidebarProps> = ({
+export const Sidebar: React.FC<SidebarProps> = ({
   mobileMenu,
   setIsMobile,
   setMobileMenu,
 }) => {
-  // const dispatch = useDispatch()
-  // const theme = useSelector(selectTheme)
-
-  // const handleClick = () => {
-  //   dispatch(setTheme("light"))
-  // }
-
-  // console.log("theme :>> ", theme)
-
   return (
     <SC.SidebarWrapper>
       <SC.StyledSidebar
@@ -41,5 +28,3 @@ const Sidebar: React.FC<SidebarProps> = ({
     </SC.SidebarWrapper>
   )
 }
-
-export default Sidebar

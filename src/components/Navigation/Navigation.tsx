@@ -5,7 +5,7 @@ interface NavigationProps {
   setMobileMenu: (mobileMenu: boolean) => void
 }
 
-const Navigation: React.FC<NavigationProps> = ({ setMobileMenu }) => {
+export const Navigation: React.FC<NavigationProps> = ({ setMobileMenu }) => {
   return (
     <SC.Navigation>
       <SC.NavigationItem
@@ -35,5 +35,3 @@ const Navigation: React.FC<NavigationProps> = ({ setMobileMenu }) => {
     </SC.Navigation>
   )
 }
-
-export default Navigation

@@ -1,13 +1,9 @@
-import { Container, Section } from "components/Common"
-
-const HomeView = () => {
+export const HomeView = () => {
   return (
-    <Section>
-      <Container>
+    <div className="section">
+      <div className="container">
         <div>HomeView</div>
-      </Container>
-    </Section>
+      </div>
+    </div>
   )
 }
-
-export default HomeView

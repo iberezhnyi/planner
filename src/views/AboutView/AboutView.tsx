@@ -1,13 +1,9 @@
-import { Container, Section } from "components/Common"
-
-const AboutView = () => {
+export const AboutView = () => {
   return (
-    <Section>
-      <Container>
+    <div className="section">
+      <div className="container">
         <div>AboutView</div>
-      </Container>
-    </Section>
+      </div>
+    </div>
   )
 }
-
-export default AboutView

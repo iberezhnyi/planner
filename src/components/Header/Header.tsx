@@ -1,7 +1,6 @@
-import MobileMenuButton from "components/Buttons"
-
+import { MobileMenuButton } from "components/buttons"
 import * as SC from "./Header.styled"
-import { Container, Section } from "components/Common"
+import { Auth } from "components/Auth"
 
 interface HeaderProps {
   isMobile: boolean
@@ -9,15 +8,15 @@ interface HeaderProps {
   mobileMenu: boolean
 }
 
-const Header: React.FC<HeaderProps> = ({
+export const Header: React.FC<HeaderProps> = ({
   isMobile,
   handleClick,
   mobileMenu,
 }) => {
   return (
     <SC.Header>
-      <Section>
-        <Container>
+      <div className="section">
+        <div className="container">
           <SC.HeaderInnerWrapper>
             {isMobile && (
               <MobileMenuButton
@@ -25,11 +24,11 @@ const Header: React.FC<HeaderProps> = ({
                 mobileMenu={mobileMenu}
               />
             )}
+
+            <Auth />
           </SC.HeaderInnerWrapper>
-        </Container>
-      </Section>
+        </div>
+      </div>
     </SC.Header>
   )
 }
-
-export default Header
