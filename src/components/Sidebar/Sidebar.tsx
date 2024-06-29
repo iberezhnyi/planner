@@ -1,4 +1,4 @@
-import { ToggleThemeButton } from "components/buttons"
+import { ToggleThemeButton } from "components/qbuttons"
 import * as SC from "./Sidebar.styled"
 import { Navigation } from "components/Navigation"
 
