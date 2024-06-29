@@ -1,4 +1,4 @@
-import { MobileMenuButton } from "components/qbuttons"
+import { MobileMenuButton } from "components/buttons"
 import * as SC from "./Header.styled"
 import { Auth } from "components/Auth"
 
