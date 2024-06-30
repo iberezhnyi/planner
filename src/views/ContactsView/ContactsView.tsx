@@ -1,4 +1,4 @@
-export const ContactsView = () => {
+const ContactsView = () => {
   return (
     <div className="section">
       <div className="container">
@@ -7,3 +7,5 @@ export const ContactsView = () => {
     </div>
   )
 }
+
+export default ContactsView

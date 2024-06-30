@@ -4,7 +4,7 @@ import * as SC from "./MainLayout.styled"
 import { Header } from "components/Header"
 import { Sidebar } from "components/Sidebar"
 
-export const MainLayout = () => {
+const MainLayout = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
   const [isMobile, setIsMobile] = useState(
     window.matchMedia("(max-width: 767px)").matches
@@ -34,3 +34,5 @@ export const MainLayout = () => {
     </>
   )
 }
+
+export default MainLayout

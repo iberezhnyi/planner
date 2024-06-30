@@ -1,4 +1,4 @@
-export const ServicesView = () => {
+const ServicesView = () => {
   return (
     <div className="section">
       <div className="container">
@@ -7,3 +7,5 @@ export const ServicesView = () => {
     </div>
   )
 }
+
+export default ServicesView

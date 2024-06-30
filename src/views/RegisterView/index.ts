@@ -1,1 +1,1 @@
-export * from "./RegisterView"
+export { default } from "./RegisterView"

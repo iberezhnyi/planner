@@ -1,6 +1,6 @@
 import { LoginForm } from "components/forms"
 
-export const LoginView = () => {
+const LoginView = () => {
   return (
     <div className="section">
       <div className="container">
@@ -9,3 +9,5 @@ export const LoginView = () => {
     </div>
   )
 }
+
+export default LoginView

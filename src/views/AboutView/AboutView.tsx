@@ -1,4 +1,4 @@
-export const AboutView = () => {
+const AboutView = () => {
   return (
     <div className="section">
       <div className="container">
@@ -7,3 +7,5 @@ export const AboutView = () => {
     </div>
   )
 }
+
+export default AboutView

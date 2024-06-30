@@ -1,1 +1,1 @@
-export * from "./AboutView"
+export { default } from "./AboutView"
