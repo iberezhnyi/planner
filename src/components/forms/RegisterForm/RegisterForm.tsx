@@ -6,6 +6,8 @@ interface RegisterFormValues {
   email: string
   password: string
   confirmPassword: string
+  //
+  firstName: string
 }
 
 const schema = yup.object({
@@ -25,9 +27,12 @@ const initialValues = {
   email: "",
   password: "",
   confirmPassword: "",
+
+  //
+  firstName: "",
 }
 
-export const RegisterForm = () => {
+export const RegisterForm = ({ register }) => {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
@@ -35,11 +40,17 @@ export const RegisterForm = () => {
     values: RegisterFormValues,
     { resetForm }: { resetForm: () => void }
   ) => {
-    console.log("values :>> ", values)
+    const newUser = {
+      firstName: values.firstName,
+      password: values.password,
+      email: values.email,
+    }
 
-    // Добавьте здесь логику для обработки формы, например, отправку данных на сервер
+    console.log("newUser in RegisterForm :>> ", newUser)
 
-    resetForm()
+    register(newUser)
+
+    // resetForm()
   }
 
   return (
@@ -48,7 +59,7 @@ export const RegisterForm = () => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <Form autoComplete="off">
+      <Form autoComplete="on">
         <label htmlFor="email">
           <p>Email</p>
           <Field type="email" name="email" />
@@ -67,6 +78,17 @@ export const RegisterForm = () => {
           />
           <ErrorMessage name="confirmPassword" component="div" />
         </label>
+
+        {/*  */}
+
+        <label htmlFor="firstName">
+          <p>First Name</p>
+          <Field type="text" name="firstName" />
+          <ErrorMessage name="firstName" component="div" />
+        </label>
+
+        {/*  */}
+
         <button type="button" onClick={() => setShowPassword(!showPassword)}>
           {showPassword ? "Hide Password" : "Show Password"}
         </button>

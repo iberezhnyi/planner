@@ -11,19 +11,25 @@ import {
 } from "redux-persist"
 import storage from "redux-persist/lib/storage"
 import { themeReducer } from "./themeSlice/themeSlice"
+import { authReducer } from "./authSlice/authSlice.ts"
+import { authApi } from "./authSlice/authApi.ts"
 
-const persistConfig = {
+const themePersistConfig = {
   key: "theme",
   storage,
   whitelist: ["theme"],
 }
 
-// const persistedReducer = combineReducers({ theme: themeReducer })
-const persistedReducer = persistReducer(persistConfig, themeReducer)
+const authPersistConfig = {
+  key: "auth",
+  storage,
+  whitelist: ["token"],
+}
 
 const reducer = {
-  // tasks: tasksReducer,
-  theme: persistedReducer,
+  theme: persistReducer(themePersistConfig, themeReducer),
+  auth: persistReducer(authPersistConfig, authReducer),
+  [authApi.reducerPath]: authApi.reducer,
 }
 
 export const store = configureStore({
@@ -33,7 +39,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(authApi.middleware),
 })
 
 export const persistor = persistStore(store)

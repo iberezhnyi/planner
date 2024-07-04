@@ -20,12 +20,14 @@ const initialValues = {
   password: "",
 }
 
-export const LoginForm: React.FC = () => {
+export const LoginForm: React.FC = ({ login }) => {
   const handleSubmit = (
     values: LoginFormValues,
     { resetForm }: { resetForm: () => void }
   ) => {
-    console.log("values :>> ", values)
+    console.log("values in LoginForm :>> ", values)
+
+    login(values)
 
     resetForm()
   }
@@ -36,7 +38,7 @@ export const LoginForm: React.FC = () => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <Form autoComplete="off">
+      <Form autoComplete="on">
         <label htmlFor="email">
           <p>Email</p>
           <Field type="email" name="email" />
