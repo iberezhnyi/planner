@@ -40,17 +40,11 @@ export const RegisterForm = ({ register }) => {
     values: RegisterFormValues,
     { resetForm }: { resetForm: () => void }
   ) => {
-    const newUser = {
-      firstName: values.firstName,
-      password: values.password,
-      email: values.email,
-    }
+    console.log("values in RegisterForm :>> ", values)
 
-    console.log("newUser in RegisterForm :>> ", newUser)
+    register(values)
 
-    register(newUser)
-
-    // resetForm()
+    resetForm()
   }
 
   return (

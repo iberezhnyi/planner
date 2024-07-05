@@ -15,6 +15,7 @@ export default defineConfig({
       hooks: "/src/hooks",
       store: "/src/store",
       api: "/src/api",
+      guards: "/src/guards",
     },
   },
 })

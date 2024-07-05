@@ -4,6 +4,9 @@ import { Route, Routes } from "react-router-dom"
 import { profileSelector } from "store"
 import { useRefreshUserQuery } from "store/authSlice/authApi"
 
+import { PublicRoute } from "guards/PublicRoute"
+import { PrivateRoute } from "guards/PrivateRoute"
+
 const MainLayout = lazy(() => import("layouts/MainLayout"))
 const HomeView = lazy(() => import("views/HomeView"))
 const RegisterView = lazy(() => import("views/RegisterView"))
@@ -28,10 +31,38 @@ export const App = () => {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomeView />} />
           <Route path="about" element={<AboutView />} />
-          <Route path="services" element={<ServicesView />} />
-          <Route path="contacts" element={<ContactsView />} />
-          <Route path="/register" element={<RegisterView />} />
-          <Route path="/login" element={<LoginView />} />
+          <Route
+            path="services"
+            element={
+              <PrivateRoute>
+                <ServicesView />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute>
+                <ContactsView />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <PublicRoute>
+                <RegisterView />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <PublicRoute>
+                <LoginView />
+              </PublicRoute>
+            }
+          />
         </Route>
 
         <Route path="*" element={<div>404 Not Found page</div>} />
