@@ -8,7 +8,7 @@ export const MobileMenuButtonWrapper = styled.div`
 export const MobileMenuButton = styled.button<{ $mobileMenu: boolean }>`
   position: relative;
   left: 0;
-  z-index: 1000;
+  z-index: 2;
 
   width: 35px;
   height: 26px;

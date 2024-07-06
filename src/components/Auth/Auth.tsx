@@ -1,6 +1,10 @@
 import { Button } from "components/buttons"
+import { CustomModal } from "components/Modal"
+
+import { useState } from "react"
+
 import { useDispatch, useSelector } from "react-redux"
-import { Link, NavLink, useNavigate } from "react-router-dom"
+// import { Link, NavLink, useNavigate } from "react-router-dom"
 import { logout, profileSelector } from "store"
 
 export const Auth = () => {
@@ -13,6 +17,9 @@ export const Auth = () => {
     dispatch(logout())
     // navigate("/login")
   }
+
+  // для модалки
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
@@ -33,6 +40,12 @@ export const Auth = () => {
           </Button>
         </div>
       )}
+
+      {/* // для модалки */}
+      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+        vjlfkrf
+      </button>
+      {isOpen && <CustomModal />}
     </>
   )
 }
