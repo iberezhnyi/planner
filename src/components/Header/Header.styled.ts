@@ -9,4 +9,5 @@ export const Header = styled.header`
 `
 export const HeaderInnerWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
 `

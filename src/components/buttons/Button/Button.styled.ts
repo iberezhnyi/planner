@@ -2,19 +2,23 @@ import { Link, NavLink } from "react-router-dom"
 import styled from "styled-components"
 
 const commonStyles = {
-  textDecoration: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  columnGap: "0.8125rem",
+  padding: "14px",
 
-  padding: "5px 15px",
-
-  borderRadius: "30px",
-  backgroundImage:
-    "linear-gradient(45deg, #6ab1d7 0%, #33d9de 50%, #002878 100%)",
-  backgroundPosition: "100% 0",
-  backgroundSize: "200% 200%",
-
-  color: "white",
-  boxShadow: "0 16px 32px 0 rgba(0, 40, 120, .35)",
-  transition: "500ms",
+  background: "rgb(62, 133, 243)",
+  boxShadow: "4px 2px 16px rgba(136, 165, 191, 0.48)",
+  borderRadius: "16px",
+  border: "none",
+  fontFamily: "Inter",
+  fontStyle: "normal",
+  fontWeight: "600",
+  fontSize: "0.875rem",
+  lineHeight: "1.125rem",
+  letterSpacing: "-0.02em",
+  color: "rgb(255, 255, 255)",
 }
 
 export const Button = styled.button`

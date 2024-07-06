@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Outlet } from "react-router-dom"
 import * as SC from "./MainLayout.styled"
 import { Header } from "components/Header"
@@ -12,8 +12,12 @@ const MainLayout = () => {
 
   const handleClick = () => setMobileMenu(!mobileMenu)
 
+  useEffect(() => {
+    !isMobile && setMobileMenu(false)
+  }, [isMobile])
+
   return (
-    <>
+    <SC.MainLayout>
       <Header
         isMobile={isMobile}
         handleClick={handleClick}
@@ -27,11 +31,11 @@ const MainLayout = () => {
           mobileMenu={mobileMenu}
         />
 
-        <main>
+        <SC.Main>
           <Outlet />
-        </main>
+        </SC.Main>
       </SC.MainLayoutInnerWrapper>
-    </>
+    </SC.MainLayout>
   )
 }
 

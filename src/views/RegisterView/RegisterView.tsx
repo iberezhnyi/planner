@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useRegisterUserMutation } from "store/authSlice/authApi"
 import { RegisterForm } from "components/forms"
 // import { useEffect } from "react"
+import * as SC from "./RegisterView.styled"
 
 const RegisterView = () => {
   // const navigate = useNavigate()
@@ -23,13 +24,20 @@ const RegisterView = () => {
   // console.log("profile :>> ", profile)
 
   return (
-    <div className="section">
-      <div className="container">
+    <SC.RegisterSection className="section">
+      {/* <div className="container"> */}
+      <SC.ContentWrapper>
+        <SC.Title>Register</SC.Title>
+
         <RegisterForm register={handleRegister} />
 
-        <Link to="/login">Log In</Link>
-      </div>
-    </div>
+        <div>
+          Have you joined us yet?{"\u00A0"}
+          <Link to="/login">Log in</Link>
+        </div>
+      </SC.ContentWrapper>
+      {/* </div> */}
+    </SC.RegisterSection>
   )
 }
 

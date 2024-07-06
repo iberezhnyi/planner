@@ -32,20 +32,20 @@ export const Auth = () => {
         </div>
       ) : (
         <div>
-          <Button to="/register" nav>
+          {/* <Button to="/register" nav>
             Register
           </Button>
           <Button to="/login" nav>
             Log In
-          </Button>
+          </Button> */}
         </div>
       )}
 
       {/* // для модалки */}
-      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+      {/* <button type="button" onClick={() => setIsOpen(!isOpen)}>
         vjlfkrf
       </button>
-      {isOpen && <CustomModal />}
+      {isOpen && <CustomModal />} */}
     </>
   )
 }

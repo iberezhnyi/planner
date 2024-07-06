@@ -1,12 +1,15 @@
-import { ErrorMessage, Field, Form, Formik } from "formik"
+import { Formik } from "formik"
 import * as yup from "yup"
+import * as SC from "./RegisterForm.styled"
 import { useState } from "react"
+import ShowPasswordBtn from "./ShowPasswordBtn/ShowPasswordBtn"
+import { Button } from "components/buttons"
+import loginIcon from "assets/icons/login.svg"
 
 interface RegisterFormValues {
   email: string
   password: string
   confirmPassword: string
-  //
   firstName: string
 }
 
@@ -27,14 +30,20 @@ const initialValues = {
   email: "",
   password: "",
   confirmPassword: "",
-
-  //
   firstName: "",
 }
 
 export const RegisterForm = ({ register }) => {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword)
+  }
+
+  const toggleConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword)
+  }
 
   const handleSubmit = (
     values: RegisterFormValues,
@@ -53,49 +62,52 @@ export const RegisterForm = ({ register }) => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <Form autoComplete="on">
+      <SC.FormStyled autoComplete="on">
         <label htmlFor="email">
-          <p>Email</p>
-          <Field type="email" name="email" />
-          <ErrorMessage name="email" component="div" />
+          <SC.FormText>Email</SC.FormText>
+          <SC.InputStyled type="email" name="email" />
+          <SC.ErrorMessageStyled name="email" component="div" />
         </label>
-        <label htmlFor="password">
-          <p>Password</p>
-          <Field type={showPassword ? "text" : "password"} name="password" />
-          <ErrorMessage name="password" component="div" />
-        </label>
-        <label htmlFor="confirmPassword">
-          <p>Confirm Password</p>
-          <Field
+        <SC.Label htmlFor="password">
+          <SC.FormText>Password</SC.FormText>
+          <SC.InputStyled
+            type={showPassword ? "text" : "password"}
+            name="password"
+          />
+
+          <ShowPasswordBtn
+            showPassword={showPassword}
+            togglePassword={togglePassword}
+          />
+
+          <SC.ErrorMessageStyled name="password" component="div" />
+        </SC.Label>
+        <SC.Label htmlFor="confirmPassword">
+          <SC.FormText>Confirm Password</SC.FormText>
+          <SC.InputStyled
             type={showConfirmPassword ? "text" : "password"}
             name="confirmPassword"
           />
-          <ErrorMessage name="confirmPassword" component="div" />
-        </label>
 
-        {/*  */}
+          <ShowPasswordBtn
+            showPassword={showConfirmPassword}
+            togglePassword={toggleConfirmPassword}
+          />
+
+          <SC.ErrorMessageStyled name="confirmPassword" component="div" />
+        </SC.Label>
 
         <label htmlFor="firstName">
-          <p>First Name</p>
-          <Field type="text" name="firstName" />
-          <ErrorMessage name="firstName" component="div" />
+          <SC.FormText>First Name</SC.FormText>
+          <SC.InputStyled type="text" name="firstName" />
+          <SC.ErrorMessageStyled name="firstName" component="div" />
         </label>
 
-        {/*  */}
-
-        <button type="button" onClick={() => setShowPassword(!showPassword)}>
-          {showPassword ? "Hide Password" : "Show Password"}
-        </button>
-        <button
-          type="button"
-          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-        >
-          {showConfirmPassword
-            ? "Hide Confirm Password"
-            : "Show Confirm Password"}
-        </button>
-        <button type="submit">Submit</button>
-      </Form>
+        <Button type="submit">
+          Submit
+          <img src={loginIcon} width="20" alt="" />
+        </Button>
+      </SC.FormStyled>
     </Formik>
   )
 }

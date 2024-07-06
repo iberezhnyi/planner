@@ -19,7 +19,7 @@ export const App = () => {
   const profile = useSelector(profileSelector)
   const { data: refreshData } = useRefreshUserQuery()
 
-  console.log("refreshData :>> ", refreshData)
+  // console.log("refreshData :>> ", refreshData)
 
   useEffect(() => {
     !profile && refreshData
