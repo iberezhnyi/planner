@@ -1,6 +1,19 @@
-import * as SC from "./Button.styled"
+import * as SC from './Button.styled'
 
-export const Button = ({ children, to, type, nav, ...rest }) => {
+interface ButtonProps {
+  children: React.ReactNode
+  to?: string
+  type?: 'button' | 'submit' | 'reset'
+  nav?: boolean
+}
+
+export const Button: React.FC<ButtonProps> = ({
+  children,
+  to,
+  type,
+  nav,
+  ...rest
+}) => {
   return (
     <>
       {type && (

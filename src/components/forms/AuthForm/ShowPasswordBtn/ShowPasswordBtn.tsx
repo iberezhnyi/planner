@@ -6,7 +6,7 @@ import * as SC from "./ShowPasswordBtn.styled"
 export default function ShowPasswordBtn({ showPassword, togglePassword }) {
   return (
     <button type="button" onClick={() => togglePassword()}>
-      <SC.SvgEye src={showPassword ? eyeOff : eyeOn} alt="Success Icon" />
+      <SC.EyeIcon src={showPassword ? eyeOff : eyeOn} alt="Success Icon" />
     </button>
   )
 }

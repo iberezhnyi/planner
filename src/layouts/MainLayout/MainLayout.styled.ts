@@ -1,21 +1,28 @@
 import styled from "styled-components"
 
 export const MainLayout = styled.div`
-  min-height: 100vh;
-  max-width: 100vw;
   display: flex;
   flex-direction: column;
 
-  background: ${(props) => props.theme.pageBackground};
+  min-height: 100vh;
+  max-width: 100vw;
+
+  color: ${({ theme }) => theme.textColor};
+  font-size: ${({ theme }) => theme.text.fontSize.s};
+  font-weight: ${({ theme }) => theme.text.fontWeight.r};
+  line-height: ${({ theme }) => theme.text.lineHeight};
+
+  background: ${({ theme }) => theme.pageBackground};
+
+  a {
+    color: ${({ theme }) => theme.linkColor};
+    text-decoration: none;
+  }
 `
 
 export const MainLayoutInnerWrapper = styled.div`
-  flex-grow: 1;
   display: flex;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
+  flex-grow: 1;
 `
 
 export const Main = styled.main`

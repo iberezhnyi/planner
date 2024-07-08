@@ -1,61 +1,64 @@
 import { Link, NavLink } from "react-router-dom"
 import styled from "styled-components"
+import { globalStyles } from "styles"
 
 const commonStyles = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  columnGap: "0.8125rem",
-  padding: "14px",
 
-  background: "rgb(62, 133, 243)",
-  boxShadow: "4px 2px 16px rgba(136, 165, 191, 0.48)",
-  borderRadius: "16px",
-  border: "none",
-  fontFamily: "Inter",
-  fontStyle: "normal",
-  fontWeight: "600",
-  fontSize: "0.875rem",
-  lineHeight: "1.125rem",
-  letterSpacing: "-0.02em",
-  color: "rgb(255, 255, 255)",
+  columnGap: "0.8125rem",
+  padding: "0.875rem",
+
+  fontWeight: `${globalStyles.text.fontWeight.sb}`,
+
+  borderRadius: "1rem",
 }
 
 export const Button = styled.button`
   ${commonStyles}
 
+  color: ${({ theme }) => theme.btnTextColor};
+
+  background-color: ${({ theme }) => theme.btnBgColor};
+
   &:hover {
-    box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
-    background-position: 0 0;
+    background-color: ${({ theme }) => theme.btnHoverBgColor};
   }
 
   &:active {
-    background-color: tomato;
+    background-color: ${({ theme }) => theme.btnHoverBgColor};
   }
 `
 
 export const ButtonLink = styled(Link)`
   ${commonStyles}
 
+  color: ${({ theme }) => theme.btnTextColor};
+
+  background-color: ${({ theme }) => theme.btnBgColor};
+
   &:hover {
-    box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
-    background-position: 0 0;
+    background-color: ${({ theme }) => theme.btnHoverBgColor};
   }
 
   &:active {
-    background-color: tomato;
+    background-color: ${({ theme }) => theme.btnHoverBgColor};
   }
 `
 
 export const ButtonNavLink = styled(NavLink)`
   ${commonStyles}
 
+  color: ${({ theme }) => theme.btnTextColor};
+
+  background-color: ${({ theme }) => theme.btnBgColor};
+
   &:hover {
-    box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
-    background-position: 0 0;
+    background-color: ${({ theme }) => theme.btnHoverBgColor};
   }
 
   &:active {
-    background-color: tomato;
+    background-color: ${({ theme }) => theme.btnHoverBgColor};
   }
 `

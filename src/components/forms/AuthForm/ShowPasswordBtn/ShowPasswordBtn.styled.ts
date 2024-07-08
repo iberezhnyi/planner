@@ -1,8 +1,9 @@
 import styled from "styled-components"
 
-export const SvgEye = styled.img`
+export const EyeIcon = styled.img`
   position: absolute;
-  top: 30px;
+  top: 37px;
   right: 10px;
-  width: 24px;
+
+  width: 26px;
 `

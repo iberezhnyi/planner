@@ -16,6 +16,7 @@ export default defineConfig({
       store: "/src/store",
       api: "/src/api",
       guards: "/src/guards",
+      routsConfig: "/src/routsConfig",
     },
   },
 })

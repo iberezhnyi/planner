@@ -9,8 +9,8 @@ import { PrivateRoute } from "guards/PrivateRoute"
 
 const MainLayout = lazy(() => import("layouts/MainLayout"))
 const HomeView = lazy(() => import("views/HomeView"))
-const RegisterView = lazy(() => import("views/RegisterView"))
-const LoginView = lazy(() => import("views/LoginView"))
+const AuthView = lazy(() => import("views/AuthView"))
+// const LoginView = lazy(() => import("views/LoginView"))
 const AboutView = lazy(() => import("views/AboutView"))
 const ContactsView = lazy(() => import("views/ContactsView"))
 const ServicesView = lazy(() => import("views/ServicesView"))
@@ -51,7 +51,7 @@ export const App = () => {
             path="/register"
             element={
               <PublicRoute>
-                <RegisterView />
+                <AuthView />
               </PublicRoute>
             }
           />
@@ -59,7 +59,7 @@ export const App = () => {
             path="/login"
             element={
               <PublicRoute>
-                <LoginView />
+                <AuthView />
               </PublicRoute>
             }
           />

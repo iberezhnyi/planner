@@ -59,13 +59,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.29;
-
-  /* background: linear-gradient(to bottom, #000066 0%, #000033 100%); */
-  color: antiquewhite;
 }
 
 h1,
@@ -86,14 +79,18 @@ ol {
 
 button {
   padding: 0;
+
   font-family: inherit;
+
   background-color: transparent;
+
   border: none;
   cursor: pointer;
 }
 
 img {
   display: block;
+
   max-width: 100%;
   height: auto;
 }
@@ -126,30 +123,4 @@ img {
   .container {
     width: 1200px;
   }
-} */
-
-/* @import-normalize;
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-  background: linear-gradient(to bottom, #000066 0%, #000033 100%);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 } */
