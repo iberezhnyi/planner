@@ -1,6 +1,9 @@
-import { MobileMenuButton } from "components/buttons"
-import * as SC from "./Header.styled"
-import { Auth } from "components/Auth"
+import { MobileMenuButton } from 'components/buttons'
+import * as SC from './Header.styled'
+// import * as SCGlobal from 'styles/GlobalComponents.styled'
+import * as SCG from 'styles/Components.styled'
+
+import { AuthPanel } from 'components/AuthPanel'
 
 interface HeaderProps {
   isMobile: boolean
@@ -13,24 +16,22 @@ export const Header: React.FC<HeaderProps> = ({
   handleClick,
   mobileMenu,
 }) => {
-  console.log("isMobile :>> ", isMobile)
+  console.log('isMobile :>> ', isMobile)
 
   return (
     <SC.Header>
-      <div className="section">
-        <div className="container">
-          <SC.HeaderInnerWrapper>
-            {isMobile && (
-              <MobileMenuButton
-                onClick={() => handleClick()}
-                mobileMenu={mobileMenu}
-              />
-            )}
+      <SCG.Section>
+        <SC.HeaderContainer>
+          {isMobile && (
+            <MobileMenuButton
+              onClick={() => handleClick()}
+              mobileMenu={mobileMenu}
+            />
+          )}
 
-            <Auth />
-          </SC.HeaderInnerWrapper>
-        </div>
-      </div>
+          <AuthPanel />
+        </SC.HeaderContainer>
+      </SCG.Section>
     </SC.Header>
   )
 }

@@ -1,12 +1,13 @@
-import eyeOn from "assets/icons/eye-on.svg"
-import eyeOff from "assets/icons/eye-off.svg"
+import sprite from 'assets/icons/sprite.svg'
 
-import * as SC from "./ShowPasswordBtn.styled"
+import * as SC from './ShowPasswordBtn.styled'
 
 export default function ShowPasswordBtn({ showPassword, togglePassword }) {
   return (
     <button type="button" onClick={() => togglePassword()}>
-      <SC.EyeIcon src={showPassword ? eyeOff : eyeOn} alt="Success Icon" />
+      <SC.EyeIcon1 className={showPassword ? 'active' : ''}>
+        <use href={`${sprite}#${showPassword ? 'eye-off' : 'eye-on'}`} />
+      </SC.EyeIcon1>
     </button>
   )
 }

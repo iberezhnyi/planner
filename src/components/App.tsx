@@ -1,19 +1,19 @@
-import { Suspense, lazy, useEffect } from "react"
-import { useSelector } from "react-redux"
-import { Route, Routes } from "react-router-dom"
-import { profileSelector } from "store"
-import { useRefreshUserQuery } from "store/authSlice/authApi"
+import { Suspense, lazy, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { Route, Routes } from 'react-router-dom'
+import { profileSelector } from 'store'
+import { useRefreshUserQuery } from 'store/authSlice/authApi'
 
-import { PublicRoute } from "guards/PublicRoute"
-import { PrivateRoute } from "guards/PrivateRoute"
+import { PublicRoute } from 'guards/PublicRoute'
+import { PrivateRoute } from 'guards/PrivateRoute'
 
-const MainLayout = lazy(() => import("layouts/MainLayout"))
-const HomeView = lazy(() => import("views/HomeView"))
-const AuthView = lazy(() => import("views/AuthView"))
+const MainLayout = lazy(() => import('layouts/MainLayout'))
+const HomeView = lazy(() => import('views/HomeView'))
+const AuthView = lazy(() => import('views/AuthView'))
 // const LoginView = lazy(() => import("views/LoginView"))
-const AboutView = lazy(() => import("views/AboutView"))
-const ContactsView = lazy(() => import("views/ContactsView"))
-const ServicesView = lazy(() => import("views/ServicesView"))
+const AboutView = lazy(() => import('views/AboutView'))
+const ContactsView = lazy(() => import('views/ContactsView'))
+const ServicesView = lazy(() => import('views/ServicesView'))
 
 export const App = () => {
   const profile = useSelector(profileSelector)

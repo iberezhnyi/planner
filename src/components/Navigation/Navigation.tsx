@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom"
-import * as SC from "./Navigation.styled"
+import { NavLink } from 'react-router-dom'
+import * as SC from './Navigation.styled'
 
 interface NavigationProps {
   setMobileMenu: (mobileMenu: boolean) => void

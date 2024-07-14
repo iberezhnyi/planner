@@ -1,5 +1,5 @@
-import { Sidebar, sidebarClasses } from "react-pro-sidebar"
-import styled from "styled-components"
+import { Sidebar, sidebarClasses } from 'react-pro-sidebar'
+import styled from 'styled-components'
 
 export const SidebarWrapper = styled.div`
   /* display: flex;
@@ -19,7 +19,7 @@ export const SidebarWrapper = styled.div`
 
 export const StyledSidebar = styled(Sidebar)`
   .${sidebarClasses.container} {
-    background-color: grey;
+    background-color: ${({ theme }) => theme.primaryBgColor};
     padding: 60px 10px 10px 10px;
 
     z-index: 2;

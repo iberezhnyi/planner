@@ -1,18 +1,20 @@
-import { Link, NavLink } from "react-router-dom"
-import styled from "styled-components"
-import { globalStyles } from "styles"
+import { Link, NavLink } from 'react-router-dom'
+import styled from 'styled-components'
+import { global } from 'styles'
+// import { globalStyles } from 'styles/globalStyles'
+// import { globalStyles } from "styles"
 
 const commonStyles = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
-  columnGap: "0.8125rem",
-  padding: "0.875rem",
+  columnGap: '0.8125rem',
+  padding: '0.875rem',
 
-  fontWeight: `${globalStyles.text.fontWeight.sb}`,
+  fontWeight: `${global.text.fontWeight.sb}`,
 
-  borderRadius: "1rem",
+  borderRadius: '1rem',
 }
 
 export const Button = styled.button`

@@ -6,7 +6,7 @@ import ShowPasswordBtn from './ShowPasswordBtn/ShowPasswordBtn'
 import * as path from 'routsConfig'
 import { loginFormSchema, registerFormSchema } from '../schemas'
 import * as SC from './AuthForm.styled'
-import entranceIcon from 'assets/icons/entrance.svg'
+import sprite from 'assets/icons/sprite.svg'
 
 interface AuthFormProps {
   auth: (values: Record<string, string>) => void
@@ -107,7 +107,9 @@ export const AuthForm: React.FC<AuthFormProps> = ({ auth }) => {
 
             <Button type="submit">
               {isLoginPage ? 'Log in' : 'Register'}
-              <img src={entranceIcon} width="20" alt="" />
+              <SC.IconLogin>
+                <use href={`${sprite}#login`} />
+              </SC.IconLogin>
             </Button>
           </SC.FormStyled>
         </>

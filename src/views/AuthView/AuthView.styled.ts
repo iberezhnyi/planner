@@ -1,26 +1,21 @@
-import styled from "styled-components"
+import styled from 'styled-components'
+import { Section } from 'styles/Components.styled'
 
-export const AuthSection = styled.div`
+export const AuthSection = styled(Section)`
   display: flex;
-  flex-grow: 1;
   justify-content: center;
-  align-items: center;
 `
 
 export const ContentWrapper = styled.div`
   width: 90%;
-  padding: 2.5rem 1.5rem;
+  padding: ${({ theme }) => theme.global.spacing(10, 6)};
 
   background-color: ${({ theme }) => theme.primaryBgColor};
   border-radius: 0.5rem;
 `
 
 export const Title = styled.h1`
-  margin-bottom: 0.5rem;
-
-  color: ${({ theme }) => theme.titleColor};
-  font-size: ${({ theme }) => theme.text.fontSize.l};
-  font-weight: ${({ theme }) => theme.text.fontWeight.sb};
+  margin-bottom: ${({ theme }) => theme.global.spacing(2)};
 `
 
 export const Text = styled.p`

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const MobileMenuButtonWrapper = styled.div`
   display: flex;
@@ -10,8 +10,8 @@ export const MobileMenuButton = styled.button<{ $mobileMenu: boolean }>`
   left: 0;
   z-index: 2;
 
-  width: 35px;
-  height: 26px;
+  width: 2.1875rem;
+  height: 1.625rem;
   padding: 0;
 
   background: none;
@@ -21,15 +21,15 @@ export const MobileMenuButton = styled.button<{ $mobileMenu: boolean }>`
   &::after,
   & span,
   & span::before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
 
     width: 100%;
-    height: 3px;
+    height: 0.1875rem;
 
-    background-color: #fff;
-    border-radius: 5px;
+    background-color: ${({ theme }) => theme.textColor};
+    border-radius: 0.3125rem;
 
     transition: all 200ms linear;
     will-change: opacity, top, bottom, transform;
@@ -39,30 +39,26 @@ export const MobileMenuButton = styled.button<{ $mobileMenu: boolean }>`
   }
 
   &::before {
-    top: ${(props) => (props.$mobileMenu ? "11px" : "0")};
-    transform: ${(props) => (props.$mobileMenu ? "rotate(45deg)" : "")};
+    top: ${(props) => (props.$mobileMenu ? '44%' : '1%')};
+    transform: ${(props) => (props.$mobileMenu ? 'rotate(45deg)' : '')};
   }
 
   &::after {
-    bottom: ${(props) => (props.$mobileMenu ? "12px" : "0")};
-    transform: ${(props) => (props.$mobileMenu ? "rotate(-45deg)" : "")};
+    bottom: ${(props) => (props.$mobileMenu ? '44%' : '1%')};
+    transform: ${(props) => (props.$mobileMenu ? 'rotate(-45deg)' : '')};
   }
 
   & span {
-    top: 7px;
+    top: 30%;
   }
 
   & span::before {
-    top: 8px;
+    top: 256%;
   }
 
   & span,
   & span::before {
-    opacity: ${(props) => (props.$mobileMenu ? "0" : "1")};
-    transform: ${(props) => (props.$mobileMenu ? "translateX(100%)" : "")};
-  }
-
-  @media (min-width: 768px) {
-    display: none;
+    opacity: ${(props) => (props.$mobileMenu ? '0' : '1')};
+    transform: ${(props) => (props.$mobileMenu ? 'translateX(100%)' : '')};
   }
 `

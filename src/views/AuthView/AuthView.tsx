@@ -19,7 +19,7 @@ const AuthView = () => {
   }
 
   return (
-    <SC.AuthSection className="section">
+    <SC.AuthSection>
       <SC.ContentWrapper>
         <SC.Title>{isLoginPage ? 'Log in' : 'Register'}</SC.Title>
 

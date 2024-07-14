@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react"
-import { Outlet } from "react-router-dom"
-import * as SC from "./MainLayout.styled"
-import { Header } from "components/Header"
-import { Sidebar } from "components/Sidebar"
+import { useEffect, useState } from 'react'
+import { Outlet } from 'react-router-dom'
+import * as SC from './MainLayout.styled'
+import { Header } from 'components/Header'
+import { Sidebar } from 'components/Sidebar'
 
 const MainLayout = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia("(max-width: 767px)").matches
+    window.matchMedia('(max-width: 767px)').matches
   )
 
   const handleClick = () => setMobileMenu(!mobileMenu)
@@ -17,7 +17,7 @@ const MainLayout = () => {
   }, [isMobile])
 
   return (
-    <SC.MainLayout>
+    <>
       <Header
         isMobile={isMobile}
         handleClick={handleClick}
@@ -35,7 +35,7 @@ const MainLayout = () => {
           <Outlet />
         </SC.Main>
       </SC.MainLayoutInnerWrapper>
-    </SC.MainLayout>
+    </>
   )
 }
 

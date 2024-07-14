@@ -1,14 +1,20 @@
-import { useSelector } from "react-redux"
-import { ThemeProvider } from "styled-components"
-import { selectTheme } from "store"
-import { themes } from "styles"
+import { useSelector } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
+import { selectTheme } from 'store'
+import { Global, global, themes } from 'styles'
 
 export const Theme: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const theme = useSelector(selectTheme)
+  const themeName = useSelector(selectTheme)
+  const theme = { global, ...themes[themeName] }
 
-  const themeMode = theme === "light" ? themes.light : themes.dark
+  console.log('themeMode', theme)
 
-  return <ThemeProvider theme={themeMode}>{children}</ThemeProvider>
+  return (
+    <ThemeProvider theme={theme}>
+      <Global />
+      {children}
+    </ThemeProvider>
+  )
 }
