@@ -1,3 +1,4 @@
+
 import { NavLink } from 'react-router-dom'
 import { styled } from 'styled-components'
 
@@ -31,8 +32,13 @@ export const Link = styled(NavLink)`
 
   padding: ${({ theme }) => theme.global.spacing(2)};
 
-  color: ${({ theme }) => theme.linkColor};
+  color: ${(props) => {
+    console.log(props)
+    return props.theme.linkColor
+  }};
 `
+
+// color: ${ ({ theme }) => theme.linkColor };
 
 export const List = styled.ul`
   padding: ${({ theme }) => theme.global.spacing(4)};

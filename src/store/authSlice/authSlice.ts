@@ -1,37 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
+import { authApi } from './authApi'
+import { IAuthState } from 'types'
 
-import { RootState } from "store/store"
-import { authApi } from "./authApi"
-
-interface AuthState {
-  token: string
-  profile: UserProfile | null
-}
-
-interface UserProfile {
-  firstName: string
-  email: string
-  password: string
-  _id: string
-  lastName: string
-  gender: string
-  phone: string
-  image: string
-}
-
-const initialState: AuthState = {
-  token: "",
+const initialState: IAuthState = {
+  token: '',
   profile: null,
 }
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState,
   reducers: {
-    logout: (state) => {
-      state.token = ""
+    logoutAction: (state) => {
+      state.token = ''
       state.profile = null
-      localStorage.removeItem("persist:auth")
+      localStorage.removeItem('persist:auth')
     },
   },
   extraReducers: (builder) => {
@@ -61,16 +44,12 @@ export const authSlice = createSlice({
         }
       )
       .addMatcher(authApi.endpoints.refreshUser.matchRejected, (state) => {
-        state.token = ""
+        state.token = ''
         state.profile = null
-        localStorage.removeItem("persist:auth")
+        localStorage.removeItem('persist:auth')
       })
   },
 })
 
 export const authReducer = authSlice.reducer
-
-export const isAuthSelector = (state: RootState) => state.auth.token
-export const profileSelector = (state: RootState) => state.auth.profile
-
-export const { logout } = authSlice.actions
+export const { logoutAction } = authSlice.actions

@@ -1,14 +1,15 @@
-import { useDispatch, useSelector } from "react-redux"
-import { selectTheme, changeTheme } from "store"
+import { useDispatch, useSelector } from 'react-redux'
+import { selectTheme, changeThemeAction } from 'store'
+import { ThemeNameType } from 'types'
 
-export const useThemeToggle = (): [string, (theme: string) => void] => {
+export const useThemeToggle = (): [string, (theme: ThemeNameType) => void] => {
   const dispatch = useDispatch()
   const theme = useSelector(selectTheme)
 
-  const setTheme = (theme: string) =>
-    theme === "light"
-      ? dispatch(changeTheme("dark"))
-      : dispatch(changeTheme("light"))
+  const setTheme = (theme: ThemeNameType) =>
+    theme === 'light'
+      ? dispatch(changeThemeAction('dark'))
+      : dispatch(changeThemeAction('light'))
 
   return [theme, setTheme]
 }

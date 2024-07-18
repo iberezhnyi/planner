@@ -1,6 +1,7 @@
 import { calculateSpacing } from 'helpers'
+import { IGlobalStyles } from 'types'
 
-export const global = {
+export const global: IGlobalStyles = {
   text: {
     fontSize: {
       xxs: '0.625rem', // 10px
@@ -23,7 +24,14 @@ export const global = {
       b: 700,
     },
 
-    lineHeight: 1.29,
+    lineHeight: {
+      xl: 1.3,
+      l: 1.25,
+      m: 1.2,
+      s: 1.125,
+      xs: 1.1,
+      xxs: 1,
+    },
   },
 
   form: {

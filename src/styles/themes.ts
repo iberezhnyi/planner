@@ -1,4 +1,6 @@
-export const themes = {
+import { IThemes } from 'types'
+
+export const themes: IThemes = {
   light: {
     pageBackground: '#DCEBF7',
     primaryBgColor: '#FFFFFF',

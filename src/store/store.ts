@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit"
+import { configureStore } from '@reduxjs/toolkit'
 import {
   persistStore,
   persistReducer,
@@ -8,22 +8,22 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist"
-import storage from "redux-persist/lib/storage"
-import { themeReducer } from "./themeSlice/themeSlice"
-import { authReducer } from "./authSlice/authSlice.ts"
-import { authApi } from "./authSlice/authApi.ts"
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import { themeReducer } from './themeSlice/themeSlice'
+import { authReducer } from './authSlice/authSlice.ts'
+import { authApi } from './authSlice/authApi.ts'
 
 const themePersistConfig = {
-  key: "theme",
+  key: 'theme',
   storage,
-  whitelist: ["theme"],
+  whitelist: ['theme'],
 }
 
 const authPersistConfig = {
-  key: "auth",
+  key: 'auth',
   storage,
-  whitelist: ["token"],
+  whitelist: ['token'],
 }
 
 const reducer = {
@@ -44,4 +44,5 @@ export const store = configureStore({
 
 export const persistor = persistStore(store)
 
+export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>

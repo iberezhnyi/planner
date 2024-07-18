@@ -1,52 +1,62 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { RootState } from "store/store"
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { RootState } from 'store/store'
+import { IAuthResponse, IUserProfile } from 'types'
 
 export const authApi = createApi({
-  reducerPath: "authApi",
+  reducerPath: 'authApi',
 
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://practices-api.vercel.app/auth/",
+    baseUrl: 'https://practices-api.vercel.app/auth/',
     prepareHeaders: (headers, { getState }) => {
       const token = (getState() as RootState).auth.token
 
       if (token) {
-        headers.set("Authorization", `Bearer ${token}`)
+        headers.set('Authorization', `Bearer ${token}`)
       }
 
       return headers
     },
   }),
 
-  tagTypes: ["Auth"],
+  tagTypes: ['Auth'],
 
   endpoints: (builder) => ({
-    registerUser: builder.mutation({
+    registerUser: builder.mutation<
+      IAuthResponse,
+      Pick<IUserProfile, 'firstName' | 'email' | 'password'>
+    >({
       query: (body) => ({
-        url: "signup",
-        method: "POST",
+        url: 'signup',
+        method: 'POST',
         body,
       }),
-      invalidatesTags: ["Auth"],
+      invalidatesTags: ['Auth'],
     }),
 
-    loginUser: builder.mutation({
+    loginUser: builder.mutation<
+      IAuthResponse,
+      Pick<IUserProfile, 'email' | 'password'>
+    >({
       query: (body) => ({
         url: `login`,
-        method: "POST",
+        method: 'POST',
         body,
       }),
-      invalidatesTags: ["Auth"],
+      invalidatesTags: ['Auth'],
     }),
 
-    refreshUser: builder.query({
+    refreshUser: builder.query<IAuthResponse, void>({
       query: () => `refresh`,
-      providesTags: ["Auth"],
+      providesTags: ['Auth'],
     }),
   }),
 })
 
-export const {
-  useRegisterUserMutation,
-  useLoginUserMutation,
-  useRefreshUserQuery,
-} = authApi
+export const useRegisterUserMutation: typeof authApi.endpoints.registerUser.useMutation =
+  authApi.endpoints.registerUser.useMutation
+
+export const useLoginUserMutation: typeof authApi.endpoints.loginUser.useMutation =
+  authApi.endpoints.loginUser.useMutation
+
+export const useRefreshUserQuery: typeof authApi.endpoints.refreshUser.useQuery =
+  authApi.endpoints.refreshUser.useQuery

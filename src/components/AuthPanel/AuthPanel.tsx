@@ -11,19 +11,19 @@ import {
   FloatingFocusManager,
   useId,
 } from '@floating-ui/react'
-import { logout, profileSelector } from 'store'
+import { logoutAction, selectProfile } from 'store'
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './AuthPanel.styled'
 import * as SCG from 'styles/Components.styled'
 
 export const AuthPanel = () => {
-  const profile = useSelector(profileSelector)
+  const profile = useSelector(selectProfile)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   // Переписати, якщо бек зберігає токен в БД
   const handleLogOut = () => {
-    dispatch(logout())
+    dispatch(logoutAction())
     navigate('/login')
     setIsOpen(false)
   }

@@ -30,7 +30,7 @@ body {
 
   color: ${({ theme }) => theme.textColor};
   font-size: ${({ theme }) => theme.global.text.fontSize.s};
-  line-height: ${({ theme }) => theme.global.text.lineHeight};
+  line-height: ${({ theme }) => theme.global.text.lineHeight.xl};
   
   background: ${({ theme }) => theme.pageBackground};
 }
@@ -96,59 +96,3 @@ a {
   margin-right: auto;
 }
 `
-
-// +++++++++++++++++++++++++++
-
-/* @font-face {
-  font-family: 'Inter';
-  src: url('styles/fonts/Inter-Regular.woff2') format('woff2'),
-    url('styles/fonts/Inter-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('styles/fonts/Inter-Medium.woff2') format('woff2'),
-    url('styles/fonts/Inter-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('styles/fonts/Inter-SemiBold.woff2') format('woff2'),
-    url('styles/fonts/Inter-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('styles/fonts/Inter-Bold.woff2') format('woff2'),
-    url('styles/fonts/Inter-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Coolvetica';
-  src: url('styles/fonts/Coolvetica-Regular.woff2') format('woff2'),
-    url('styles/fonts/Coolvetica-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Coolvetica';
-  src: url('styles/fonts/Coolvetica-Italic.woff2') format('woff2'),
-    url('styles/fonts/Coolvetica-Italic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-} */
