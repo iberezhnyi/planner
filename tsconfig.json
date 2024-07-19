@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    // "allowJs": false,
+    "allowJs": false,
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
@@ -10,6 +10,10 @@
     "skipLibCheck": true,
 
     "baseUrl": "src",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "noImplicitAny": true,
     // "typeRoots": ["./node_modules/@types", "./src/types"],
 
     /* Bundler mode */

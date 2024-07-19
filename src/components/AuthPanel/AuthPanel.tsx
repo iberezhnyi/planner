@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -16,7 +16,7 @@ import sprite from 'assets/icons/sprite.svg'
 import * as SC from './AuthPanel.styled'
 import * as SCG from 'styles/Components.styled'
 
-export const AuthPanel = () => {
+export const AuthPanel: FC = () => {
   const profile = useSelector(selectProfile)
   const dispatch = useDispatch()
   const navigate = useNavigate()

@@ -73,6 +73,16 @@ export interface IGlobalStyles {
   spacing: typeof calculateSpacing
 }
 
-// export interface CombinedTheme extends ITheme {
-//   global: IGlobalStyles
-// }
+// Forms
+export interface IBasicAuthFormValues {
+  email: string
+  password: string
+  confirmPassword: string
+  firstName: string
+}
+
+export interface ILoginFormValues
+  extends Pick<IBasicAuthFormValues, 'email' | 'password'> {}
+
+export interface IRegisterFormValues
+  extends Omit<IBasicAuthFormValues, 'confirmPassword'> {}

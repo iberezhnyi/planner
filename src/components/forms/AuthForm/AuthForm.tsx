@@ -1,50 +1,61 @@
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Formik, FormikErrors } from 'formik'
+import { Formik, FormikErrors, useFormikContext } from 'formik'
 import { Button } from 'components/buttons'
-import ShowPasswordBtn from './ShowPasswordBtn/ShowPasswordBtn'
+import { ShowPasswordBtn } from './ShowPasswordBtn/ShowPasswordBtn'
 import * as path from 'routsConfig'
 import { loginFormSchema, registerFormSchema } from '../schemas'
 import * as SC from './AuthForm.styled'
 import sprite from 'assets/icons/sprite.svg'
+import {
+  IBasicAuthFormValues,
+  ILoginFormValues,
+  IRegisterFormValues,
+} from 'types'
 
 interface AuthFormProps {
-  auth: (values: Record<string, string>) => void
+  auth: (body: ILoginFormValues | IRegisterFormValues) => void
 }
-const initialRegisterValues = {
+
+type HandleSubmitType = (
+  body: ILoginFormValues | IBasicAuthFormValues,
+  { resetForm }: { resetForm: () => void }
+) => void
+
+const initialRegisterValues: IBasicAuthFormValues = {
   email: '',
   password: '',
   confirmPassword: '',
   firstName: '',
 }
 
-const initialLoginValues = {
+const initialLoginValues: ILoginFormValues = {
   email: '',
   password: '',
 }
 
-export const AuthForm: React.FC<AuthFormProps> = ({ auth }) => {
+export const AuthForm: FC<AuthFormProps> = ({ auth }) => {
   const location = useLocation()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
   const isLoginPage = location.pathname === path.login
 
-  const togglePassword = () => {
-    setShowPassword(!showPassword)
-  }
+  const togglePassword = () => setShowPassword((prev) => !prev)
+  const toggleConfirmPassword = () => setShowConfirmPassword((prev) => !prev)
 
-  const toggleConfirmPassword = () => {
-    setShowConfirmPassword(!showConfirmPassword)
-  }
-
-  const handleSubmit = (
-    values: Record<string, string>,
-    { resetForm }: { resetForm: () => void }
-  ) => {
-    console.log(`values in :>> ${location.pathname} form`, values)
-
-    auth(values)
+  const handleSubmit: HandleSubmitType = (body, { resetForm }) => {
+    if (isLoginPage) {
+      auth(body as ILoginFormValues)
+    } else {
+      const { email, password, firstName } = body as IBasicAuthFormValues
+      const registerBody: IRegisterFormValues = {
+        email,
+        password,
+        firstName,
+      }
+      auth(registerBody)
+    }
 
     resetForm()
   }
@@ -120,20 +131,20 @@ export const AuthForm: React.FC<AuthFormProps> = ({ auth }) => {
 
 interface FormObserverProps {
   setErrors: (
-    errors: FormikErrors<{
-      email: string
-      password: string
-      confirmPassword: string
-    }>
+    errors: FormikErrors<ILoginFormValues | IRegisterFormValues>
   ) => void
-
   pathname: string
 }
 
-const FormObserver: React.FC<FormObserverProps> = ({ setErrors, pathname }) => {
+const FormObserver: FC<FormObserverProps> = ({ setErrors, pathname }) => {
+  const { resetForm } = useFormikContext<
+    ILoginFormValues | IBasicAuthFormValues
+  >()
+
   useEffect(() => {
     setErrors({})
-  }, [pathname, setErrors])
+    resetForm()
+  }, [pathname, setErrors, resetForm])
 
   return null
 }

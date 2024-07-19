@@ -1,4 +1,6 @@
-const AboutView = () => {
+import { FC } from 'react'
+
+const AboutView: FC = () => {
   return (
     <div className="section">
       <div className="container">

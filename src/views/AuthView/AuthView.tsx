@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import {
   useLoginUserMutation,
@@ -6,16 +7,20 @@ import {
 import { AuthForm } from 'components/forms'
 import * as path from 'routsConfig'
 import * as SC from './AuthView.styled'
+import { ILoginFormValues, IRegisterFormValues } from 'types'
 
-const AuthView = () => {
+const AuthView: FC = () => {
   const location = useLocation()
   const [registerUser] = useRegisterUserMutation()
   const [loginUser] = useLoginUserMutation()
 
   const isLoginPage = location.pathname === path.login
 
-  const handleAuth = (body: Record<string, string>) => {
-    isLoginPage ? loginUser(body) : registerUser(body)
+  const handleAuth = (body: ILoginFormValues | IRegisterFormValues) => {
+    isLoginPage
+      ? loginUser(body as ILoginFormValues)
+      : registerUser(body as IRegisterFormValues)
+    console.log(`AuthView body in :>> ${location.pathname} form`, body)
   }
 
   return (

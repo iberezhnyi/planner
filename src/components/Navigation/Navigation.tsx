@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import * as SC from './Navigation.styled'
 
@@ -5,7 +6,7 @@ interface NavigationProps {
   setMobileMenu: (mobileMenu: boolean) => void
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ setMobileMenu }) => {
+export const Navigation: FC<NavigationProps> = ({ setMobileMenu }) => {
   return (
     <SC.Navigation>
       <SC.NavigationItem

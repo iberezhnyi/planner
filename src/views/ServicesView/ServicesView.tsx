@@ -1,4 +1,6 @@
-const ServicesView = () => {
+import { FC } from 'react'
+
+const ServicesView: FC = () => {
   return (
     <div className="section">
       <div className="container">

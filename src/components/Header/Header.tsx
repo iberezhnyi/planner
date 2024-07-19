@@ -1,8 +1,7 @@
+import { FC } from 'react'
 import { MobileMenuButton } from 'components/buttons'
 import * as SC from './Header.styled'
-// import * as SCGlobal from 'styles/GlobalComponents.styled'
 import * as SCG from 'styles/Components.styled'
-
 import { AuthPanel } from 'components/AuthPanel'
 
 interface HeaderProps {
@@ -11,7 +10,7 @@ interface HeaderProps {
   mobileMenu: boolean
 }
 
-export const Header: React.FC<HeaderProps> = ({
+export const Header: FC<HeaderProps> = ({
   isMobile,
   handleClick,
   mobileMenu,

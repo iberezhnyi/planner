@@ -1,9 +1,15 @@
+import { FC } from 'react'
 import * as SC from './MobileMenuButton.styled'
 
-export const MobileMenuButton: React.FC<{
+interface MobileMenuButtonProps {
   onClick: () => void
   mobileMenu: boolean
-}> = ({ onClick, mobileMenu }) => {
+}
+
+export const MobileMenuButton: FC<MobileMenuButtonProps> = ({
+  onClick,
+  mobileMenu,
+}) => {
   return (
     <SC.MobileMenuButtonWrapper>
       <SC.MobileMenuButton $mobileMenu={mobileMenu} onClick={onClick}>

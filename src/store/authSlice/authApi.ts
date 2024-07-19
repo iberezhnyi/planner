@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { RootState } from 'store/store'
-import { IAuthResponse, IUserProfile } from 'types'
+import { IAuthResponse, ILoginFormValues, IRegisterFormValues } from 'types'
 
 export const authApi = createApi({
   reducerPath: 'authApi',
@@ -21,22 +21,19 @@ export const authApi = createApi({
   tagTypes: ['Auth'],
 
   endpoints: (builder) => ({
-    registerUser: builder.mutation<
-      IAuthResponse,
-      Pick<IUserProfile, 'firstName' | 'email' | 'password'>
-    >({
-      query: (body) => ({
-        url: 'signup',
-        method: 'POST',
-        body,
-      }),
+    registerUser: builder.mutation<IAuthResponse, IRegisterFormValues>({
+      query: (body) => {
+        console.log('body :>> ', body)
+        return {
+          url: 'signup',
+          method: 'POST',
+          body,
+        }
+      },
       invalidatesTags: ['Auth'],
     }),
 
-    loginUser: builder.mutation<
-      IAuthResponse,
-      Pick<IUserProfile, 'email' | 'password'>
-    >({
+    loginUser: builder.mutation<IAuthResponse, ILoginFormValues>({
       query: (body) => ({
         url: `login`,
         method: 'POST',

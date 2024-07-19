@@ -20,4 +20,8 @@ export default defineConfig({
       helpers: '/src/helpers',
     },
   },
+
+  build: {
+    sourcemap: true,
+  },
 })

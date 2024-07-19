@@ -1,6 +1,7 @@
-import { ToggleThemeButton } from "components/buttons"
-import * as SC from "./Sidebar.styled"
-import { Navigation } from "components/Navigation"
+import { FC } from 'react'
+import { ToggleThemeButton } from 'components/buttons'
+import * as SC from './Sidebar.styled'
+import { Navigation } from 'components/Navigation'
 
 interface SidebarProps {
   mobileMenu: boolean
@@ -8,7 +9,7 @@ interface SidebarProps {
   setMobileMenu: (mobileMenu: boolean) => void
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({
+export const Sidebar: FC<SidebarProps> = ({
   mobileMenu,
   setIsMobile,
   setMobileMenu,
