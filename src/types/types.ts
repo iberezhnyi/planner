@@ -33,6 +33,7 @@ export type ThemeNameType = 'dark' | 'light'
 export interface ITheme {
   pageBackground: string
   primaryBgColor: string
+  secondaryBgColor: string
   titleColor: string
   textColor: string
   linkColor: string
@@ -40,6 +41,7 @@ export interface ITheme {
   btnTextColor: string
   btnBgColor: string
   btnHoverBgColor: string
+  accent: string
 }
 
 export interface IThemes {
@@ -59,6 +61,10 @@ export interface IGlobalStyles {
 
     lineHeight: {
       [key: string]: number
+    }
+
+    color: {
+      [key: string]: string
     }
   }
 

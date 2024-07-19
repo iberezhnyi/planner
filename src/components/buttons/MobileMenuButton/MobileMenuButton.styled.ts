@@ -28,7 +28,7 @@ export const MobileMenuButton = styled.button<{ $mobileMenu: boolean }>`
     width: 100%;
     height: 0.1875rem;
 
-    background-color: ${({ theme }) => theme.textColor};
+    background-color: ${({ theme }) => theme.global.text.color.white};
     border-radius: 0.3125rem;
 
     transition: all 200ms linear;

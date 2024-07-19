@@ -7,6 +7,8 @@ export const SidebarWrapper = styled.div`
   min-height: 400px; */
   /* z-index: 2; */
 
+  height: qwerty;
+
   & aside.ps-broken {
     border: none;
     z-index: 1;
@@ -19,8 +21,10 @@ export const SidebarWrapper = styled.div`
 
 export const StyledSidebar = styled(Sidebar)`
   .${sidebarClasses.container} {
+    position: relative;
     background-color: ${({ theme }) => theme.primaryBgColor};
-    padding: 60px 10px 10px 10px;
+
+    /* padding: 60px 10px 10px 10px; */
 
     z-index: 2;
 

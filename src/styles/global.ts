@@ -32,6 +32,10 @@ export const global: IGlobalStyles = {
       xs: 1.1,
       xxs: 1,
     },
+
+    color: {
+      white: '#E6E6FA',
+    },
   },
 
   form: {

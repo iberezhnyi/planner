@@ -1,7 +1,8 @@
 import { FC } from 'react'
-import { ToggleThemeButton } from 'components/buttons'
+
 import * as SC from './Sidebar.styled'
 import { Navigation } from 'components/Navigation'
+import { SidebarAuthPanel } from './SidebarAuthPanel/SidebarAuthPanel'
 
 interface SidebarProps {
   mobileMenu: boolean
@@ -22,9 +23,8 @@ export const Sidebar: FC<SidebarProps> = ({
         onBreakPoint={setIsMobile}
         onBackdropClick={() => setMobileMenu(false)}
       >
+        <SidebarAuthPanel />
         <Navigation setMobileMenu={setMobileMenu} />
-
-        <ToggleThemeButton />
       </SC.StyledSidebar>
     </SC.SidebarWrapper>
   )

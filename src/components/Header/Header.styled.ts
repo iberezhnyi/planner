@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Container } from 'styles/Components.styled'
 
 export const Header = styled.header`
-  background-color: ${({ theme }) => theme.primaryBgColor};
+  background-color: ${({ theme }) => theme.secondaryBgColor};
 `
 
 export const HeaderContainer = styled(Container)`

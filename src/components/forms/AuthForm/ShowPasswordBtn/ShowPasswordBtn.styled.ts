@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const EyeIcon1 = styled.svg`
+export const EyeIcon = styled.svg`
   position: absolute;
   top: 45%;
   right: 2%;
