@@ -14,7 +14,6 @@ import {
 import { logoutAction, selectProfile } from 'store'
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './AuthPanel.styled'
-import * as SCG from 'styles/Components.styled'
 
 export const AuthPanel: FC = () => {
   const profile = useSelector(selectProfile)
@@ -50,7 +49,7 @@ export const AuthPanel: FC = () => {
   return (
     <>
       {profile ? (
-        <SCG.ButtonAuth ref={refs.setReference} {...getReferenceProps()}>
+        <SC.ButtonAuth ref={refs.setReference} {...getReferenceProps()}>
           <SC.Username>{profile.firstName}</SC.Username>
 
           <SC.IconUser>
@@ -60,18 +59,18 @@ export const AuthPanel: FC = () => {
           <SC.IconDropdown className={isOpen ? 'open' : ''}>
             <use href={`${sprite}#arrow-down`} />
           </SC.IconDropdown>
-        </SCG.ButtonAuth>
+        </SC.ButtonAuth>
       ) : (
-        <SC.Link to="/login">
+        <SC.LinkAuth to="/login">
           Log in
           <SC.IconUser>
             <use href={`${sprite}#user`} />
           </SC.IconUser>
-        </SC.Link>
+        </SC.LinkAuth>
       )}
 
       {isOpen && (
-        <FloatingFocusManager context={context} modal={false}>
+        <FloatingFocusManager context={context} modal={false} initialFocus={-1}>
           <div
             className="Popover"
             ref={refs.setFloating}
@@ -81,20 +80,20 @@ export const AuthPanel: FC = () => {
           >
             <SC.List>
               <SC.ListItem role="menuitem">
-                <SCG.ButtonAuth onClick={handleLogOut}>
+                <SC.ButtonAuth onClick={handleLogOut} className="logout">
                   <SC.IconListItem>
                     <use href={`${sprite}#logout`} />
                   </SC.IconListItem>
                   Log out
-                </SCG.ButtonAuth>
+                </SC.ButtonAuth>
               </SC.ListItem>
               <SC.ListItem role="menuitem">
-                <SCG.LinkAuth to={'/settings'}>
+                <SC.ListLink to={'/settings'}>
                   <SC.IconListItem>
                     <use href={`${sprite}#settings`} />
                   </SC.IconListItem>
                   Settings
-                </SCG.LinkAuth>
+                </SC.ListLink>
               </SC.ListItem>
             </SC.List>
           </div>

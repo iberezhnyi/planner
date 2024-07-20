@@ -14,7 +14,3 @@ export const ToggleThemeButton: FC = () => {
     </SC.ToggleThemeButton>
   )
 }
-
-// <SC.ToggleThemeButton type="button" onClick={() => setTheme(theme)}>
-//   Switch to {theme === 'light' ? 'Dark' : 'Light'} theme
-// </SC.ToggleThemeButton>

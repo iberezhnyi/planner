@@ -12,10 +12,10 @@ export const ShowPasswordBtn: FC<ShowPasswordBtnProps> = ({
   togglePassword,
 }) => {
   return (
-    <button type="button" onClick={() => togglePassword()}>
+    <SC.ShowPasswordBtn type="button" onClick={() => togglePassword()}>
       <SC.EyeIcon className={showPassword ? 'active' : ''}>
         <use href={`${sprite}#${showPassword ? 'eye-off' : 'eye-on'}`} />
       </SC.EyeIcon>
-    </button>
+    </SC.ShowPasswordBtn>
   )
 }

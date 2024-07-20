@@ -1,40 +1,31 @@
 import { Link, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { global } from 'styles'
-// import { globalStyles } from 'styles/globalStyles'
-// import { globalStyles } from "styles"
-
-const commonStyles = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-
-  columnGap: '0.8125rem',
-  padding: '0.875rem',
-
-  fontWeight: `${global.text.fontWeight.sb}`,
-
-  borderRadius: '1rem',
-}
+import { btnCommonStyles } from 'styles/Components.styled'
 
 export const Button = styled.button`
-  ${commonStyles}
+  ${btnCommonStyles}
+
+  padding: ${({ theme }) => theme.global.spacing(4)};
 
   color: ${({ theme }) => theme.btnTextColor};
+  font-weight: ${({ theme }) => theme.global.text.fontWeight.sb};
 
+  border-radius: 1rem;
   background-color: ${({ theme }) => theme.btnBgColor};
 
   &:hover {
     background-color: ${({ theme }) => theme.btnHoverBgColor};
+    color: ${({ theme }) => theme.btnHoverTextColor};
   }
 
   &:active {
     background-color: ${({ theme }) => theme.btnHoverBgColor};
+    color: ${({ theme }) => theme.btnHoverTextColor};
   }
 `
 
 export const ButtonLink = styled(Link)`
-  ${commonStyles}
+  /* ${btnCommonStyles}
 
   color: ${({ theme }) => theme.btnTextColor};
 
@@ -42,15 +33,17 @@ export const ButtonLink = styled(Link)`
 
   &:hover {
     background-color: ${({ theme }) => theme.btnHoverBgColor};
+    color: ${({ theme }) => theme.btnHoverTextColor};
   }
 
   &:active {
     background-color: ${({ theme }) => theme.btnHoverBgColor};
-  }
+    color: ${({ theme }) => theme.btnHoverTextColor};
+  } */
 `
 
 export const ButtonNavLink = styled(NavLink)`
-  ${commonStyles}
+  /* ${btnCommonStyles}
 
   color: ${({ theme }) => theme.btnTextColor};
 
@@ -58,9 +51,11 @@ export const ButtonNavLink = styled(NavLink)`
 
   &:hover {
     background-color: ${({ theme }) => theme.btnHoverBgColor};
+    color: ${({ theme }) => theme.btnHoverTextColor};
   }
 
   &:active {
     background-color: ${({ theme }) => theme.btnHoverBgColor};
-  }
+    color: ${({ theme }) => theme.btnHoverTextColor};
+  } */
 `

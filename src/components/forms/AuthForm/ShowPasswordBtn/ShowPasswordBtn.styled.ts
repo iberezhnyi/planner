@@ -1,18 +1,20 @@
 import styled from 'styled-components'
 
-export const EyeIcon = styled.svg`
+export const ShowPasswordBtn = styled.button`
   position: absolute;
-  top: 45%;
-  right: 2%;
+  top: 35%;
+  right: 0;
 
-  width: 2rem;
-  height: 2rem;
+  padding: ${({ theme }) => theme.global.spacing(2)};
+`
 
-  fill: ${({ theme }) => theme.linkColor};
-  stroke: ${({ theme }) => theme.linkColor};
+export const EyeIcon = styled.svg`
+  width: 1.5rem;
+  height: 1.5rem;
+
+  fill: ${({ theme }) => theme.iconColor};
 
   &.active {
-    fill: ${({ theme }) => theme.linkActiveColor};
-    stroke: ${({ theme }) => theme.linkActiveColor};
+    fill: ${({ theme }) => theme.iconActiveColor};
   }
 `

@@ -1,17 +1,17 @@
-import { Menu, MenuItem } from "react-pro-sidebar"
-import styled from "styled-components"
+import { Menu, MenuItem } from 'react-pro-sidebar'
+import styled from 'styled-components'
 
 export const Navigation = styled(Menu)`
-  background-color: ${(props) => props.theme.pageBackground};
+  background-color: ${(props) => props.theme.primaryBgColor};
 `
 
 export const NavigationItem = styled(MenuItem)`
   a.active {
-    color: tomato;
+    color: ${({ theme }) => theme.linkActiveColor};
   }
 
   .ps-menu-button:hover {
-    color: tomato;
+    color: ${({ theme }) => theme.linkActiveColor};
     background-color: inherit !important;
   }
 `

@@ -39,7 +39,6 @@ export const global: IGlobalStyles = {
   },
 
   form: {
-    primaryInputColor: '#DCE3E5',
     warningColor: '#FF9966',
   },
 

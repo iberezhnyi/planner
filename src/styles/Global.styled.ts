@@ -43,6 +43,7 @@ h5,
 h6,
 p {
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 h1 {
@@ -58,11 +59,13 @@ ul {
 }
 
 button {
+  display: flex;
+
   padding: 0;
 
   font-family: inherit;
 
-  background-color: transparent;
+  background: none;
 
   border: none;
   cursor: pointer;
@@ -76,11 +79,11 @@ img {
 }
 
 a {
-  color: ${({ theme }) => theme.linkColor};
+  /* color: ${({ theme }) => theme.linkColor}; */
   text-decoration: none;
 
   &.active{
-    color: ${({ theme }) => theme.linkActiveColor};
+    /* color: ${({ theme }) => theme.linkActiveColor}; */
   }
 }
 

@@ -1,18 +1,13 @@
 import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
 
-const btnCommonStyles = css`
+export const btnCommonStyles = css`
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: ${({ theme }) => theme.global.spacing(2)};
 
   padding: ${({ theme }) => theme.global.spacing(2)};
-
-  color: ${({ theme }) => theme.linkColor};
-
-  fill: transparent;
-  stroke: ${({ theme }) => theme.linkColor};
 `
 
 export const Section = styled.div`
@@ -23,12 +18,4 @@ export const Container = styled.div`
   padding: ${({ theme }) => theme.global.spacing(0, 3)};
   margin-left: auto;
   margin-right: auto;
-`
-
-export const ButtonAuth = styled.button`
-  ${btnCommonStyles}
-`
-
-export const LinkAuth = styled(Link)`
-  ${btnCommonStyles}
 `

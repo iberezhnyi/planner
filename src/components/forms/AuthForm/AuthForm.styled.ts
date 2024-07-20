@@ -16,10 +16,14 @@ export const Label = styled.label`
 export const InputStyled = styled(Field)`
   width: 100%;
   margin-bottom: ${({ theme }) => theme.global.spacing(2)};
-  padding: ${({ theme }) => theme.global.spacing(4)};
+  padding: ${({ theme }) => theme.global.spacing(4, 10, 4, 4)};
 
-  border: 0.0625rem solid ${({ theme }) => theme.global.form.primaryInputColor};
+  border: none;
   border-radius: 0.5rem;
+
+  background-color: ${({ theme }) => theme.inputBgColor};
+
+  color: inherit;
 `
 
 export const FormText = styled.p`
@@ -42,5 +46,5 @@ export const IconLogin = styled.svg`
   height: 1.25rem;
 
   fill: transparent;
-  stroke: ${({ theme }) => theme.btnTextColor};
+  stroke: currentColor;
 `

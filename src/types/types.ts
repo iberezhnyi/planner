@@ -31,17 +31,24 @@ export type ThemeNameType = 'dark' | 'light'
 // }
 
 export interface ITheme {
+  // themeName: string
   pageBackground: string
   primaryBgColor: string
   secondaryBgColor: string
+  headerBgColor: string
   titleColor: string
   textColor: string
+  textColorSecondary: string
   linkColor: string
   linkActiveColor: string
   btnTextColor: string
   btnBgColor: string
   btnHoverBgColor: string
+  btnHoverTextColor: string
   accent: string
+  inputBgColor: string
+  iconColor: string
+  iconActiveColor: string
 }
 
 export interface IThemes {
