@@ -1,4 +1,4 @@
-import{p as ee,j as T,u as lo,a as An,s as li,c as Qn,r as b,b as ui,R as fi,N as lt,d as uo,e as di,l as pi,f as R,O as vi}from"./index-vyLfiJMO.js";import{M as hi,a as mi,T as gi,b as bi,s as ct,C as yi,c as In,S as xi}from"./Button.styled-CdqG8feB.js";const wi=ee.div`
+import{p as ee,j as T,u as lo,a as An,s as li,c as Qn,r as b,b as ui,R as fi,N as lt,d as uo,e as di,l as pi,f as R,O as vi}from"./index-Dh3gHKeU.js";import{M as hi,a as mi,T as gi,b as bi,s as ct,C as yi,c as In,S as xi}from"./Button.styled-BycuftXk.js";const wi=ee.div`
   /* display: flex;
   flex-grow: 1; */
 `,Si=ee.main`
@@ -573,4 +573,4 @@ PERFORMANCE OF THIS SOFTWARE.
   font-size: ${({theme:e})=>e.global.text.fontSize.xs};
   font-weight: ${({theme:e})=>e.global.text.fontWeight.m};
 `,Fl=()=>{const e=An(uo);return T.jsx(Ll,{children:e&&T.jsx(T.Fragment,{children:T.jsxs("ul",{children:[T.jsx(yn,{children:T.jsx(jl,{src:e.image,alt:"User photo",width:"60"})}),T.jsx(yn,{children:T.jsx(co,{children:e.firstName})}),T.jsx(yn,{children:T.jsx(co,{children:e.email})})]})})})},Bl=({mobileMenu:e,setIsMobile:t,setMobileMenu:n})=>T.jsx($l,{children:T.jsxs(Ml,{toggled:e,customBreakPoint:"767px",onBreakPoint:t,onBackdropClick:()=>n(!1),children:[T.jsx(ki,{}),T.jsx(Fl,{}),T.jsx(Nl,{setMobileMenu:n})]})}),Wl=()=>{const[e,t]=b.useState(!1),[n,r]=b.useState(window.matchMedia("(max-width: 767px)").matches),o=()=>t(i=>!i);return b.useEffect(()=>{!n&&t(!1)},[n]),T.jsxs(T.Fragment,{children:[T.jsx(ss,{isMobile:n,handleClick:o,mobileMenu:e}),T.jsxs(wi,{children:[T.jsx(Bl,{setMobileMenu:t,setIsMobile:r,mobileMenu:e}),T.jsx(Si,{children:T.jsx(vi,{})})]})]})},zl=Wl;export{zl as default};
-//# sourceMappingURL=index-C6hKwobI.js.map
+//# sourceMappingURL=index-DhumzR0Z.js.map
