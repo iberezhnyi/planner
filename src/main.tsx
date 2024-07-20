@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Theme>
-          <BrowserRouter>
+          <BrowserRouter basename="/mv">
             <App />
           </BrowserRouter>
         </Theme>
