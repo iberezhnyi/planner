@@ -21,7 +21,7 @@ export default defineConfig({
     },
   },
 
-  base: 'mv',
+  base: '/mv',
 
   build: {
     sourcemap: true,
