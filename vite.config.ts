@@ -21,9 +21,18 @@ export default defineConfig({
     },
   },
 
-  base: '/mv',
-
   build: {
     sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
+
+  // server: {
+  //   historyApiFallback: true,
+  // },
+
+  base: '/mv/',
 })
