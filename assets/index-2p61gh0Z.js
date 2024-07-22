@@ -1,4 +1,4 @@
-import{p as Q,j as T,u as fo,a as Pt,s as di,c as tr,b as po,d as In,r as b,e as pi,R as vi,f as Mn,N as lt,g as on,h as hi,l as mi,i as R,k as gi,L as bi,O as yi}from"./index-CL0yub6G.js";import{M as xi,a as wi,T as Si,b as Ci,s as ct}from"./Button.styled-COEix6ny.js";const Ei=Q.main`
+import{p as Q,j as T,u as fo,a as Pt,s as di,c as tr,b as po,d as In,r as b,e as pi,R as vi,f as Mn,N as lt,g as on,h as hi,l as mi,i as R,k as gi,L as bi,O as yi}from"./index-o2ZMEkMb.js";import{M as xi,a as wi,T as Si,b as Ci,s as ct}from"./Button.styled-DtC9hhX5.js";const Ei=Q.main`
   flex-grow: 1;
 `,ki=({onClick:e,mobileMenu:t})=>T.jsx(xi,{children:T.jsx(wi,{$mobileMenu:t,onClick:e,children:T.jsx("span",{})})}),Ri=()=>{const e=fo();return[Pt(di),r=>e(r==="light"?tr("dark"):tr("light"))]},Oi=()=>{const[e,t]=Ri();return T.jsx(Si,{onClick:()=>t(e),children:T.jsx(Ci,{children:T.jsx("use",{href:`${ct}#${e==="light"?"moon-stars":"sun"}`})})})},Ti=Q.header`
   ${po}
@@ -517,7 +517,10 @@ PERFORMANCE OF THIS SOFTWARE.
     `,`;
   }
 `])),function(e){var t=e.menuItemStyles;return t},function(e){var t=e.rootStyles;return t},U.button,function(e){var t=e.level,n=e.disabled,r=e.active,o=e.collapsed,i=e.rtl;return li({level:t,disabled:n,active:r,collapsed:o,rtl:i})},function(e){var t=e.buttonStyles;return t}),Il=function(e,t){var n,r=e.children,o=e.icon,i=e.className,a=e.prefix,s=e.suffix,c=e.active,u=c===void 0?!1:c,l=e.disabled,d=l===void 0?!1:l,y=e.component,f=e.rootStyles,p=ot(e,["children","icon","className","prefix","suffix","active","disabled","component","rootStyles"]),v=R.useContext(nn),S=R.useContext(fn),w=S.collapsed,C=S.rtl,g=S.transitionDuration,h=Un().menuItemStyles,x=function(E){if(h){var O={level:v,disabled:d,active:u,isSubmenu:!1},D=h.root,I=h.button,B=h.label,$=h.icon,V=h.prefix,k=h.suffix;switch(E){case"root":return typeof D=="function"?D(O):D;case"button":return typeof I=="function"?I(O):I;case"label":return typeof B=="function"?B(O):B;case"icon":return typeof $=="function"?$(O):$;case"prefix":return typeof V=="function"?V(O):V;case"suffix":return typeof k=="function"?k(O):k;default:return}}},m=(n={},n[U.active]=u,n[U.disabled]=d,n);return R.createElement($l,{ref:t,className:ie(U.menuItemRoot,m,i),menuItemStyles:x("root"),level:v,collapsed:w,rtl:C,disabled:d,active:u,buttonStyles:x("button"),rootStyles:f},R.createElement(ui,ye({className:ie(U.button,m),"data-testid":"".concat(U.button,"-test-id"),component:y,tabIndex:0},p),o&&R.createElement(Zo,{rtl:C,className:ie(U.icon,m),rootStyles:x("icon")},o),a&&R.createElement(Jo,{collapsed:w,transitionDuration:g,firstLevel:v===0,className:ie(U.prefix,m),rtl:C,rootStyles:x("prefix")},a),R.createElement(Go,{className:ie(U.label,m),rootStyles:x("label")},r),s&&R.createElement(Qo,{collapsed:w,transitionDuration:g,firstLevel:v===0,className:ie(U.suffix,m),rootStyles:x("suffix")},s)))},Ml=R.forwardRef(Il),lo;const Dl=Q(fc)`
-  z-index: 0 !important;
+  &&& {
+    z-index: 0;
+    border: none;
+  }
 
   .${J.container} {
     display: flex;
@@ -577,4 +580,4 @@ PERFORMANCE OF THIS SOFTWARE.
     text-align: center;
   }
 `,fi=({isMainLayout:e})=>T.jsx(Hl,{children:T.jsxs(zl,{className:e?"main-layout-footer":"",children:["Coded by"," ",T.jsx(Vl,{to:"https://github.com/iberezhnyi",children:"©iberezhnyi"})]})}),Ul=({mobileMenu:e,setIsMobile:t,setMobileMenu:n})=>{const r=Pt(on);return T.jsxs(Dl,{toggled:e,customBreakPoint:"767px",onBreakPoint:t,onBackdropClick:()=>n(!1),children:[T.jsx(Oi,{}),T.jsx(Wl,{}),T.jsx(Nl,{setMobileMenu:n}),r&&T.jsx(fi,{})]})},ql=()=>{const[e,t]=b.useState(!1),[n,r]=b.useState(window.matchMedia("(max-width: 767px)").matches),o=Pt(on),i=()=>t(a=>!a);return b.useEffect(()=>{!n&&t(!1)},[n]),T.jsxs(T.Fragment,{children:[T.jsx(ls,{isMobile:n,handleClick:i,mobileMenu:e}),T.jsx(Ul,{setMobileMenu:t,setIsMobile:r,mobileMenu:e}),T.jsx(Ei,{children:T.jsx(yi,{})}),!o&&T.jsx(fi,{isMainLayout:!0})]})},Yl=ql;export{Yl as default};
-//# sourceMappingURL=index-DTZ42aF4.js.map
+//# sourceMappingURL=index-2p61gh0Z.js.map
