@@ -1,10 +1,10 @@
-import{p as t,m as e,L as n,N as a}from"./index-Dh3gHKeU.js";const i=t.div`
+import{p as t,f as r,L as e,N as n}from"./index-CL0yub6G.js";const a=t.div`
   display: flex;
   overflow: hidden;
-`,s=t.button`
+  z-index: 2;
+`,b=t.button`
   position: relative;
   left: 0;
-  z-index: 2;
 
   width: 2.1875rem;
   height: 1.625rem;
@@ -57,32 +57,18 @@ import{p as t,m as e,L as n,N as a}from"./index-Dh3gHKeU.js";const i=t.div`
     opacity: ${o=>o.$mobileMenu?"0":"1"};
     transform: ${o=>o.$mobileMenu?"translateX(100%)":""};
   }
-`,c="/mv/assets/sprite-By30VI1c.svg",r=e`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: ${({theme:o})=>o.global.spacing(2)};
-
-  padding: ${({theme:o})=>o.global.spacing(2)};
-`,b=t.div`
-  padding: ${({theme:o})=>o.global.spacing(2,0)};
-`,g=t.div`
-  padding: ${({theme:o})=>o.global.spacing(0,3)};
-  margin-left: auto;
-  margin-right: auto;
-`,$=t.button`
+`,i="/mv/assets/sprite-By30VI1c.svg",s=t.button`
   ${r}
 
   position: absolute;
   top: 2%;
   right: 5%;
-`,d=t.svg`
+`,c=t.svg`
   width: 1.5rem;
   height: 1.5rem;
 
   fill: ${({theme:o})=>o.global.text.color.white};
-`,p=t.button`
+`,g=t.button`
   ${r}
 
   padding: ${({theme:o})=>o.global.spacing(4)};
@@ -102,7 +88,7 @@ import{p as t,m as e,L as n,N as a}from"./index-Dh3gHKeU.js";const i=t.div`
     background-color: ${({theme:o})=>o.btnHoverBgColor};
     color: ${({theme:o})=>o.btnHoverTextColor};
   }
-`,u=t(n)`
+`,$=t(e)`
   /* ${r}
 
   color: ${({theme:o})=>o.btnTextColor};
@@ -118,7 +104,7 @@ import{p as t,m as e,L as n,N as a}from"./index-Dh3gHKeU.js";const i=t.div`
     background-color: ${({theme:o})=>o.btnHoverBgColor};
     color: ${({theme:o})=>o.btnHoverTextColor};
   } */
-`,m=t(a)`
+`,d=t(n)`
   /* ${r}
 
   color: ${({theme:o})=>o.btnTextColor};
@@ -134,5 +120,5 @@ import{p as t,m as e,L as n,N as a}from"./index-Dh3gHKeU.js";const i=t.div`
     background-color: ${({theme:o})=>o.btnHoverBgColor};
     color: ${({theme:o})=>o.btnHoverTextColor};
   } */
-`;export{p as B,g as C,i as M,b as S,$ as T,s as a,d as b,r as c,u as d,m as e,c as s};
-//# sourceMappingURL=Button.styled-BycuftXk.js.map
+`;export{g as B,a as M,s as T,b as a,c as b,$ as c,d,i as s};
+//# sourceMappingURL=Button.styled-COEix6ny.js.map
