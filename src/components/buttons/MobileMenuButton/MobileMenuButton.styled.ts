@@ -3,12 +3,12 @@ import styled from 'styled-components'
 export const MobileMenuButtonWrapper = styled.div`
   display: flex;
   overflow: hidden;
+  z-index: 2;
 `
 
 export const MobileMenuButton = styled.button<{ $mobileMenu: boolean }>`
   position: relative;
   left: 0;
-  z-index: 2;
 
   width: 2.1875rem;
   height: 1.625rem;

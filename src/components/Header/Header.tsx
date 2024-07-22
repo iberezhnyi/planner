@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import { MobileMenuButton } from 'components/buttons'
 import * as SC from './Header.styled'
-import * as SCG from 'styles/Components.styled'
 import { AuthPanel } from 'components/AuthPanel'
 
 interface HeaderProps {
@@ -19,18 +18,16 @@ export const Header: FC<HeaderProps> = ({
 
   return (
     <SC.Header>
-      <SCG.Section>
-        <SC.HeaderContainer>
-          {isMobile && (
-            <MobileMenuButton
-              onClick={() => handleClick()}
-              mobileMenu={mobileMenu}
-            />
-          )}
+      <SC.HeaderContainer>
+        {isMobile && (
+          <MobileMenuButton
+            onClick={() => handleClick()}
+            mobileMenu={mobileMenu}
+          />
+        )}
 
-          <AuthPanel />
-        </SC.HeaderContainer>
-      </SCG.Section>
+        <AuthPanel />
+      </SC.HeaderContainer>
     </SC.Header>
   )
 }

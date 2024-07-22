@@ -9,7 +9,7 @@ export const SidebarAuthPanel: FC = () => {
     <SC.SidebarAuthPanel>
       {profile && (
         <>
-          <ul>
+          <SC.SidebarAuthPanelList>
             <SC.SidebarAuthItem>
               <SC.SidebarAuthImg
                 src={profile.image}
@@ -23,7 +23,7 @@ export const SidebarAuthPanel: FC = () => {
             <SC.SidebarAuthItem>
               <SC.SidebarAuthInfo>{profile.email}</SC.SidebarAuthInfo>
             </SC.SidebarAuthItem>
-          </ul>
+          </SC.SidebarAuthPanelList>
         </>
       )}
     </SC.SidebarAuthPanel>

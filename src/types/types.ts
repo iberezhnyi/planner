@@ -36,8 +36,10 @@ export interface ITheme {
   primaryBgColor: string
   secondaryBgColor: string
   headerBgColor: string
+  footerBgColor: string
   titleColor: string
   textColor: string
+  footerTextColor: string
   textColorSecondary: string
   linkColor: string
   linkActiveColor: string

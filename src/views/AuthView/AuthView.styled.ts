@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { Section } from 'styles/Components.styled'
+import { section, siteLink } from 'styles/common.styled'
 
-export const AuthSection = styled(Section)`
+export const AuthSection = styled.div`
+  ${section}
   display: flex;
   justify-content: center;
 `
@@ -22,4 +24,7 @@ export const Text = styled.p`
   margin-bottom: 0;
 
   text-align: center;
+`
+export const AuthLink = styled(Link)`
+  ${siteLink}
 `

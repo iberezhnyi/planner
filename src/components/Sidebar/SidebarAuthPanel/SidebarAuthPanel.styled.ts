@@ -1,8 +1,16 @@
 import styled from 'styled-components'
+import { container } from 'styles'
 
 export const SidebarAuthPanel = styled.div`
+  padding-top: ${({ theme }) => theme.global.spacing(12)};
+  padding-bottom: ${({ theme }) => theme.global.spacing(2)};
+
   background-color: ${({ theme }) => theme.secondaryBgColor};
-  padding: ${({ theme }) => theme.global.spacing(14, 4, 2, 4)};
+`
+// padding: ${({ theme }) => theme.global.spacing(14, 4, 2, 4)};
+
+export const SidebarAuthPanelList = styled.ul`
+  ${container}
 `
 
 export const SidebarAuthItem = styled.li`

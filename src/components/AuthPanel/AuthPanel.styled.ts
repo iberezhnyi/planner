@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { styled } from 'styled-components'
-import { btnCommonStyles } from 'styles/Components.styled'
+import { btnCommonStyles } from 'styles/common.styled'
 
 export const ButtonAuth = styled.button`
   ${btnCommonStyles}
@@ -25,7 +25,8 @@ export const LinkAuth = styled(NavLink)`
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &.active {
     color: ${({ theme }) => theme.linkActiveColor};
   }
 `

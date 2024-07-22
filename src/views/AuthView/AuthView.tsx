@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import {
   useLoginUserMutation,
   useRegisterUserMutation,
@@ -7,6 +7,7 @@ import {
 import { AuthForm } from 'components/forms'
 import * as path from 'routsConfig'
 import * as SC from './AuthView.styled'
+
 import { ILoginFormValues, IRegisterFormValues } from 'types'
 
 const AuthView: FC = () => {
@@ -35,9 +36,9 @@ const AuthView: FC = () => {
             ? "Don't have an account yet?"
             : 'Have you joined us yet?'}
           {'\u00A0'}
-          <Link to={isLoginPage ? '/register' : '/login'}>
+          <SC.AuthLink to={isLoginPage ? '/register' : '/login'}>
             {isLoginPage ? 'Register' : 'Log in'}
-          </Link>
+          </SC.AuthLink>
         </SC.Text>
       </SC.ContentWrapper>
     </SC.AuthSection>

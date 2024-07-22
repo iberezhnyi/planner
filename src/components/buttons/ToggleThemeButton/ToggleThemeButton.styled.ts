@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { btnCommonStyles } from 'styles/Components.styled'
+import { btnCommonStyles } from 'styles/common.styled'
 
 export const ToggleThemeButton = styled.button`
   ${btnCommonStyles}

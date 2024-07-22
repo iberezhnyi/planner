@@ -36,3 +36,5 @@ export const Navigation: FC<NavigationProps> = ({ setMobileMenu }) => {
     </SC.Navigation>
   )
 }
+
+// flexGrow: '1', backgroundColor: 'orange'

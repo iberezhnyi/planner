@@ -79,23 +79,12 @@ img {
 }
 
 a {
-  /* color: ${({ theme }) => theme.linkColor}; */
   text-decoration: none;
-
-  &.active{
-    /* color: ${({ theme }) => theme.linkActiveColor}; */
-  }
 }
 
-.section {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.container {
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: auto;
-  margin-right: auto;
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
 }
 `

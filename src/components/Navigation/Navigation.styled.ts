@@ -1,17 +1,22 @@
-import { Menu, MenuItem } from 'react-pro-sidebar'
+import { Menu, MenuItem, menuClasses } from 'react-pro-sidebar'
 import styled from 'styled-components'
 
 export const Navigation = styled(Menu)`
-  background-color: ${(props) => props.theme.primaryBgColor};
+  flex-grow: 1;
+
+  background-color: ${({ theme }) => theme.primaryBgColor};
 `
 
 export const NavigationItem = styled(MenuItem)`
-  a.active {
-    color: ${({ theme }) => theme.linkActiveColor};
-  }
+  a.${menuClasses.button} {
+    padding: ${({ theme }) => theme.global.spacing(3, 0, 3, 3)};
 
-  .ps-menu-button:hover {
-    color: ${({ theme }) => theme.linkActiveColor};
-    background-color: inherit !important;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: ${({ theme }) => theme.pageBackground};
+      color: ${({ theme }) => theme.linkActiveColor};
+    }
   }
 `

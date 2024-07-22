@@ -12,6 +12,7 @@ import {
   useId,
 } from '@floating-ui/react'
 import { logoutAction, selectProfile } from 'store'
+
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './AuthPanel.styled'
 

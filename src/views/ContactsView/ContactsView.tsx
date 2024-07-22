@@ -1,13 +1,7 @@
 import { FC } from 'react'
 
 const ContactsView: FC = () => {
-  return (
-    <div className="section">
-      <div className="container">
-        <div>ContactsView</div>
-      </div>
-    </div>
-  )
+  return <div>ContactsView</div>
 }
 
 export default ContactsView

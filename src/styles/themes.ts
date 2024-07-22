@@ -17,11 +17,13 @@ export const themes: IThemes = {
     primaryBgColor: '#F4F4F5', //
     secondaryBgColor: '#5288c1', //
     headerBgColor: '#5288c1', //
+    footerBgColor: '#E5E5E5', // #E5E5E5
 
     // Text
     textColor: '#000000', //
     textColorSecondary: '#BFE5FF',
     titleColor: '#137BCD',
+    footerTextColor: '#707579', // #768791
 
     // Link
     linkColor: '#137BCD',
@@ -49,11 +51,13 @@ export const themes: IThemes = {
     primaryBgColor: '#1D2733', // '#212121', '#35363A'
     secondaryBgColor: '#232F40', //
     headerBgColor: '#1D2733',
+    footerBgColor: '#F4F4F5',
 
     // Text
     textColor: '#E6E6FA', //
     textColorSecondary: '#7D8D9A',
     titleColor: '#137BCD',
+    footerTextColor: '#707579', // #768791
 
     // Link
     linkColor: '#137BCD',

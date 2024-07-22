@@ -23,16 +23,13 @@ export default defineConfig({
 
   build: {
     sourcemap: true,
+
     rollupOptions: {
       output: {
         manualChunks: undefined,
       },
     },
   },
-
-  // server: {
-  //   historyApiFallback: true,
-  // },
 
   base: '/mv/',
 })
