@@ -8,9 +8,8 @@ export const Footer = styled.footer<{ isMainLayout?: boolean }>`
   color: ${({ theme }) => theme.footerTextColor};
   font-size: ${({ theme }) => theme.global.text.fontSize.xs};
 
-  background-color: ${({ theme }) => theme.footerBgColor};
-
-  ${({ isMainLayout }) => isMainLayout && { textAlign: 'center' }}
+  background-color: ${({ isMainLayout, theme }) =>
+    isMainLayout ? theme.primaryBgColor : theme.footerBgColor};
 `
 
 export const LinkFooter = styled(Link)`
@@ -20,8 +19,14 @@ export const LinkFooter = styled(Link)`
 export const FooterContainer = styled.div<{ isMainLayout?: boolean }>`
   ${container}
 
-  ${({ isMainLayout }) => isMainLayout && { textAlign: 'center' }}
+  text-align: ${({ isMainLayout }) => isMainLayout && 'center'};
 `
+
+// ${({ isMainLayout, theme }) =>
+//   isMainLayout
+//     ? { backgroundColor: theme.footerBgColor }
+//     : theme.primaryBgColor
+// }
 
 // &.main-layout-footer {
 //   text-align: center;
