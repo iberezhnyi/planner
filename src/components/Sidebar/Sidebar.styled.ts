@@ -2,7 +2,10 @@ import { Sidebar, sidebarClasses } from 'react-pro-sidebar'
 import styled from 'styled-components'
 
 export const StyledSidebar = styled(Sidebar)`
-  z-index: 0 !important;
+  &&& {
+    z-index: 0;
+    border: none;
+  }
 
   .${sidebarClasses.container} {
     display: flex;
