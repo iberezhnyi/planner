@@ -7,8 +7,8 @@ interface FooterProps {
 
 export const Footer: FC<FooterProps> = ({ isMainLayout }) => {
   return (
-    <SC.Footer>
-      <SC.FooterContainer className={isMainLayout ? 'main-layout-footer' : ''}>
+    <SC.Footer isMainLayout={isMainLayout}>
+      <SC.FooterContainer isMainLayout={isMainLayout}>
         Coded by{' '}
         <SC.LinkFooter to="https://github.com/iberezhnyi">
           &#169;iberezhnyi

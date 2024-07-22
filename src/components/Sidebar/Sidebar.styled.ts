@@ -3,14 +3,14 @@ import styled from 'styled-components'
 
 export const StyledSidebar = styled(Sidebar)`
   &&& {
-    z-index: 0;
+    z-index: 1;
     border: none;
   }
 
   .${sidebarClasses.container} {
     display: flex;
     flex-direction: column;
-    z-index: 1;
+    z-index: 2;
   }
 
   .${sidebarClasses.backdrop} {

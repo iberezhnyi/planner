@@ -51,7 +51,7 @@ export const themes: IThemes = {
     primaryBgColor: '#1D2733', // '#212121', '#35363A'
     secondaryBgColor: '#232F40', //
     headerBgColor: '#1D2733',
-    footerBgColor: '#F4F4F5',
+    footerBgColor: '#232F40',
 
     // Text
     textColor: '#E6E6FA', //
