@@ -1,1 +1,0 @@
-{"version":3,"file":"index-BuCdxJSE.js","sources":["../../src/views/AboutView/AboutView.tsx"],"sourcesContent":["import { FC } from 'react'\r\n\r\nconst AboutView: FC = () => {\r\n  return <div>AboutView</div>\r\n}\r\n\r\nexport default AboutView\r\n"],"names":["AboutView","jsx","AboutView$1"],"mappings":"wCAEA,MAAMA,EAAgB,IACbC,EAAA,IAAC,OAAI,SAAS,WAAA,CAAA,EAGvBC,EAAeF"}

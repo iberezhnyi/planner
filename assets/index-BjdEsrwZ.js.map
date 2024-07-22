@@ -1,1 +1,0 @@
-{"version":3,"file":"index-BjdEsrwZ.js","sources":["../../src/views/HomeView/HomeView.tsx"],"sourcesContent":["import { FC } from 'react'\r\n\r\nconst HomeView: FC = () => {\r\n  return <div>HomeView</div>\r\n}\r\n\r\nexport default HomeView\r\n"],"names":["HomeView","jsx","HomeView$1"],"mappings":"wCAEA,MAAMA,EAAe,IACZC,EAAA,IAAC,OAAI,SAAQ,UAAA,CAAA,EAGtBC,EAAeF"}
