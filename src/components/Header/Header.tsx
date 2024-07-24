@@ -14,7 +14,7 @@ export const Header: FC<HeaderProps> = ({
   handleClick,
   mobileMenu,
 }) => {
-  console.log('isMobile :>> ', isMobile)
+  // console.log('isMobile :>> ', isMobile)
 
   return (
     <SC.Header>

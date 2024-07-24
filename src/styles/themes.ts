@@ -15,8 +15,8 @@ export const themes: IThemes = {
     // Background
     pageBackground: '#DCEBF7', //#F4F4F5
     primaryBgColor: '#F4F4F5', //
-    secondaryBgColor: '#5288c1', //
-    headerBgColor: '#5288c1', //
+    secondaryBgColor: '#5288C1', //
+    headerBgColor: '#5288C1', //
     footerBgColor: '#E5E5E5', // #E5E5E5
 
     // Text
@@ -31,6 +31,7 @@ export const themes: IThemes = {
 
     // Button
     btnTextColor: '#FFFFFF',
+    btnDisabledTextColor: '#707579',
     btnHoverTextColor: '',
     btnBgColor: '#137BCD',
     btnHoverBgColor: '#4CCCFF',
@@ -65,6 +66,7 @@ export const themes: IThemes = {
 
     // Button
     btnTextColor: '#FFFFFF',
+    btnDisabledTextColor: '#707579',
     btnHoverTextColor: '#137BCD',
     btnBgColor: '#137BCD',
     btnHoverBgColor: '#79C4FD', // '#4CCCFF'

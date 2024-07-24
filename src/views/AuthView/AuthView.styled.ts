@@ -9,6 +9,8 @@ export const AuthSection = styled.div`
 `
 
 export const ContentWrapper = styled.div`
+  position: relative;
+
   width: 90%;
   padding: ${({ theme }) => theme.global.spacing(10, 6)};
 
@@ -27,4 +29,14 @@ export const Text = styled.p`
 `
 export const AuthLink = styled(Link)`
   ${siteLink}
+`
+
+export const ErrorMessage = styled.p`
+  position: absolute;
+  top: 3%;
+  left: 6%;
+
+  color: ${({ theme }) => theme.global.form.warningColor};
+  font-size: ${({ theme }) => theme.global.text.fontSize.xs};
+  font-weight: ${({ theme }) => theme.global.text.fontWeight.sb};
 `

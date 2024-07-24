@@ -38,7 +38,7 @@ const MainLayout: FC = () => {
         <Outlet />
       </SC.Main>
 
-      {!profile && <Footer isMainLayout />}
+      {!profile && <Footer $isMainLayout />}
     </>
   )
 }

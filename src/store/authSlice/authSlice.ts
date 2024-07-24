@@ -5,6 +5,9 @@ import { IAuthState } from 'types'
 const initialState: IAuthState = {
   token: '',
   profile: null,
+  // isLoading: false,
+  // isError: null,
+  // isSuccess: true,
 }
 
 export const authSlice = createSlice({
@@ -33,6 +36,10 @@ export const authSlice = createSlice({
         (state, { payload }) => {
           state.token = payload.token
           state.profile = payload.user
+
+          // state.isLoading = false
+          // state.isError = null
+          // state.isSuccess = true
         }
       )
 

@@ -13,7 +13,7 @@ export const Theme: React.FC<{ children: React.ReactNode }> = ({
 
   // const theme={themeName === "dark" ? themes.dark : themes.light}
 
-  console.log('themeMode', theme)
+  // console.log('themeMode', theme)
 
   return (
     <ThemeProvider theme={theme}>

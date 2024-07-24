@@ -1,3 +1,4 @@
+import { Loader } from 'components/Loader'
 import { NavLink } from 'react-router-dom'
 import { styled } from 'styled-components'
 import { btnCommonStyles } from 'styles/common.styled'
@@ -87,4 +88,9 @@ export const IconListItem = styled.svg`
 
   fill: transparent;
   stroke: currentColor;
+`
+
+export const LoaderStyled = styled(Loader)`
+  height: 1.75rem;
+  width: 1.75rem;
 `

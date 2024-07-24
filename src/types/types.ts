@@ -15,6 +15,9 @@ export interface IUserProfile {
 export interface IAuthState {
   token: string
   profile: IUserProfile | null
+  // isLoading: boolean
+  // isError: string | null
+  // isSuccess: boolean
 }
 
 export interface IAuthResponse {
@@ -44,6 +47,7 @@ export interface ITheme {
   linkColor: string
   linkActiveColor: string
   btnTextColor: string
+  btnDisabledTextColor: string
   btnBgColor: string
   btnHoverBgColor: string
   btnHoverTextColor: string

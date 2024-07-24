@@ -5,6 +5,7 @@ interface ButtonProps {
   to?: string
   type?: 'button' | 'submit' | 'reset'
   nav?: boolean
+  disabled?: boolean
 }
 
 export const Button: React.FC<ButtonProps> = ({

@@ -13,14 +13,16 @@ export const Button = styled.button`
   border-radius: 1rem;
   background-color: ${({ theme }) => theme.btnBgColor};
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: ${({ theme }) => theme.btnHoverBgColor};
     color: ${({ theme }) => theme.btnHoverTextColor};
   }
 
-  &:active {
+  &:disabled {
     background-color: ${({ theme }) => theme.btnHoverBgColor};
-    color: ${({ theme }) => theme.btnHoverTextColor};
+    color: ${({ theme }) => theme.btnDisabledTextColor};
   }
 `
 

@@ -13,7 +13,7 @@ export const Label = styled.label`
   position: relative;
 `
 
-export const InputStyled = styled(Field)`
+export const Input = styled(Field)`
   width: 100%;
   margin-bottom: ${({ theme }) => theme.global.spacing(2)};
   padding: ${({ theme }) => theme.global.spacing(4, 10, 4, 4)};

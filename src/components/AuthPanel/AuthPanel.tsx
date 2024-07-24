@@ -11,7 +11,12 @@ import {
   FloatingFocusManager,
   useId,
 } from '@floating-ui/react'
-import { logoutAction, selectProfile } from 'store'
+import {
+  logoutAction,
+  selectProfile,
+  useLoginUserMutation,
+  useRegisterUserMutation,
+} from 'store'
 
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './AuthPanel.styled'
@@ -20,6 +25,16 @@ export const AuthPanel: FC = () => {
   const profile = useSelector(selectProfile)
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
+  const [, { isLoading: isLoginLoading }] = useLoginUserMutation({
+    fixedCacheKey: 'login-user',
+  })
+  const [, { isLoading: isRegisterLoading }] = useRegisterUserMutation({
+    fixedCacheKey: 'register-user',
+  })
+
+  console.log('isLoginLoading :>> ', isLoginLoading)
+  console.log('isLoginLoading :>> ', isRegisterLoading)
 
   // Переписати, якщо бек зберігає токен в БД
   const handleLogOut = () => {
@@ -49,7 +64,7 @@ export const AuthPanel: FC = () => {
 
   return (
     <>
-      {profile ? (
+      {profile && (
         <SC.ButtonAuth ref={refs.setReference} {...getReferenceProps()}>
           <SC.Username>{profile.firstName}</SC.Username>
 
@@ -61,9 +76,15 @@ export const AuthPanel: FC = () => {
             <use href={`${sprite}#arrow-down`} />
           </SC.IconDropdown>
         </SC.ButtonAuth>
-      ) : (
+      )}
+
+      {!profile && (
         <SC.LinkAuth to="/login">
-          Log in
+          {isLoginLoading || isRegisterLoading ? (
+            <SC.LoaderStyled />
+          ) : (
+            <p>Log in</p>
+          )}
           <SC.IconUser>
             <use href={`${sprite}#user`} />
           </SC.IconUser>

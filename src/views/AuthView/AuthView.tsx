@@ -1,36 +1,67 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import {
-  useLoginUserMutation,
-  useRegisterUserMutation,
-} from 'store/authSlice/authApi'
-import { AuthForm } from 'components/forms'
+import { useLoginUserMutation, useRegisterUserMutation } from 'store'
 import * as path from 'routsConfig'
+import { AuthForm } from 'components/forms'
+import {
+  IBasicAuthFormValues,
+  ILoginFormValues,
+  IRegisterFormValues,
+} from 'types'
 import * as SC from './AuthView.styled'
-
-import { ILoginFormValues, IRegisterFormValues } from 'types'
+import { getErrorMessage } from 'helpers'
 
 const AuthView: FC = () => {
+  const [errorMessage, setErrorMessage] = useState('')
   const location = useLocation()
-  const [registerUser] = useRegisterUserMutation()
-  const [loginUser] = useLoginUserMutation()
+  const [registerUser] = useRegisterUserMutation({
+    fixedCacheKey: 'register-user',
+  })
+  const [loginUser] = useLoginUserMutation({
+    fixedCacheKey: 'login-user',
+  })
+
+  useEffect(() => {
+    setErrorMessage('')
+  }, [location.pathname])
 
   const isLoginPage = location.pathname === path.login
 
-  const handleAuth = (body: ILoginFormValues | IRegisterFormValues) => {
-    isLoginPage
-      ? loginUser(body as ILoginFormValues)
-      : registerUser(body as IRegisterFormValues)
-    console.log(`AuthView body in :>> ${location.pathname} form`, body)
+  const handleAuth = async (body: ILoginFormValues | IBasicAuthFormValues) => {
+    try {
+      if (isLoginPage) {
+        await loginUser(body as ILoginFormValues).unwrap()
+
+        console.log(`AuthView body in :>> ${location.pathname} form`, body)
+      } else {
+        const { email, password, firstName } = body as IBasicAuthFormValues
+        const registerBody: IRegisterFormValues = {
+          email,
+          password,
+          firstName,
+        }
+
+        await registerUser(registerBody).unwrap()
+
+        console.log(
+          `AuthView body in :>> ${location.pathname} form`,
+          registerBody
+        )
+      }
+    } catch (err) {
+      console.log('err QQQQQQQQQQ:>> ', err)
+
+      setErrorMessage(getErrorMessage(err))
+    }
   }
 
   return (
     <SC.AuthSection>
       <SC.ContentWrapper>
+        {errorMessage && <SC.ErrorMessage>{errorMessage}</SC.ErrorMessage>}
+
         <SC.Title>{isLoginPage ? 'Log in' : 'Register'}</SC.Title>
-
         <AuthForm auth={handleAuth} />
-
         <SC.Text>
           {isLoginPage
             ? "Don't have an account yet?"
