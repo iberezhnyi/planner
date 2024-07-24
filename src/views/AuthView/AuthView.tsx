@@ -30,8 +30,8 @@ const AuthView: FC = () => {
   const handleAuth = async (body: ILoginFormValues | IBasicAuthFormValues) => {
     try {
       if (isLoginPage) {
+        setErrorMessage('')
         await loginUser(body as ILoginFormValues).unwrap()
-
         console.log(`AuthView body in :>> ${location.pathname} form`, body)
       } else {
         const { email, password, firstName } = body as IBasicAuthFormValues
@@ -41,8 +41,8 @@ const AuthView: FC = () => {
           firstName,
         }
 
+        setErrorMessage('')
         await registerUser(registerBody).unwrap()
-
         console.log(
           `AuthView body in :>> ${location.pathname} form`,
           registerBody
