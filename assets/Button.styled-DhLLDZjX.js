@@ -1,4 +1,4 @@
-import{p as t,f as r,L as e,N as n}from"./index-iPUCrOcr.js";const a=t.div`
+import{p as t,f as r,o as e,N as n}from"./index-DpGfBj9M.js";const a=t.div`
   display: flex;
   overflow: hidden;
   z-index: 2;
@@ -79,14 +79,16 @@ import{p as t,f as r,L as e,N as n}from"./index-iPUCrOcr.js";const a=t.div`
   border-radius: 1rem;
   background-color: ${({theme:o})=>o.btnBgColor};
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: ${({theme:o})=>o.btnHoverBgColor};
     color: ${({theme:o})=>o.btnHoverTextColor};
   }
 
-  &:active {
+  &:disabled {
     background-color: ${({theme:o})=>o.btnHoverBgColor};
-    color: ${({theme:o})=>o.btnHoverTextColor};
+    color: ${({theme:o})=>o.btnDisabledTextColor};
   }
 `,$=t(e)`
   /* ${r}
@@ -121,4 +123,4 @@ import{p as t,f as r,L as e,N as n}from"./index-iPUCrOcr.js";const a=t.div`
     color: ${({theme:o})=>o.btnHoverTextColor};
   } */
 `;export{g as B,a as M,s as T,b as a,c as b,$ as c,d,i as s};
-//# sourceMappingURL=Button.styled-CTL7p-cz.js.map
+//# sourceMappingURL=Button.styled-DhLLDZjX.js.map
