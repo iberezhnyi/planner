@@ -1,4 +1,4 @@
-import{p as G,j as T,u as fo,a as Pt,s as di,c as tr,b as po,d as In,r as b,e as pi,R as vi,f as Mn,N as lt,L as hi,g as on,h as mi,i as gi,k as bi,l as yi,m as R,n as xi,o as wi,O as Ci}from"./index-tc6h0H9J.js";import{M as Si,a as Ei,T as ki,b as Ri,s as ct}from"./Button.styled-DiYiRia3.js";const Oi=G.main`
+import{p as G,j as T,u as fo,a as Pt,s as di,c as tr,b as po,d as In,r as b,e as pi,R as vi,f as Mn,N as lt,L as hi,g as on,h as mi,i as gi,k as bi,l as yi,m as R,n as xi,o as wi,O as Ci}from"./index-mLvfEHoL.js";import{M as Si,a as Ei,T as ki,b as Ri,s as ct}from"./Button.styled-BSQFxnAv.js";const Oi=G.main`
   flex-grow: 1;
 `,Ti=({onClick:e,mobileMenu:t})=>T.jsx(Si,{children:T.jsx(Ei,{$mobileMenu:t,onClick:e,children:T.jsx("span",{})})}),Pi=()=>{const e=fo();return[Pt(di),r=>e(r==="light"?tr("dark"):tr("light"))]},Ai=()=>{const[e,t]=Pi();return T.jsx(ki,{onClick:()=>t(e),children:T.jsx(Ri,{children:T.jsx("use",{href:`${ct}#${e==="light"?"moon-stars":"sun"}`})})})},$i=G.header`
   ${po}
@@ -581,4 +581,4 @@ PERFORMANCE OF THIS SOFTWARE.
 
   text-align: ${({$isMainLayout:e})=>e&&"center"};
 `,fi=({$isMainLayout:e})=>T.jsx(ql,{$isMainLayout:e,children:T.jsxs(_l,{$isMainLayout:e,children:["Coded by"," ",T.jsx(Kl,{to:"https://github.com/iberezhnyi",children:"©iberezhnyi"})]})}),Yl=({mobileMenu:e,setIsMobile:t,setMobileMenu:n})=>{const r=Pt(on);return T.jsxs(Fl,{toggled:e,customBreakPoint:"767px",onBreakPoint:t,onBackdropClick:()=>n(!1),children:[T.jsx(Ai,{}),T.jsx(Ul,{}),T.jsx(Wl,{setMobileMenu:n}),r&&T.jsx(fi,{})]})},Xl=()=>{const[e,t]=b.useState(!1),[n,r]=b.useState(window.matchMedia("(max-width: 767px)").matches),o=Pt(on),i=()=>t(a=>!a);return b.useEffect(()=>{!n&&t(!1)},[n]),T.jsxs(T.Fragment,{children:[T.jsx(ps,{isMobile:n,handleClick:i,mobileMenu:e}),T.jsx(Yl,{setMobileMenu:t,setIsMobile:r,mobileMenu:e}),T.jsx(Oi,{children:T.jsx(Ci,{})}),!o&&T.jsx(fi,{$isMainLayout:!0})]})},Jl=Xl;export{Jl as default};
-//# sourceMappingURL=index-DeRiumyQ.js.map
+//# sourceMappingURL=index-Cvd-Jw-U.js.map
