@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import { enqueueSnackbar } from 'notistack'
 import { useLoginUserMutation, useRegisterUserMutation } from 'store'
 import * as path from 'routsConfig'
 import { AuthForm } from 'components/forms'
@@ -36,8 +37,11 @@ const AuthView: FC = () => {
 
       if (isLoginPage) {
         setErrorMessage('')
-        await loginUser(body as ILoginFormValues).unwrap()
-        console.log(`AuthView body in :>> ${location.pathname} form`, body)
+        const data = await loginUser(body as ILoginFormValues).unwrap()
+
+        enqueueSnackbar(`Welcome back, ${data.user.firstName}!`, {
+          variant: 'success',
+        })
       } else {
         const { email, password, firstName } = body as IBasicAuthFormValues
         const registerBody: IRegisterFormValues = {
@@ -47,10 +51,13 @@ const AuthView: FC = () => {
         }
 
         setErrorMessage('')
-        await registerUser(registerBody).unwrap()
-        console.log(
-          `AuthView body in :>> ${location.pathname} form`,
-          registerBody
+        const data = await registerUser(registerBody).unwrap()
+
+        enqueueSnackbar(
+          `Welcome, ${data.user.firstName}! Thank you for registering!`,
+          {
+            variant: 'success',
+          }
         )
       }
 
@@ -61,6 +68,8 @@ const AuthView: FC = () => {
       setErrorMessage(getErrorMessage(err))
 
       setModalIsOpen(false)
+
+      enqueueSnackbar(getErrorMessage(err), { variant: 'error' })
     }
   }
 
