@@ -20,6 +20,11 @@ export const buttonLoaderColors: ColorRingProps['colors'] = [
 export const StyledWrapper = styled.div`
   height: 1.25rem;
   width: 1.25rem;
+
+  &.loader-large {
+    width: 10rem;
+    height: 10rem;
+  }
 `
 
 // '#137BCD',

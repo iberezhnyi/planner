@@ -42,6 +42,11 @@ export const global: IGlobalStyles = {
     warningColor: '#FF9966',
   },
 
+  backdrop: {
+    backgroundColor: 'rgba(23, 24, 32, 0.5)',
+    backdropFilter: 'blur(3px)',
+  },
+
   breakpoint: {
     mobile: '480px',
     tablet: '768px',

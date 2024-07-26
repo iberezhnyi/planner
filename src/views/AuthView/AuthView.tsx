@@ -10,9 +10,12 @@ import {
 } from 'types'
 import * as SC from './AuthView.styled'
 import { getErrorMessage } from 'helpers'
+import { Modal } from 'components/Modal'
+import { Loader } from 'components/Loader'
 
 const AuthView: FC = () => {
   const [errorMessage, setErrorMessage] = useState('')
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const location = useLocation()
   const [registerUser] = useRegisterUserMutation({
     fixedCacheKey: 'register-user',
@@ -29,6 +32,8 @@ const AuthView: FC = () => {
 
   const handleAuth = async (body: ILoginFormValues | IBasicAuthFormValues) => {
     try {
+      setModalIsOpen(true)
+
       if (isLoginPage) {
         setErrorMessage('')
         await loginUser(body as ILoginFormValues).unwrap()
@@ -48,10 +53,14 @@ const AuthView: FC = () => {
           registerBody
         )
       }
+
+      setModalIsOpen(false)
     } catch (err) {
       console.log('err QQQQQQQQQQ:>> ', err)
 
       setErrorMessage(getErrorMessage(err))
+
+      setModalIsOpen(false)
     }
   }
 
@@ -59,9 +68,19 @@ const AuthView: FC = () => {
     <SC.AuthSection>
       <SC.ContentWrapper>
         {errorMessage && <SC.ErrorMessage>{errorMessage}</SC.ErrorMessage>}
-
         <SC.Title>{isLoginPage ? 'Log in' : 'Register'}</SC.Title>
+
         <AuthForm auth={handleAuth} />
+
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={() => setModalIsOpen(false)}
+          shouldCloseOnOverlayClick={false}
+          shouldCloseOnEsc={false}
+        >
+          <Loader className="loader-large" />
+        </Modal>
+
         <SC.Text>
           {isLoginPage
             ? "Don't have an account yet?"

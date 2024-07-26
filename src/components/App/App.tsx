@@ -6,7 +6,7 @@ import { useRefreshUserQuery } from 'store/authSlice/authApi'
 
 import { PublicRoute } from 'guards/PublicRoute'
 import { PrivateRoute } from 'guards/PrivateRoute'
-import { Loader } from 'components/Loader'
+import * as SC from './App.styled'
 
 const MainLayout = lazy(() => import('layouts/MainLayout'))
 const HomeView = lazy(() => import('views/HomeView'))
@@ -20,16 +20,12 @@ export const App = () => {
   const profile = useSelector(selectProfile)
   const { data: refreshData } = useRefreshUserQuery()
 
-  // console.log('refreshData APP :>> ', refreshData)
-  // console.log('isFetching APP :>> ', isFetching)
-  // console.log('isLoading APP :>> ', isLoading)
-
   useEffect(() => {
     !profile && refreshData
   }, [profile, refreshData])
 
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={<SC.LoaderStyled />}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomeView />} />

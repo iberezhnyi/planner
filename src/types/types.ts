@@ -85,6 +85,10 @@ export interface IGlobalStyles {
     [key: string]: string
   }
 
+  backdrop: {
+    [key: string]: string
+  }
+
   breakpoint: {
     [key: string]: string
   }
