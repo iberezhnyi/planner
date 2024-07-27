@@ -17,18 +17,19 @@ export const buttonLoaderColors: ColorRingProps['colors'] = [
   '#707579',
 ]
 
-export const StyledWrapper = styled.div`
-  height: 1.25rem;
-  width: 1.25rem;
+export const StyledWrapper = styled.div<{ $isButton?: boolean }>`
+  height: ${(props) => (props.$isButton ? '1.25rem' : '1.75rem')};
+  width: ${(props) => (props.$isButton ? '1.25rem' : '1.75rem')};
 
-  &.loader-large {
+  &.large {
     width: 10rem;
     height: 10rem;
   }
-`
 
-// '#137BCD',
-// '#4CCCFF',
-// '#DCEBF7',
-// '#5288C1',
-// '#E5E5E5',
+  &.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`

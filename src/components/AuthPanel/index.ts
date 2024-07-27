@@ -1,1 +1,1 @@
-export * from './AuthPanel'
+export { AuthPanel } from './AuthPanel'

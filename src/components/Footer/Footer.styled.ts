@@ -21,13 +21,3 @@ export const FooterContainer = styled.div<{ $isMainLayout?: boolean }>`
 
   text-align: ${({ $isMainLayout }) => $isMainLayout && 'center'};
 `
-
-// ${({ isMainLayout, theme }) =>
-//   isMainLayout
-//     ? { backgroundColor: theme.footerBgColor }
-//     : theme.primaryBgColor
-// }
-
-// &.main-layout-footer {
-//   text-align: center;
-// }

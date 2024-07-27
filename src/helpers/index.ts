@@ -1,7 +1,3 @@
 export { calculateSpacing } from './calculateSpasing'
 export { getErrorMessage } from './getErrorMessage'
-
-// export {
-//   isFetchBaseQueryError,
-//   isErrorWithMessage,
-// } from './isFetchBaseQueryError'
+export { successNotification, errorNotification } from './notifications'

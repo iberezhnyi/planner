@@ -17,7 +17,7 @@ import {
   useLoginUserMutation,
   useRegisterUserMutation,
 } from 'store'
-
+import { Loader } from 'components/common'
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './AuthPanel.styled'
 
@@ -80,11 +80,7 @@ export const AuthPanel: FC = () => {
 
       {!profile && (
         <SC.LinkAuth to="/login">
-          {isLoginLoading || isRegisterLoading ? (
-            <SC.LoaderStyled />
-          ) : (
-            <p>Log in</p>
-          )}
+          {isLoginLoading || isRegisterLoading ? <Loader /> : <p>Log in</p>}
           <SC.IconUser>
             <use href={`${sprite}#user`} />
           </SC.IconUser>

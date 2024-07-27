@@ -1,1 +1,1 @@
-export * from "./useThemeToggle"
+export { useThemeToggle } from './useThemeToggle'

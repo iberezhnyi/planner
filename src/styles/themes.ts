@@ -27,14 +27,14 @@ export const themes: IThemes = {
 
     // Link
     linkColor: '#137BCD',
-    linkActiveColor: '#4CCCFF', //'#4CCCFF'
+    linkActiveColor: '#79C4FD', //'#4CCCFF'
 
     // Button
     btnTextColor: '#FFFFFF',
     btnDisabledTextColor: '#707579',
     btnHoverTextColor: '',
     btnBgColor: '#137BCD',
-    btnHoverBgColor: '#4CCCFF',
+    btnHoverBgColor: '#79C4FD',
 
     // Icons
     iconColor: '#7D8D9A',
@@ -43,7 +43,7 @@ export const themes: IThemes = {
     // Form
     inputBgColor: 'rgb(220,235,247, 0.8)',
 
-    accent: '#3390EC', //
+    accent: '#79C4FD', //
   },
 
   dark: {
@@ -78,7 +78,7 @@ export const themes: IThemes = {
     // Form
     inputBgColor: 'rgb(220,227,229, 0.1)',
 
-    accent: '#8774E1', //
+    accent: '#79C4FD', // "#8774E1"
   },
 }
 

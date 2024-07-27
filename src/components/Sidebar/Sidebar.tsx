@@ -1,12 +1,11 @@
 import { FC } from 'react'
-
-import * as SC from './Sidebar.styled'
-import { Navigation } from 'components/Navigation'
-import { SidebarAuthPanel } from './SidebarAuthPanel/SidebarAuthPanel'
-import { ToggleThemeButton } from 'components/buttons'
 import { useSelector } from 'react-redux'
 import { selectProfile } from 'store'
+import { SidebarAuthPanel } from './SidebarAuthPanel/SidebarAuthPanel'
+import { Navigation } from 'components/Navigation'
+import { ToggleThemeButton } from 'components/buttons'
 import { Footer } from 'components/Footer'
+import * as SC from './Sidebar.styled'
 
 interface SidebarProps {
   mobileMenu: boolean

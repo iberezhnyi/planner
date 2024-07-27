@@ -1,3 +1,3 @@
-export * from "./MobileMenuButton/MobileMenuButton"
-export * from "./ToggleThemeButton/ToggleThemeButton"
-export * from "./Button/Button"
+export { MobileMenuButton } from './MobileMenuButton/MobileMenuButton'
+export { ToggleThemeButton } from './ToggleThemeButton/ToggleThemeButton'
+export { Button } from './Button/Button'

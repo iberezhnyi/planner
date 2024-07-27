@@ -1,2 +1,2 @@
-export * from "./registerFormSchema"
-export * from "./loginFormSchema"
+export { registerFormSchema } from './registerFormSchema'
+export { loginFormSchema } from './loginFormSchema'

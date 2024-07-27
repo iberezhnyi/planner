@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import { SnackbarProvider } from 'notistack'
 import { selectTheme } from 'store'
 import { Global, global, themes } from 'styles'
+import { Notifications } from 'components/common'
 
 export const Theme: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -12,7 +13,12 @@ export const Theme: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <SnackbarProvider autoHideDuration={3000}>
+      <SnackbarProvider
+        Components={{
+          success: Notifications,
+          error: Notifications,
+        }}
+      >
         <Global />
         {children}
       </SnackbarProvider>

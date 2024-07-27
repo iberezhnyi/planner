@@ -1,4 +1,4 @@
-export * from './themes'
-export * from './global'
-export * from './Global.styled'
+export { themes } from './themes'
+export { global } from './global'
+export { Global } from './Global.styled'
 export * from './common.styled'

@@ -1,18 +1,20 @@
 import { FC, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { enqueueSnackbar } from 'notistack'
 import { useLoginUserMutation, useRegisterUserMutation } from 'store'
 import * as path from 'routsConfig'
-import { AuthForm } from 'components/forms'
 import {
   IBasicAuthFormValues,
   ILoginFormValues,
   IRegisterFormValues,
 } from 'types'
+import {
+  errorNotification,
+  getErrorMessage,
+  successNotification,
+} from 'helpers'
+import { AuthForm } from 'components/forms'
+import { Loader, Modal } from 'components/common'
 import * as SC from './AuthView.styled'
-import { getErrorMessage } from 'helpers'
-import { Modal } from 'components/Modal'
-import { Loader } from 'components/Loader'
 
 const AuthView: FC = () => {
   const [errorMessage, setErrorMessage] = useState('')
@@ -39,9 +41,7 @@ const AuthView: FC = () => {
         setErrorMessage('')
         const data = await loginUser(body as ILoginFormValues).unwrap()
 
-        enqueueSnackbar(`Welcome back, ${data.user.firstName}!`, {
-          variant: 'success',
-        })
+        successNotification(`Welcome back, ${data.user.firstName}!`)
       } else {
         const { email, password, firstName } = body as IBasicAuthFormValues
         const registerBody: IRegisterFormValues = {
@@ -53,11 +53,8 @@ const AuthView: FC = () => {
         setErrorMessage('')
         const data = await registerUser(registerBody).unwrap()
 
-        enqueueSnackbar(
-          `Welcome, ${data.user.firstName}! Thank you for registering!`,
-          {
-            variant: 'success',
-          }
+        successNotification(
+          `Welcome, ${data.user.firstName}! Thank you for registering!`
         )
       }
 
@@ -69,7 +66,7 @@ const AuthView: FC = () => {
 
       setModalIsOpen(false)
 
-      enqueueSnackbar(getErrorMessage(err), { variant: 'error' })
+      errorNotification(getErrorMessage(err))
     }
   }
 
@@ -87,7 +84,7 @@ const AuthView: FC = () => {
           shouldCloseOnOverlayClick={false}
           shouldCloseOnEsc={false}
         >
-          <Loader className="loader-large" />
+          <Loader className="large" />
         </Modal>
 
         <SC.Text>

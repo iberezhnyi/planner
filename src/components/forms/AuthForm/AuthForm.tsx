@@ -13,7 +13,7 @@ import {
   ILoginFormValues,
   IRegisterFormValues,
 } from 'types'
-import { Loader } from 'components/Loader'
+import { Loader } from 'components/common'
 
 interface AuthFormProps {
   auth: (body: ILoginFormValues | IRegisterFormValues) => void
@@ -111,7 +111,7 @@ export const AuthForm: FC<AuthFormProps> = ({ auth }) => {
           {isLoginPage ? 'Log in' : 'Register'}
 
           {isLoginLoading || isRegisterLoading ? (
-            <Loader isButton />
+            <Loader $isButton />
           ) : (
             <SC.IconLogin>
               <use href={`${sprite}#login`} />

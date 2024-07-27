@@ -4,7 +4,7 @@ import * as SC from './Loader.styled'
 
 export interface LoaderProps extends ColorRingProps {
   className?: string
-  isButton?: boolean
+  $isButton?: boolean
 }
 
 export const Loader: FC<LoaderProps> = ({
@@ -14,16 +14,16 @@ export const Loader: FC<LoaderProps> = ({
   ariaLabel = 'color-ring-loading',
   className = '',
   colors = SC.mainLoaderColors,
-  isButton,
+  $isButton,
 }) => {
   return (
-    <SC.StyledWrapper className={className}>
+    <SC.StyledWrapper className={className} $isButton={$isButton}>
       <ColorRing
         visible={visible}
         height={height}
         width={width}
         ariaLabel={ariaLabel}
-        colors={isButton ? SC.buttonLoaderColors : colors}
+        colors={$isButton ? SC.buttonLoaderColors : colors}
       />
     </SC.StyledWrapper>
   )

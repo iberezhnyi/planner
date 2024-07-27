@@ -7,7 +7,6 @@ export const SidebarAuthPanel = styled.div`
 
   background-color: ${({ theme }) => theme.secondaryBgColor};
 `
-// padding: ${({ theme }) => theme.global.spacing(14, 4, 2, 4)};
 
 export const SidebarAuthPanelList = styled.ul`
   ${container}

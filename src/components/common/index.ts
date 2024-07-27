@@ -1,3 +1,3 @@
-// export * from "./Section.styled"
-// export * from "./Container.styled"
-export * from "./Backdrop.styled"
+export { Loader } from './Loader/Loader'
+export { Modal } from './Modal/Modal'
+export { Notifications } from './Notifications/Notifications.styled'
