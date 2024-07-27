@@ -2,9 +2,9 @@ import { Menu, MenuItem, menuClasses } from 'react-pro-sidebar'
 import styled from 'styled-components'
 
 export const Navigation = styled(Menu)`
-  flex-grow: 1;
+  /* flex-grow: 1;
 
-  background-color: ${({ theme }) => theme.primaryBgColor};
+  background-color: ${({ theme }) => theme.primaryBgColor}; */
 `
 
 export const NavigationItem = styled(MenuItem)`
@@ -15,7 +15,7 @@ export const NavigationItem = styled(MenuItem)`
     &:focus,
     &:active,
     &.active {
-      background-color: ${({ theme }) => theme.pageBackground};
+      background-color: ${({ theme }) => theme.linkActiveBgColor};
       color: ${({ theme }) => theme.linkActiveColor};
     }
   }

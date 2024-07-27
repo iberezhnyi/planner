@@ -33,9 +33,6 @@ export const AuthPanel: FC = () => {
     fixedCacheKey: 'register-user',
   })
 
-  console.log('isLoginLoading :>> ', isLoginLoading)
-  console.log('isLoginLoading :>> ', isRegisterLoading)
-
   // Переписати, якщо бек зберігає токен в БД
   const handleLogOut = () => {
     dispatch(logoutAction())

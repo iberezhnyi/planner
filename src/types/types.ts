@@ -38,6 +38,7 @@ export interface ITheme {
   pageBackground: string
   primaryBgColor: string
   secondaryBgColor: string
+  mainBgColor: string
   headerBgColor: string
   footerBgColor: string
   titleColor: string
@@ -46,6 +47,7 @@ export interface ITheme {
   textColorSecondary: string
   linkColor: string
   linkActiveColor: string
+  linkActiveBgColor: string
   btnTextColor: string
   btnDisabledTextColor: string
   btnBgColor: string
@@ -90,7 +92,9 @@ export interface IGlobalStyles {
   }
 
   breakpoint: {
-    [key: string]: string
+    mobile: string
+    tablet: string
+    desktop: string
   }
 
   spacing: typeof calculateSpacing

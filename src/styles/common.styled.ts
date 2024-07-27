@@ -1,4 +1,5 @@
 import { css } from 'styled-components'
+import { media } from './media'
 
 export const btnCommonStyles = css`
   display: flex;
@@ -18,8 +19,12 @@ export const section = css`
 export const container = css`
   padding-left: ${({ theme }) => theme.global.spacing(3)};
   padding-right: ${({ theme }) => theme.global.spacing(3)};
-  margin-left: auto;
-  margin-right: auto;
+
+  ${media.desktop`
+    width: ${({ theme }) => theme.global.breakpoint.desktop};
+    margin-left: auto;
+    margin-right: auto;
+  `}
 `
 
 export const siteLink = css`

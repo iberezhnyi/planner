@@ -26,12 +26,17 @@ export const Sidebar: FC<SidebarProps> = ({
       customBreakPoint="767px"
       onBreakPoint={setIsMobile}
       onBackdropClick={() => setMobileMenu(false)}
+      $profile={!!profile}
     >
-      <ToggleThemeButton />
+      {!profile && <SC.SidebarThumb />}
 
-      <SidebarAuthPanel />
+      <SC.SidebarWrapper>
+        {profile && <SidebarAuthPanel />}
 
-      <Navigation setMobileMenu={setMobileMenu} />
+        <Navigation setMobileMenu={setMobileMenu} />
+
+        <ToggleThemeButton />
+      </SC.SidebarWrapper>
 
       {profile && <Footer />}
     </SC.StyledSidebar>

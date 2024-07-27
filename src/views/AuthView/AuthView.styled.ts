@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { media } from 'styles'
 import { section, siteLink } from 'styles/common.styled'
 
 export const AuthSection = styled.div`
@@ -16,6 +17,14 @@ export const ContentWrapper = styled.div`
 
   background-color: ${({ theme }) => theme.primaryBgColor};
   border-radius: 0.5rem;
+
+  ${media.tablet`
+    width: 70%;
+  `}
+
+  ${media.desktop`
+    width: 50%;
+  `}
 `
 
 export const Title = styled.h1`

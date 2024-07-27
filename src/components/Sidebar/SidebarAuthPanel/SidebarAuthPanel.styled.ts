@@ -1,11 +1,15 @@
 import styled from 'styled-components'
-import { container } from 'styles'
+import { container, media } from 'styles'
 
 export const SidebarAuthPanel = styled.div`
   padding-top: ${({ theme }) => theme.global.spacing(12)};
   padding-bottom: ${({ theme }) => theme.global.spacing(2)};
 
   background-color: ${({ theme }) => theme.secondaryBgColor};
+
+  ${media.tablet`
+    padding-top: ${({ theme }) => theme.global.spacing(2)};
+  `}
 `
 
 export const SidebarAuthPanelList = styled.ul`

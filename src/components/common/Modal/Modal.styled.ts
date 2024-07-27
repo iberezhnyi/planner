@@ -5,6 +5,7 @@ import { global } from 'styles'
 export const customStyles = {
   overlay: {
     zIndex: 2,
+
     backgroundColor: global.backdrop.backgroundColor,
     backdropFilter: global.backdrop.backdropFilter,
   },

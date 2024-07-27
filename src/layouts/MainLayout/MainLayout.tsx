@@ -28,15 +28,17 @@ const MainLayout: FC = () => {
         mobileMenu={mobileMenu}
       />
 
-      <Sidebar
-        setMobileMenu={setMobileMenu}
-        setIsMobile={setIsMobile}
-        mobileMenu={mobileMenu}
-      />
+      <SC.LayoutInnerWrapper>
+        <Sidebar
+          setMobileMenu={setMobileMenu}
+          setIsMobile={setIsMobile}
+          mobileMenu={mobileMenu}
+        />
 
-      <SC.Main>
-        <Outlet />
-      </SC.Main>
+        <SC.Main>
+          <Outlet />
+        </SC.Main>
+      </SC.LayoutInnerWrapper>
 
       {!profile && <Footer $isMainLayout />}
     </>

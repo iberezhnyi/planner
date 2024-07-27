@@ -7,25 +7,17 @@ export const SidebarAuthPanel: FC = () => {
   const profile = useSelector(selectProfile)
   return (
     <SC.SidebarAuthPanel>
-      {profile && (
-        <>
-          <SC.SidebarAuthPanelList>
-            <SC.SidebarAuthItem>
-              <SC.SidebarAuthImg
-                src={profile.image}
-                alt="User photo"
-                width="60"
-              />
-            </SC.SidebarAuthItem>
-            <SC.SidebarAuthItem>
-              <SC.SidebarAuthInfo>{profile.firstName}</SC.SidebarAuthInfo>
-            </SC.SidebarAuthItem>
-            <SC.SidebarAuthItem>
-              <SC.SidebarAuthInfo>{profile.email}</SC.SidebarAuthInfo>
-            </SC.SidebarAuthItem>
-          </SC.SidebarAuthPanelList>
-        </>
-      )}
+      <SC.SidebarAuthPanelList>
+        <SC.SidebarAuthItem>
+          <SC.SidebarAuthImg src={profile?.image} alt="User photo" width="60" />
+        </SC.SidebarAuthItem>
+        <SC.SidebarAuthItem>
+          <SC.SidebarAuthInfo>{profile?.firstName}</SC.SidebarAuthInfo>
+        </SC.SidebarAuthItem>
+        <SC.SidebarAuthItem>
+          <SC.SidebarAuthInfo>{profile?.email}</SC.SidebarAuthInfo>
+        </SC.SidebarAuthItem>
+      </SC.SidebarAuthPanelList>
     </SC.SidebarAuthPanel>
   )
 }

@@ -13,9 +13,10 @@ import { IThemes } from 'types'
 export const themes: IThemes = {
   light: {
     // Background
-    pageBackground: '#DCEBF7', //#F4F4F5
+    pageBackground: '#FFFFFF', //#F4F4F5
     primaryBgColor: '#F4F4F5', //
     secondaryBgColor: '#5288C1', //
+    mainBgColor: '#DCEBF7',
     headerBgColor: '#5288C1', //
     footerBgColor: '#E5E5E5', // #E5E5E5
 
@@ -28,6 +29,7 @@ export const themes: IThemes = {
     // Link
     linkColor: '#137BCD',
     linkActiveColor: '#79C4FD', //'#4CCCFF'
+    linkActiveBgColor: '#DCEBF7', //'#4CCCFF'
 
     // Button
     btnTextColor: '#FFFFFF',
@@ -48,9 +50,10 @@ export const themes: IThemes = {
 
   dark: {
     // Background
-    pageBackground: '#141C27', //
+    pageBackground: '#0D1117', //#141C27
     primaryBgColor: '#1D2733', // '#212121', '#35363A'
     secondaryBgColor: '#232F40', //
+    mainBgColor: '#141C27',
     headerBgColor: '#1D2733',
     footerBgColor: '#232F40',
 
@@ -63,6 +66,7 @@ export const themes: IThemes = {
     // Link
     linkColor: '#137BCD',
     linkActiveColor: '#79C4FD', // '#4CCCFF'
+    linkActiveBgColor: '#141C27',
 
     // Button
     btnTextColor: '#FFFFFF',
