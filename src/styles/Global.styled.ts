@@ -32,7 +32,7 @@ body {
   font-size: ${({ theme }) => theme.global.text.fontSize.s};
   line-height: ${({ theme }) => theme.global.text.lineHeight.xl};
   
-  background: ${({ theme }) => theme.pageBackground};
+  background-image: ${({ theme }) => theme.pageBackground};
 }
 
 h1,

@@ -6,12 +6,15 @@ import { Sidebar } from 'components/Sidebar'
 import { Footer } from 'components/Footer'
 import { useSelector } from 'react-redux'
 import { selectProfile } from 'store'
+import { global } from 'styles'
 
 const MainLayout: FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
+  const [headerHeight, setHeaderHeight] = useState(0)
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia('(max-width: 767px)').matches
+    window.matchMedia(`(max-width: ${global.breakpoint.maxTablet})`).matches
   )
+
   const profile = useSelector(selectProfile)
 
   const handleClick = () => setMobileMenu((prev) => !prev)
@@ -26,19 +29,21 @@ const MainLayout: FC = () => {
         isMobile={isMobile}
         handleClick={handleClick}
         mobileMenu={mobileMenu}
+        setHeaderHeight={setHeaderHeight}
       />
 
-      <SC.LayoutInnerWrapper>
+      <SC.LayoutWrapper>
         <Sidebar
           setMobileMenu={setMobileMenu}
           setIsMobile={setIsMobile}
           mobileMenu={mobileMenu}
+          headerHeight={headerHeight}
         />
 
         <SC.Main>
           <Outlet />
         </SC.Main>
-      </SC.LayoutInnerWrapper>
+      </SC.LayoutWrapper>
 
       {!profile && <Footer $isMainLayout />}
     </>

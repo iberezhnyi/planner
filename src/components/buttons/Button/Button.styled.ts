@@ -10,7 +10,7 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.btnTextColor};
   font-weight: ${({ theme }) => theme.global.text.fontWeight.sb};
 
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   background-color: ${({ theme }) => theme.btnBgColor};
 
   &:hover,

@@ -21,6 +21,8 @@ export const ButtonAuth = styled.button`
 export const LinkAuth = styled(NavLink)`
   ${btnCommonStyles}
 
+  padding-right: 0;
+
   color: ${({ theme }) => theme.global.text.color.white};
 
   &:hover,
@@ -60,7 +62,7 @@ export const List = styled.ul`
 
   border-radius: 0.75rem;
   box-shadow: rgba(64, 123, 255, 0.34) 0px 4px 0.75rem;
-  background-color: ${({ theme }) => theme.pageBackground};
+  background-color: ${({ theme }) => theme.mainBgColor};
 `
 
 export const ListItem = styled.li`

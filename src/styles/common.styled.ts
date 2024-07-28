@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import { media } from './media'
+import { global } from './global'
 
 export const btnCommonStyles = css`
   display: flex;
@@ -11,20 +11,43 @@ export const btnCommonStyles = css`
   padding: ${({ theme }) => theme.global.spacing(2)};
 `
 
+// export const globalContainer = css`
+//   // @media (min-width: ${global.breakpoint.desktop}) {
+//   //   width: ${({ theme }) => theme.global.breakpoint.desktop};
+
+//   //   margin-left: auto;
+//   //   margin-right: auto;
+//   // }
+// `
+
 export const section = css`
-  padding-top: ${({ theme }) => theme.global.spacing(2)};
-  padding-bottom: ${({ theme }) => theme.global.spacing(2)};
+  padding-top: ${({ theme }) => theme.global.spacing(6)};
+  padding-bottom: ${({ theme }) => theme.global.spacing(6)};
+
+  @media (min-width: ${global.breakpoint.tablet}) {
+    padding-top: ${({ theme }) => theme.global.spacing(8)};
+    padding-bottom: ${({ theme }) => theme.global.spacing(8)};
+  }
+
+  @media (min-width: ${global.breakpoint.desktop}) {
+    padding-top: ${({ theme }) => theme.global.spacing(12)};
+    padding-bottom: ${({ theme }) => theme.global.spacing(12)};
+  }
 `
 
 export const container = css`
-  padding-left: ${({ theme }) => theme.global.spacing(3)};
-  padding-right: ${({ theme }) => theme.global.spacing(3)};
+  padding-left: ${({ theme }) => theme.global.spacing(4)};
+  padding-right: ${({ theme }) => theme.global.spacing(4)};
 
-  ${media.desktop`
-    width: ${({ theme }) => theme.global.breakpoint.desktop};
-    margin-left: auto;
-    margin-right: auto;
-  `}
+  @media (min-width: ${global.breakpoint.tablet}) {
+    padding-left: ${({ theme }) => theme.global.spacing(8)};
+    padding-right: ${({ theme }) => theme.global.spacing(8)};
+  }
+
+  @media (min-width: ${global.breakpoint.desktop}) {
+    padding-left: ${({ theme }) => theme.global.spacing(12)};
+    padding-right: ${({ theme }) => theme.global.spacing(12)};
+  }
 `
 
 export const siteLink = css`

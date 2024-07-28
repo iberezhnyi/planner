@@ -1,12 +1,20 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { media } from 'styles'
+import { global } from 'styles'
 import { section, siteLink } from 'styles/common.styled'
 
 export const AuthSection = styled.div`
-  ${section}
+  /* ${section} */
+
   display: flex;
   justify-content: center;
+
+  padding-top: ${({ theme }) => theme.global.spacing(8)};
+  padding-bottom: ${({ theme }) => theme.global.spacing(8)};
+
+  @media (min-width: ${global.breakpoint.tablet}) {
+    padding-top: ${({ theme }) => theme.global.spacing(12)};
+  }
 `
 
 export const ContentWrapper = styled.div`
@@ -18,13 +26,13 @@ export const ContentWrapper = styled.div`
   background-color: ${({ theme }) => theme.primaryBgColor};
   border-radius: 0.5rem;
 
-  ${media.tablet`
+  @media (min-width: ${global.breakpoint.tablet}) {
     width: 70%;
-  `}
+  }
 
-  ${media.desktop`
+  @media (min-width: ${global.breakpoint.desktop}) {
     width: 50%;
-  `}
+  }
 `
 
 export const Title = styled.h1`

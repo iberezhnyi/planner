@@ -9,7 +9,7 @@ import { Loader } from 'components/common'
 const MainLayout = lazy(() => import('layouts/MainLayout'))
 const HomeView = lazy(() => import('views/HomeView'))
 const AuthView = lazy(() => import('views/AuthView'))
-const AboutView = lazy(() => import('views/AboutView'))
+const CalendarView = lazy(() => import('views/CalendarView'))
 const ContactsView = lazy(() => import('views/ContactsView'))
 const ServicesView = lazy(() => import('views/ServicesView'))
 
@@ -26,7 +26,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomeView />} />
-          <Route path="about" element={<AboutView />} />
+          <Route path="calendar" element={<CalendarView />} />
 
           <Route path="" element={<PrivateRoute />}>
             <Route path="services" element={<ServicesView />} />

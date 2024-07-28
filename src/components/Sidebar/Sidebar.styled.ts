@@ -1,10 +1,17 @@
 import { Sidebar, sidebarClasses } from 'react-pro-sidebar'
 import styled from 'styled-components'
+import { global } from 'styles'
 
 export const StyledSidebar = styled(Sidebar)<{ $profile: boolean }>`
   &&& {
     z-index: 1;
+
     border: none;
+
+    @media (min-width: ${global.breakpoint.tablet}) and (max-width: ${global.breakpoint.desktop}) {
+      width: 200px;
+      min-width: 200px;
+    }
   }
 
   .${sidebarClasses.container} {
@@ -13,11 +20,6 @@ export const StyledSidebar = styled(Sidebar)<{ $profile: boolean }>`
     z-index: 2;
 
     background-color: ${({ theme }) => theme.primaryBgColor};
-
-    /* @media (max-width: 767px) {
-      padding-top: ${({ theme, $profile }) =>
-      $profile ? 0 : theme.global.spacing(12)};
-    } */
   }
 
   .${sidebarClasses.backdrop} {
@@ -32,7 +34,11 @@ export const SidebarWrapper = styled.div`
   flex-grow: 1;
 `
 
-export const SidebarThumb = styled.div`
+export const SidebarThumb = styled.div<{ $headerHeight: number }>`
   background-color: ${({ theme }) => theme.secondaryBgColor};
-  height: ${({ theme }) => theme.global.spacing(14)};
+  height: ${({ $headerHeight }) => `${$headerHeight}px`};
+
+  @media (min-width: ${global.breakpoint.tablet}) {
+    display: none;
+  }
 `

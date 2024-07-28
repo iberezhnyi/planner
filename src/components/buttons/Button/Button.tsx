@@ -1,6 +1,6 @@
 import * as SC from './Button.styled'
 
-interface ButtonProps {
+export interface ButtonProps {
   children: React.ReactNode
   to?: string
   type?: 'button' | 'submit' | 'reset'
@@ -8,13 +8,7 @@ interface ButtonProps {
   disabled?: boolean
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  children,
-  to,
-  type,
-  nav,
-  ...rest
-}) => {
+export const Button: React.FC<ButtonProps> = ({ children, to, type, nav, ...rest }) => {
   return (
     <>
       {type && (

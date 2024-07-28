@@ -51,6 +51,8 @@ export const global: IGlobalStyles = {
     mobile: '480px',
     tablet: '768px',
     desktop: '1440px',
+
+    maxTablet: '767px',
   },
 
   spacing: calculateSpacing,

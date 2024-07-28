@@ -1,5 +1,4 @@
 export { themes } from './themes'
 export { global } from './global'
-export { media } from './media'
 export { Global } from './Global.styled'
 export * from './common.styled'

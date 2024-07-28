@@ -13,7 +13,7 @@ import { IThemes } from 'types'
 export const themes: IThemes = {
   light: {
     // Background
-    pageBackground: '#FFFFFF', //#F4F4F5
+    pageBackground: 'linear-gradient(to right, #F4F4F5 25%, #DCEBF7 0)', //#F4F4F5, '#FFFFFF'
     primaryBgColor: '#F4F4F5', //
     secondaryBgColor: '#5288C1', //
     mainBgColor: '#DCEBF7',
@@ -50,7 +50,7 @@ export const themes: IThemes = {
 
   dark: {
     // Background
-    pageBackground: '#0D1117', //#141C27
+    pageBackground: 'linear-gradient(to right, #1D2733 25%, #141C27 0)', //#141C27, '#0D1117'
     primaryBgColor: '#1D2733', // '#212121', '#35363A'
     secondaryBgColor: '#232F40', //
     mainBgColor: '#141C27',

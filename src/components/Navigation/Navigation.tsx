@@ -9,27 +9,21 @@ interface NavigationProps {
 export const Navigation: FC<NavigationProps> = ({ setMobileMenu }) => {
   return (
     <SC.Navigation>
-      <SC.NavigationItem
-        component={<NavLink to="/" onClick={() => setMobileMenu(false)} />}
-      >
+      <SC.NavigationItem component={<NavLink to="/" onClick={() => setMobileMenu(false)} />}>
         Home
       </SC.NavigationItem>
       <SC.NavigationItem
-        component={<NavLink to="/about" onClick={() => setMobileMenu(false)} />}
+        component={<NavLink to="/calendar" onClick={() => setMobileMenu(false)} />}
       >
-        About
+        Calendar
       </SC.NavigationItem>
       <SC.NavigationItem
-        component={
-          <NavLink to="/services" onClick={() => setMobileMenu(false)} />
-        }
+        component={<NavLink to="/services" onClick={() => setMobileMenu(false)} />}
       >
         Services
       </SC.NavigationItem>
       <SC.NavigationItem
-        component={
-          <NavLink to="/contacts" onClick={() => setMobileMenu(false)} />
-        }
+        component={<NavLink to="/contacts" onClick={() => setMobileMenu(false)} />}
       >
         Contacts
       </SC.NavigationItem>
