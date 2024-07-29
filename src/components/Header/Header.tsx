@@ -3,15 +3,16 @@ import { MobileMenuButton } from 'components/buttons'
 import * as SC from './Header.styled'
 import { AuthPanel } from 'components/AuthPanel'
 import Logo from 'assets/logo/logo-placeholder4.png'
+import { useIsMobile } from 'hooks'
 
 interface HeaderProps {
-  isMobile: boolean
   handleClick: () => void
   mobileMenu: boolean
   setHeaderHeight: (height: number) => void
 }
 
-export const Header: FC<HeaderProps> = ({ isMobile, handleClick, mobileMenu, setHeaderHeight }) => {
+export const Header: FC<HeaderProps> = ({ handleClick, mobileMenu, setHeaderHeight }) => {
+  const isMobile = useIsMobile()
   const headerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

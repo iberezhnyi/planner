@@ -1,26 +1,45 @@
 import { FC } from 'react'
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './CalendarControlPanel.styled'
+import { useIsMobile } from 'hooks'
+import { global } from 'styles'
 
 export const CalendarControlPanel: FC = () => {
+  const isMobile = useIsMobile(global.breakpoint.maxMobile)
+
   return (
     <SC.CalendarControlPanel>
-      <SC.CurrentWeekButton type="button">28 липня 2024</SC.CurrentWeekButton>
+      <SC.ControlOutWrapper>
+        <SC.CurrentDayButton type="button">29 липня</SC.CurrentDayButton>
 
-      <SC.ArrowButton type="button" $prev>
-        <SC.ArrowIcon $left>
-          <use href={`${sprite}#arrow-down`} />
-        </SC.ArrowIcon>
-      </SC.ArrowButton>
+        {!isMobile && (
+          <SC.ControlWrapper>
+            <SC.ControlButton type="button">Місяць</SC.ControlButton>
+            <SC.ControlButton type="button">Тиждень</SC.ControlButton>
+          </SC.ControlWrapper>
+        )}
 
-      <SC.ArrowButton type="button" $next>
-        <SC.ArrowIcon $right>
-          <use href={`${sprite}#arrow-down`} />
-        </SC.ArrowIcon>
-      </SC.ArrowButton>
+        <SC.ArrowWrapper>
+          <SC.ArrowButton className="prev" type="button">
+            <SC.ArrowIcon className="left">
+              <use href={`${sprite}#arrow`} />
+            </SC.ArrowIcon>
+          </SC.ArrowButton>
 
-      <SC.ControlButton type="button">Місяць</SC.ControlButton>
-      <SC.ControlButton type="button">Тиждень</SC.ControlButton>
+          <SC.ArrowButton className="next" type="button">
+            <SC.ArrowIcon className="right">
+              <use href={`${sprite}#arrow`} />
+            </SC.ArrowIcon>
+          </SC.ArrowButton>
+        </SC.ArrowWrapper>
+      </SC.ControlOutWrapper>
+
+      {isMobile && (
+        <SC.ControlWrapper>
+          <SC.ControlButton type="button">Місяць</SC.ControlButton>
+          <SC.ControlButton type="button">Тиждень</SC.ControlButton>
+        </SC.ControlWrapper>
+      )}
     </SC.CalendarControlPanel>
   )
 }

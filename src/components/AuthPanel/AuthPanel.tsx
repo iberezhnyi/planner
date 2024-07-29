@@ -11,12 +11,7 @@ import {
   FloatingFocusManager,
   useId,
 } from '@floating-ui/react'
-import {
-  logoutAction,
-  selectProfile,
-  useLoginUserMutation,
-  useRegisterUserMutation,
-} from 'store'
+import { logoutAction, selectProfile, useLoginUserMutation, useRegisterUserMutation } from 'store'
 import { Loader } from 'components/common'
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './AuthPanel.styled'
@@ -52,11 +47,7 @@ export const AuthPanel: FC = () => {
   const role = useRole(context, {
     role: 'menu',
   })
-  const { getReferenceProps, getFloatingProps } = useInteractions([
-    click,
-    dismiss,
-    role,
-  ])
+  const { getReferenceProps, getFloatingProps } = useInteractions([click, dismiss, role])
   const headingId = useId()
 
   return (
@@ -70,7 +61,7 @@ export const AuthPanel: FC = () => {
           </SC.IconUser>
 
           <SC.IconDropdown className={isOpen ? 'open' : ''}>
-            <use href={`${sprite}#arrow-down`} />
+            <use href={`${sprite}#arrow`} />
           </SC.IconDropdown>
         </SC.ButtonAuth>
       )}

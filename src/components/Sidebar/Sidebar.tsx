@@ -10,24 +10,17 @@ import * as SC from './Sidebar.styled'
 
 interface SidebarProps {
   mobileMenu: boolean
-  setIsMobile: (isMobile: boolean) => void
   setMobileMenu: (mobileMenu: boolean) => void
   headerHeight: number
 }
 
-export const Sidebar: FC<SidebarProps> = ({
-  mobileMenu,
-  setIsMobile,
-  setMobileMenu,
-  headerHeight,
-}) => {
+export const Sidebar: FC<SidebarProps> = ({ mobileMenu, setMobileMenu, headerHeight }) => {
   const profile = useSelector(selectProfile)
 
   return (
     <SC.StyledSidebar
       toggled={mobileMenu}
       customBreakPoint={`${global.breakpoint.maxTablet}`}
-      onBreakPoint={setIsMobile}
       onBackdropClick={() => setMobileMenu(false)}
       $profile={!!profile}
     >

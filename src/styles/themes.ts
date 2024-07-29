@@ -44,6 +44,7 @@ export const themes: IThemes = {
 
     // Form
     inputBgColor: 'rgb(220,235,247, 0.8)',
+    border: '0.0625rem solid rgba(220, 227, 229, 0.8)',
 
     accent: '#79C4FD', //
   },
@@ -81,6 +82,7 @@ export const themes: IThemes = {
 
     // Form
     inputBgColor: 'rgb(220,227,229, 0.1)',
+    border: '0.0625rem solid rgba(220, 227, 229, 0.8)',
 
     accent: '#79C4FD', // "#8774E1"
   },

@@ -1,9 +1,12 @@
 import { Button } from 'components/buttons'
 import styled, { css } from 'styled-components'
+import { global } from 'styles'
 
 const calendarBtnCommonStyles = css`
   background-color: transparent;
-  border: 1px solid rgba(220, 227, 229, 0.5);
+  border: ${({ theme }) => theme.border};
+
+  padding: ${({ theme }) => theme.global.spacing(3)};
 `
 
 const arrowIconCommonStyles = css`
@@ -14,32 +17,65 @@ const arrowIconCommonStyles = css`
 `
 
 export const CalendarControlPanel = styled.div`
+  margin-bottom: ${({ theme }) => theme.global.spacing(4)};
+`
+
+export const CurrentDayButton = styled(Button)`
+  ${calendarBtnCommonStyles}
+
+  text-transform: uppercase;
+`
+
+export const ArrowButton = styled(Button)`
+  ${calendarBtnCommonStyles}
+
+  &.prev {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.next {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+`
+
+export const ArrowIcon = styled.svg`
+  ${arrowIconCommonStyles}
+
+  &.left {
+    transform: rotate(90deg);
+  }
+
+  &.right {
+    transform: rotate(-90deg);
+  }
+`
+
+export const ControlWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+export const ArrowWrapper = styled.div`
   display: flex;
 `
 
-export const CurrentWeekButton = styled(Button)`
-  text-transform: uppercase;
-  font-size: ${({ theme }) => theme.global.text.fontSize.m};
-  font-weight: ${({ theme }) => theme.global.text.fontWeight.b};
-`
+export const ControlOutWrapper = styled.div`
+  display: flex;
 
-export const ArrowButton = styled(Button)<{ $prev?: boolean; $next?: boolean }>`
-  ${calendarBtnCommonStyles}
+  justify-content: space-between;
+  margin-bottom: ${({ theme }) => theme.global.spacing(4)};
 
-  border-top-right-radius: ${({ $prev }) => ($prev ? '0' : '')};
-  border-bottom-right-radius: ${({ $prev }) => ($prev ? '0' : '')};
-
-  border-top-left-radius: ${({ $next }) => ($next ? '0' : '')};
-  border-bottom-left-radius: ${({ $next }) => ($next ? '0' : '')};
-`
-
-export const ArrowIcon = styled.svg<{ $left?: boolean; $right?: boolean }>`
-  ${arrowIconCommonStyles}
-
-  transform: ${({ $left, $right }) =>
-    $left ? 'rotate(90deg)' : $right ? 'rotate(-90deg)' : 'none'};
+  @media (min-width: ${global.breakpoint.mobile}) {
+    margin-bottom: 0;
+  }
 `
 
 export const ControlButton = styled(Button)`
   ${calendarBtnCommonStyles}
+
+  &:not(:last-child) {
+    margin-right: ${({ theme }) => theme.global.spacing(6)};
+  }
 `

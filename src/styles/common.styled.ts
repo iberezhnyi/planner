@@ -11,15 +11,6 @@ export const btnCommonStyles = css`
   padding: ${({ theme }) => theme.global.spacing(2)};
 `
 
-// export const globalContainer = css`
-//   // @media (min-width: ${global.breakpoint.desktop}) {
-//   //   width: ${({ theme }) => theme.global.breakpoint.desktop};
-
-//   //   margin-left: auto;
-//   //   margin-right: auto;
-//   // }
-// `
-
 export const section = css`
   padding-top: ${({ theme }) => theme.global.spacing(6)};
   padding-bottom: ${({ theme }) => theme.global.spacing(6)};

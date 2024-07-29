@@ -55,6 +55,7 @@ export interface ITheme {
   btnHoverTextColor: string
   accent: string
   inputBgColor: string
+  border: string
   iconColor: string
   iconActiveColor: string
 }
@@ -97,6 +98,7 @@ export interface IGlobalStyles {
     desktop: string
 
     maxTablet: string
+    maxMobile: string
   }
 
   spacing: typeof calculateSpacing
@@ -110,8 +112,6 @@ export interface IBasicAuthFormValues {
   firstName: string
 }
 
-export interface ILoginFormValues
-  extends Pick<IBasicAuthFormValues, 'email' | 'password'> {}
+export interface ILoginFormValues extends Pick<IBasicAuthFormValues, 'email' | 'password'> {}
 
-export interface IRegisterFormValues
-  extends Omit<IBasicAuthFormValues, 'confirmPassword'> {}
+export interface IRegisterFormValues extends Omit<IBasicAuthFormValues, 'confirmPassword'> {}

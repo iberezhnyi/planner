@@ -52,6 +52,7 @@ export const global: IGlobalStyles = {
     tablet: '768px',
     desktop: '1440px',
 
+    maxMobile: '479px',
     maxTablet: '767px',
   },
 

@@ -6,6 +6,7 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
   nav?: boolean
   disabled?: boolean
+  className?: string
 }
 
 export const Button: React.FC<ButtonProps> = ({ children, to, type, nav, ...rest }) => {
