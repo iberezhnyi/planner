@@ -1,0 +1,2 @@
+import{r as t,g as i}from"./index-CsyOjkQH.js";const r=(e=i.breakpoint.maxTablet)=>{const[o,a]=t.useState(window.matchMedia(`(max-width: ${e})`).matches);return t.useEffect(()=>{const s=()=>{a(window.matchMedia(`(max-width: ${e})`).matches),console.log("handleResize")};return window.addEventListener("resize",s),()=>window.removeEventListener("resize",s)},[e]),o};export{r as u};
+//# sourceMappingURL=useIsMobile-DanOif54.js.map
