@@ -1,1 +1,0 @@
-export { WeeksPanel } from './WeeksPanel'

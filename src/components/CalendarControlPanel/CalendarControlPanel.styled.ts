@@ -1,13 +1,5 @@
-import { Button } from 'components/buttons'
 import styled, { css } from 'styled-components'
-import { global } from 'styles'
-
-const calendarBtnCommonStyles = css`
-  background-color: transparent;
-  border: ${({ theme }) => theme.border};
-
-  padding: ${({ theme }) => theme.global.spacing(3)};
-`
+import { global, secondaryBtn } from 'styles'
 
 const arrowIconCommonStyles = css`
   width: 1rem;
@@ -20,14 +12,14 @@ export const CalendarControlPanel = styled.div`
   margin-bottom: ${({ theme }) => theme.global.spacing(4)};
 `
 
-export const CurrentDayButton = styled(Button)`
-  ${calendarBtnCommonStyles}
+export const CurrentDayButton = styled.button`
+  ${secondaryBtn}
 
   text-transform: uppercase;
 `
 
-export const ArrowButton = styled(Button)`
-  ${calendarBtnCommonStyles}
+export const ArrowButton = styled.button`
+  ${secondaryBtn}
 
   &.prev {
     border-top-right-radius: 0;
@@ -72,8 +64,8 @@ export const ControlOutWrapper = styled.div`
   }
 `
 
-export const ControlButton = styled(Button)`
-  ${calendarBtnCommonStyles}
+export const ControlButton = styled.button`
+  ${secondaryBtn}
 
   &:not(:last-child) {
     margin-right: ${({ theme }) => theme.global.spacing(6)};

@@ -1,13 +1,16 @@
 import { CalendarControlPanel } from 'components/CalendarControlPanel'
-import { DaysList } from 'components/DaysList'
-import { FC } from 'react'
+import { WeekList } from 'components/WeekList'
+import { MonthList } from 'components/MonthList'
+import { FC, useState } from 'react'
 
 const CalendarView: FC = () => {
+  const [view, setView] = useState<'week' | 'month'>('week')
+
   return (
     <>
-      <CalendarControlPanel />
+      <CalendarControlPanel setView={setView} />
 
-      <DaysList />
+      {view === 'month' ? <MonthList /> : <WeekList />}
     </>
   )
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { global } from 'styles'
 
-export const DaysList = styled.ul`
+export const WeekList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.global.spacing(6)};
@@ -17,11 +17,11 @@ export const DayItem = styled.li`
   border: ${({ theme }) => theme.border};
   border-radius: 0.5rem;
 
-  @media (min-width: 960px) {
+  @media (min-width: ${global.breakpoint.desktop}) {
     width: calc((100% - 1.5rem) / 2);
   }
 
-  @media (min-width: ${global.breakpoint.desktop}) {
+  @media (min-width: ${global.breakpoint.largeDesktop}) {
     width: calc((100% - 3rem) / 3);
   }
 `

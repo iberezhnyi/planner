@@ -2,7 +2,6 @@ import { FC, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Formik } from 'formik'
 import { useLoginUserMutation, useRegisterUserMutation } from 'store'
-import { Button } from 'components/buttons'
 import { ShowPasswordBtn } from './ShowPasswordBtn/ShowPasswordBtn'
 import * as path from 'routsConfig'
 import { loginFormSchema, registerFormSchema } from '../schemas'
@@ -107,7 +106,7 @@ export const AuthForm: FC<AuthFormProps> = ({ auth }) => {
           </label>
         )}
 
-        <Button type="submit" disabled={isLoginLoading || isRegisterLoading}>
+        <SC.Button type="submit" disabled={isLoginLoading || isRegisterLoading}>
           {isLoginPage ? 'Log in' : 'Register'}
 
           {isLoginLoading || isRegisterLoading ? (
@@ -117,7 +116,7 @@ export const AuthForm: FC<AuthFormProps> = ({ auth }) => {
               <use href={`${sprite}#login`} />
             </SC.IconLogin>
           )}
-        </Button>
+        </SC.Button>
       </SC.FormStyled>
     </Formik>
   )

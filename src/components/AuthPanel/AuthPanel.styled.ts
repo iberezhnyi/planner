@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { styled } from 'styled-components'
-import { btnCommonStyles } from 'styles/common.styled'
+import { btnCommonStyles } from 'styles'
 
 export const ButtonAuth = styled.button`
   ${btnCommonStyles}

@@ -1,16 +1,21 @@
 import { FC, useState } from 'react'
 // import { useClickOutside } from 'hooks'
 import sprite from 'assets/icons/sprite.svg'
-import * as SC from './Day.styled'
+import * as SC from './DayPerWeekList.styled'
 
-interface DayProps {
+interface DayPerWeekListProps {
   day: string
   date: string
   task: string
   text?: string
 }
 
-export const Day: FC<DayProps> = ({ date, day, task, text }) => {
+export const DayPerWeekList: FC<DayPerWeekListProps> = ({
+  date,
+  day,
+  task,
+  text,
+}) => {
   const [isTextareaVisible, setTextareaVisible] = useState(false)
   // const textareaRef = useRef<HTMLTextAreaElement>(null)
 
@@ -33,7 +38,10 @@ export const Day: FC<DayProps> = ({ date, day, task, text }) => {
       </SC.Label>
 
       <SC.ToggleButtonWrapper>
-        <SC.ToggleButton onClick={toggleTextarea} className={isTextareaVisible ? 'open' : ''}>
+        <SC.ToggleButton
+          onClick={toggleTextarea}
+          className={isTextareaVisible ? 'open' : ''}
+        >
           ----------
           <SC.IconDropdown className={isTextareaVisible ? 'open' : ''}>
             <use href={`${sprite}#arrow`} />

@@ -1,12 +1,12 @@
 import { FC } from 'react'
-import * as SC from './DaysList.styled'
-import { Day } from 'components/Day'
+import * as SC from './WeekList.styled'
+import { DayPerWeekList } from 'components/DayPerWeekList'
 
-export const DaysList: FC = () => {
+export const WeekList: FC = () => {
   return (
-    <SC.DaysList>
+    <SC.WeekList>
       <SC.DayItem>
-        <Day
+        <DayPerWeekList
           day="Понеділок"
           date="29.07"
           task="Lorem ipsum dolor sit amet consectetur adipisicing elit."
@@ -16,7 +16,7 @@ export const DaysList: FC = () => {
         />
       </SC.DayItem>
       <SC.DayItem>
-        <Day
+        <DayPerWeekList
           day="Вівторок"
           date="30.07"
           task="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, harum odio nostrum alias neque pariatur eaque suscipit. Alias accusamus minus nulla? Totam rerum sapiente consequatur, officia quasi esse. Iure, magnam.
@@ -25,7 +25,7 @@ export const DaysList: FC = () => {
         />
       </SC.DayItem>
       <SC.DayItem>
-        <Day
+        <DayPerWeekList
           day="Середа"
           date="31.07"
           task="Illum, repellendus voluptatibus distinctio quam, quod debitis placeat odio magnam quisquam at similique tempora facilis illo. Optio incidunt odit eius illum est minus, molestias quas culpa, pariatur corrupti nobis cumque!"
@@ -37,7 +37,7 @@ export const DaysList: FC = () => {
         />
       </SC.DayItem>
       <SC.DayItem>
-        <Day
+        <DayPerWeekList
           day="Четвер"
           date="01.08"
           task="Culpa facere possimus quaerat maiores velit autem quidem suscipit repudiandae soluta. Facere impedit earum, accusamus minima sapiente perferendis dolor!
@@ -45,10 +45,14 @@ export const DaysList: FC = () => {
         />
       </SC.DayItem>
       <SC.DayItem>
-        <Day day="П'ятниця" date="02.08" task="Recusandae eligendi maiores ducimus!" />
+        <DayPerWeekList
+          day="П'ятниця"
+          date="02.08"
+          task="Recusandae eligendi maiores ducimus!"
+        />
       </SC.DayItem>
       <SC.DayItem>
-        <Day
+        <DayPerWeekList
           day="Субота"
           date="03.08"
           task="Recusandae eligendi maiores ducimus neque omnis debitis veniam dolor impedit molestias, quia sed nostrum, nesciunt voluptatum blanditiis. Neque accusamus impedit recusandae consequuntur distinctio repellendus vitae odit, sunt quas delectus quam!"
@@ -57,7 +61,7 @@ export const DaysList: FC = () => {
         />
       </SC.DayItem>
       <SC.DayItem>
-        <Day
+        <DayPerWeekList
           day="Неділя"
           date="04.08"
           task="Culpa facere possimus quaerat maiores velit autem quidem suscipit repudiandae soluta. Facere impedit earum, accusamus minima sapiente perferendis dolor!
@@ -71,6 +75,6 @@ export const DaysList: FC = () => {
       Illum, repellendus voluptatibus distinctio quam, quod debitis placeat odio magnam quisquam at similique tempora facilis illo. Optio incidunt odit eius illum est minus, molestias quas culpa, pariatur corrupti nobis cumque!"
         />
       </SC.DayItem>
-    </SC.DaysList>
+    </SC.WeekList>
   )
 }

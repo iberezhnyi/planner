@@ -1,4 +1,5 @@
 export { themes } from './themes'
 export { global } from './global'
+export { btnCommonStyles, primaryBtn, secondaryBtn } from './buttons.styled'
 export { Global } from './Global.styled'
 export * from './common.styled'

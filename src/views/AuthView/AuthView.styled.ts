@@ -30,7 +30,7 @@ export const ContentWrapper = styled.div`
     width: 70%;
   }
 
-  @media (min-width: ${global.breakpoint.desktop}) {
+  @media (min-width: ${global.breakpoint.largeDesktop}) {
     width: 50%;
   }
 `

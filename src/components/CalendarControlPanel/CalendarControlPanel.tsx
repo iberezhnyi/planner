@@ -4,7 +4,13 @@ import * as SC from './CalendarControlPanel.styled'
 import { useIsMobile } from 'hooks'
 import { global } from 'styles'
 
-export const CalendarControlPanel: FC = () => {
+interface CalendarControlPanelProps {
+  setView: (view: 'week' | 'month') => void
+}
+
+export const CalendarControlPanel: FC<CalendarControlPanelProps> = ({
+  setView,
+}) => {
   const isMobile = useIsMobile(global.breakpoint.maxMobile)
 
   return (
@@ -14,8 +20,12 @@ export const CalendarControlPanel: FC = () => {
 
         {!isMobile && (
           <SC.ControlWrapper>
-            <SC.ControlButton type="button">Місяць</SC.ControlButton>
-            <SC.ControlButton type="button">Тиждень</SC.ControlButton>
+            <SC.ControlButton type="button" onClick={() => setView('month')}>
+              Місяць
+            </SC.ControlButton>
+            <SC.ControlButton type="button" onClick={() => setView('week')}>
+              Тиждень
+            </SC.ControlButton>
           </SC.ControlWrapper>
         )}
 
@@ -36,8 +46,12 @@ export const CalendarControlPanel: FC = () => {
 
       {isMobile && (
         <SC.ControlWrapper>
-          <SC.ControlButton type="button">Місяць</SC.ControlButton>
-          <SC.ControlButton type="button">Тиждень</SC.ControlButton>
+          <SC.ControlButton type="button" onClick={() => setView('month')}>
+            Місяць
+          </SC.ControlButton>
+          <SC.ControlButton type="button" onClick={() => setView('week')}>
+            Тиждень
+          </SC.ControlButton>
         </SC.ControlWrapper>
       )}
     </SC.CalendarControlPanel>

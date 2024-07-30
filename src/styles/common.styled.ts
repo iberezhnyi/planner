@@ -1,16 +1,6 @@
 import { css } from 'styled-components'
 import { global } from './global'
 
-export const btnCommonStyles = css`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: ${({ theme }) => theme.global.spacing(2)};
-
-  padding: ${({ theme }) => theme.global.spacing(2)};
-`
-
 export const section = css`
   padding-top: ${({ theme }) => theme.global.spacing(6)};
   padding-bottom: ${({ theme }) => theme.global.spacing(6)};
@@ -20,7 +10,7 @@ export const section = css`
     padding-bottom: ${({ theme }) => theme.global.spacing(8)};
   }
 
-  @media (min-width: ${global.breakpoint.desktop}) {
+  @media (min-width: ${global.breakpoint.largeDesktop}) {
     padding-top: ${({ theme }) => theme.global.spacing(12)};
     padding-bottom: ${({ theme }) => theme.global.spacing(12)};
   }
@@ -35,7 +25,7 @@ export const container = css`
     padding-right: ${({ theme }) => theme.global.spacing(8)};
   }
 
-  @media (min-width: ${global.breakpoint.desktop}) {
+  @media (min-width: ${global.breakpoint.largeDesktop}) {
     padding-left: ${({ theme }) => theme.global.spacing(12)};
     padding-right: ${({ theme }) => theme.global.spacing(12)};
   }

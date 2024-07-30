@@ -1,1 +1,1 @@
-export { CalendarControlPanel } from './CalendarControlPanel.tsx'
+export { CalendarControlPanel } from './CalendarControlPanel'

@@ -96,9 +96,12 @@ export interface IGlobalStyles {
     mobile: string
     tablet: string
     desktop: string
+    largeDesktop: string
 
-    maxTablet: string
     maxMobile: string
+    maxTablet: string
+    maxDesktop: string
+    maxLargeDesktop: string
   }
 
   spacing: typeof calculateSpacing

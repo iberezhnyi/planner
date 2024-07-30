@@ -50,10 +50,13 @@ export const global: IGlobalStyles = {
   breakpoint: {
     mobile: '480px',
     tablet: '768px',
-    desktop: '1440px',
+    desktop: '960px',
+    largeDesktop: '1440px',
 
     maxMobile: '479px',
     maxTablet: '767px',
+    maxDesktop: '959px',
+    maxLargeDesktop: '1439px',
   },
 
   spacing: calculateSpacing,

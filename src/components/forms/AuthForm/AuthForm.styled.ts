@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Form } from 'formik'
 import styled from 'styled-components'
+import { primaryBtn } from 'styles'
 
 export const FormStyled = styled(Form)`
   display: flex;
@@ -47,4 +48,8 @@ export const IconLogin = styled.svg`
 
   fill: transparent;
   stroke: currentColor;
+`
+
+export const Button = styled.button`
+  ${primaryBtn}
 `

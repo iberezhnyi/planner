@@ -24,7 +24,7 @@ export const NavigationItem = styled(MenuItem)`
       padding-left: ${({ theme }) => theme.global.spacing(8)};
     }
 
-    @media (min-width: ${global.breakpoint.desktop}) {
+    @media (min-width: ${global.breakpoint.largeDesktop}) {
       padding-left: ${({ theme }) => theme.global.spacing(12)};
     }
   }

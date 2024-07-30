@@ -1,1 +1,0 @@
-export { DaysList } from './DaysList'
