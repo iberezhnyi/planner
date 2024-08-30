@@ -41,7 +41,7 @@ const AuthView: FC = () => {
         setErrorMessage('')
         const data = await loginUser(body as ILoginFormValues).unwrap()
 
-        successNotification(`Welcome back, ${data.user.firstName}!`)
+        successNotification(`Welcome back, ${data.user.email}!`)
       } else {
         const { email, password, firstName } = body as IBasicAuthFormValues
         const registerBody: IRegisterFormValues = {
@@ -54,7 +54,7 @@ const AuthView: FC = () => {
         const data = await registerUser(registerBody).unwrap()
 
         successNotification(
-          `Welcome, ${data.user.firstName}! Thank you for registering!`
+          `Welcome, ${data.user.email}! Thank you for registering!`
         )
       }
 

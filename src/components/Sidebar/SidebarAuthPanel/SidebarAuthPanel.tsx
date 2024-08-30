@@ -2,6 +2,7 @@ import { FC } from 'react'
 import * as SC from './SidebarAuthPanel.styled'
 import { selectProfile } from 'store'
 import { useSelector } from 'react-redux'
+import UserImagePlaceholder from 'assets/images/user/user-image-placeholder.png'
 
 export const SidebarAuthPanel: FC = () => {
   const profile = useSelector(selectProfile)
@@ -9,7 +10,11 @@ export const SidebarAuthPanel: FC = () => {
     <SC.SidebarAuthPanel>
       <SC.SidebarAuthPanelList>
         <SC.SidebarAuthItem>
-          <SC.SidebarAuthImg src={profile?.image} alt="User photo" width="60" />
+          <SC.SidebarAuthImg
+            src={profile?.image || UserImagePlaceholder}
+            alt="User photo"
+            width="60"
+          />
         </SC.SidebarAuthItem>
         <SC.SidebarAuthItem>
           <SC.SidebarAuthInfo>{profile?.firstName}</SC.SidebarAuthInfo>

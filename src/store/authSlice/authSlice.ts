@@ -1,20 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { authApi } from './authApi'
-import { IAuthState } from 'types'
+import { IAuthRefreshResponse, IAuthState } from 'types'
 
 const initialState: IAuthState = {
   token: '',
   profile: null,
-  // isLoading: false,
-  // isError: null,
-  // isSuccess: true,
 }
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    logoutAction: (state) => {
+    setCredentials: (state, action: PayloadAction<IAuthRefreshResponse>) => {
+      state.token = action.payload.access_token
+      // state.profile = action.payload.user
+      // localStorage.setItem('persist:auth', JSON.stringify(action.payload))
+    },
+
+    clearCredentials: (state) => {
       state.token = ''
       state.profile = null
       localStorage.removeItem('persist:auth')
@@ -26,7 +29,7 @@ export const authSlice = createSlice({
       .addMatcher(
         authApi.endpoints.registerUser.matchFulfilled,
         (state, { payload }) => {
-          state.token = payload.token
+          state.token = payload.access_token
           state.profile = payload.user
         }
       )
@@ -34,23 +37,40 @@ export const authSlice = createSlice({
       .addMatcher(
         authApi.endpoints.loginUser.matchFulfilled,
         (state, { payload }) => {
-          state.token = payload.token
+          state.token = payload.access_token
           state.profile = payload.user
-
-          // state.isLoading = false
-          // state.isError = null
-          // state.isSuccess = true
         }
       )
 
       .addMatcher(
-        authApi.endpoints.refreshUser.matchFulfilled,
+        authApi.endpoints.getProfile.matchFulfilled,
         (state, { payload }) => {
-          state.token = payload.token
+          // state.token = payload.access_token
           state.profile = payload.user
         }
       )
+
+      .addMatcher(authApi.endpoints.getProfile.matchRejected, (state) => {
+        state.token = ''
+        state.profile = null
+        localStorage.removeItem('persist:auth')
+      })
+
+      .addMatcher(
+        authApi.endpoints.refreshUser.matchFulfilled,
+        (state, { payload }) => {
+          state.token = payload.access_token
+          // state.profile = payload.user
+        }
+      )
+
       .addMatcher(authApi.endpoints.refreshUser.matchRejected, (state) => {
+        state.token = ''
+        state.profile = null
+        localStorage.removeItem('persist:auth')
+      })
+
+      .addMatcher(authApi.endpoints.logoutUser.matchFulfilled, (state) => {
         state.token = ''
         state.profile = null
         localStorage.removeItem('persist:auth')
@@ -59,4 +79,5 @@ export const authSlice = createSlice({
 })
 
 export const authReducer = authSlice.reducer
-export const { logoutAction } = authSlice.actions
+export const { setCredentials, clearCredentials } = authSlice.actions
+// export const { logoutAction } = authSlice.actions

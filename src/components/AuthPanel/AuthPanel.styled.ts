@@ -1,6 +1,13 @@
+import { FloatingFocusManager } from '@floating-ui/react'
 import { NavLink } from 'react-router-dom'
 import { styled } from 'styled-components'
 import { btnCommonStyles } from 'styles'
+
+export const FloatingFocusManagerStyled = styled(FloatingFocusManager)`
+  &.Popover {
+    z-index: 1;
+  }
+`
 
 export const ButtonAuth = styled.button`
   ${btnCommonStyles}
@@ -58,6 +65,7 @@ export const IconDropdown = styled.svg`
 `
 
 export const List = styled.ul`
+  z-index: 1;
   padding: ${({ theme }) => theme.global.spacing(4)};
 
   border-radius: 0.75rem;

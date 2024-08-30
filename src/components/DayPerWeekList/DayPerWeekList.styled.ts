@@ -19,9 +19,30 @@ export const Date = styled.p`
 export const Checkbox = styled.input`
   margin-right: 10px;
 `
+export const LabelTaskWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+`
 
-export const Label = styled.label`
-  margin-bottom: 20px;
+export const LabelTask = styled.label`
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+`
+
+export const TaskTitle = styled.p`
+  display: inline;
+
+  margin-bottom: 5px;
+`
+
+export const TaskDescription = styled.p`
+  /* display: inline; */
+
+  text-indent: 3ch;
 `
 
 export const Textarea = styled.textarea`

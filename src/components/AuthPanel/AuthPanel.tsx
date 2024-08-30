@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import {
   useFloating,
   autoUpdate,
@@ -11,14 +11,18 @@ import {
   FloatingFocusManager,
   useId,
 } from '@floating-ui/react'
-import { logoutAction, selectProfile, useLoginUserMutation, useRegisterUserMutation } from 'store'
+import {
+  selectProfile,
+  useLoginUserMutation,
+  useLogoutUserMutation,
+  useRegisterUserMutation,
+} from 'store'
 import { Loader } from 'components/common'
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './AuthPanel.styled'
 
 export const AuthPanel: FC = () => {
   const profile = useSelector(selectProfile)
-  const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const [, { isLoading: isLoginLoading }] = useLoginUserMutation({
@@ -28,9 +32,10 @@ export const AuthPanel: FC = () => {
     fixedCacheKey: 'register-user',
   })
 
-  // Переписати, якщо бек зберігає токен в БД
-  const handleLogOut = () => {
-    dispatch(logoutAction())
+  const [logout] = useLogoutUserMutation()
+
+  const handleLogOut = async () => {
+    await logout()
     navigate('/login')
     setIsOpen(false)
   }
@@ -47,14 +52,18 @@ export const AuthPanel: FC = () => {
   const role = useRole(context, {
     role: 'menu',
   })
-  const { getReferenceProps, getFloatingProps } = useInteractions([click, dismiss, role])
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    click,
+    dismiss,
+    role,
+  ])
   const headingId = useId()
 
   return (
     <>
       {profile && (
         <SC.ButtonAuth ref={refs.setReference} {...getReferenceProps()}>
-          <SC.Username>{profile.firstName}</SC.Username>
+          <SC.Username>{profile.email}</SC.Username>
 
           <SC.IconUser>
             <use href={`${sprite}#user`} />

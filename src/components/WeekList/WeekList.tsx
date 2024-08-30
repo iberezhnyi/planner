@@ -1,11 +1,20 @@
 import { FC } from 'react'
 import * as SC from './WeekList.styled'
 import { DayPerWeekList } from 'components/DayPerWeekList'
+import { useGetWeekInfoQuery } from 'store'
 
 export const WeekList: FC = () => {
+  const { data } = useGetWeekInfoQuery()
+  console.log('data :>> ', data?.weekDays)
+
   return (
     <SC.WeekList>
-      <SC.DayItem>
+      {data?.weekDays?.map((day) => (
+        <SC.DayItem key={day.id}>
+          <DayPerWeekList {...day} />
+        </SC.DayItem>
+      ))}
+      {/* <SC.DayItem>
         <DayPerWeekList
           day="Понеділок"
           date="29.07"
@@ -74,7 +83,7 @@ export const WeekList: FC = () => {
       Molestias quae laborum atque saepe vero impedit nobis harum blanditiis perspiciatis cumque neque ab asperiores repellendus voluptas voluptatibus deserunt at, aut aliquid eveniet. Ipsam officiis sequi blanditiis, iure consectetur molestiae!
       Illum, repellendus voluptatibus distinctio quam, quod debitis placeat odio magnam quisquam at similique tempora facilis illo. Optio incidunt odit eius illum est minus, molestias quas culpa, pariatur corrupti nobis cumque!"
         />
-      </SC.DayItem>
+      </SC.DayItem> */}
     </SC.WeekList>
   )
 }

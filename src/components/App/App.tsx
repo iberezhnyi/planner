@@ -1,8 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
-import { selectProfile } from 'store'
-import { useRefreshUserQuery } from 'store/authSlice/authApi'
+import { selectProfile, useGetProfileQuery } from 'store'
 import { PrivateRoute, PublicRoute } from 'guards'
 import { Loader } from 'components/common'
 
@@ -15,11 +14,16 @@ const ServicesView = lazy(() => import('views/ServicesView'))
 
 export const App = () => {
   const profile = useSelector(selectProfile)
-  const { data: refreshData } = useRefreshUserQuery()
+  const { data: profileData } = useGetProfileQuery(undefined, {
+    skip: Boolean(profile), // пропускаем запрос, если профиль уже загружен
+  })
 
   useEffect(() => {
-    !profile && refreshData
-  }, [profile, refreshData])
+    if (profileData) {
+      // Обновите профиль в стейте, если он успешно получен
+      // Например, вызовите dispatch с нужным действием для обновления профиля
+    }
+  }, [profileData])
 
   return (
     <Suspense fallback={<Loader className="large centered" />}>

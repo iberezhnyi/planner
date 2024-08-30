@@ -2,19 +2,15 @@ import { FC, useState } from 'react'
 // import { useClickOutside } from 'hooks'
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './DayPerWeekList.styled'
+import { IWeekDay } from 'types'
 
-interface DayPerWeekListProps {
-  day: string
-  date: string
-  task: string
-  text?: string
-}
+interface DayPerWeekListProps extends IWeekDay {}
 
 export const DayPerWeekList: FC<DayPerWeekListProps> = ({
+  notes,
+  tasks,
   date,
   day,
-  task,
-  text,
 }) => {
   const [isTextareaVisible, setTextareaVisible] = useState(false)
   // const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -29,13 +25,19 @@ export const DayPerWeekList: FC<DayPerWeekListProps> = ({
     <>
       <SC.Header>
         <SC.DayName>{day}</SC.DayName>
-        <SC.Date>{date}</SC.Date>
+        <SC.Date>{date.toString().slice(0, 10)}</SC.Date>
       </SC.Header>
 
-      <SC.Label>
-        <SC.Checkbox type="checkbox" />
-        {task}
-      </SC.Label>
+      <SC.LabelTaskWrapper>
+        {tasks &&
+          tasks.map((task) => (
+            <SC.LabelTask key={task._id}>
+              <SC.Checkbox type="checkbox" />
+              <SC.TaskTitle>{task.title}</SC.TaskTitle>
+              <SC.TaskDescription>{task.description}</SC.TaskDescription>
+            </SC.LabelTask>
+          ))}
+      </SC.LabelTaskWrapper>
 
       <SC.ToggleButtonWrapper>
         <SC.ToggleButton
@@ -49,10 +51,8 @@ export const DayPerWeekList: FC<DayPerWeekListProps> = ({
           ----------
         </SC.ToggleButton>
       </SC.ToggleButtonWrapper>
-
       {isTextareaVisible && <SC.Textarea />}
-
-      <SC.Text>{text}</SC.Text>
+      <SC.Text>{notes ? notes.note : 'My note'}</SC.Text>
     </>
   )
 }

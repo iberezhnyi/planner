@@ -2,29 +2,33 @@ import { calculateSpacing } from 'helpers'
 
 // Auth, Profile
 export interface IUserProfile {
-  firstName: string
+  id: string
   email: string
-  password: string
-  _id: string
-  lastName: string
-  gender: string
-  phone: string
-  image: string
+  subscription: string
+  role: string
 }
 
 export interface IAuthState {
   token: string
   profile: IUserProfile | null
-  // isLoading: boolean
-  // isError: string | null
-  // isSuccess: boolean
 }
 
 export interface IAuthResponse {
-  statusMessage: string
-  token: string
+  message: string
+  access_token: string
   user: IUserProfile
 }
+
+export interface IAuthRefreshResponse {
+  message?: string
+  access_token: string
+}
+
+export interface ILoginFormValues
+  extends Pick<IBasicAuthFormValues, 'email' | 'password'> {}
+
+export interface IRegisterFormValues
+  extends Omit<IBasicAuthFormValues, 'confirmPassword'> {}
 
 // Theme
 export type ThemeNameType = 'dark' | 'light'
@@ -114,7 +118,3 @@ export interface IBasicAuthFormValues {
   confirmPassword: string
   firstName: string
 }
-
-export interface ILoginFormValues extends Pick<IBasicAuthFormValues, 'email' | 'password'> {}
-
-export interface IRegisterFormValues extends Omit<IBasicAuthFormValues, 'confirmPassword'> {}

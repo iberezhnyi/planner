@@ -13,6 +13,8 @@ import storage from 'redux-persist/lib/storage'
 import { themeReducer } from './themeSlice/themeSlice'
 import { authReducer } from './authSlice/authSlice.ts'
 import { authApi } from './authSlice/authApi.ts'
+import { weeksApi } from './weeksSlice/weeksApi.ts'
+import { weeksReducer } from './weeksSlice/weeksSlice.ts'
 
 const themePersistConfig = {
   key: 'theme',
@@ -30,6 +32,8 @@ const reducer = {
   theme: persistReducer(themePersistConfig, themeReducer),
   auth: persistReducer(authPersistConfig, authReducer),
   [authApi.reducerPath]: authApi.reducer,
+  [weeksApi.reducerPath]: weeksApi.reducer,
+  weeks: weeksReducer,
 }
 
 export const store = configureStore({
@@ -39,7 +43,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(authApi.middleware),
+    }).concat(authApi.middleware, weeksApi.middleware),
 })
 
 export const persistor = persistStore(store)
