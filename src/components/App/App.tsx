@@ -4,6 +4,8 @@ import { Route, Routes } from 'react-router-dom'
 import { selectProfile, useGetProfileQuery } from 'store'
 import { PrivateRoute, PublicRoute } from 'guards'
 import { Loader } from 'components/common'
+// import { MonthList } from 'components/MonthList'
+// import { WeekList } from 'components/WeekList'
 
 const MainLayout = lazy(() => import('layouts/MainLayout'))
 const HomeView = lazy(() => import('views/HomeView'))
@@ -11,6 +13,8 @@ const AuthView = lazy(() => import('views/AuthView'))
 const CalendarView = lazy(() => import('views/CalendarView'))
 const ContactsView = lazy(() => import('views/ContactsView'))
 const ServicesView = lazy(() => import('views/ServicesView'))
+const WeekList = lazy(() => import('components/WeekList'))
+const MonthList = lazy(() => import('components/MonthList'))
 
 export const App = () => {
   const profile = useSelector(selectProfile)
@@ -30,7 +34,10 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomeView />} />
-          <Route path="calendar" element={<CalendarView />} />
+          <Route path="calendar" element={<CalendarView />}>
+            <Route path="weeks" element={<WeekList />} />
+            <Route path="months" element={<MonthList />} />
+          </Route>
 
           <Route path="" element={<PrivateRoute />}>
             <Route path="services" element={<ServicesView />} />

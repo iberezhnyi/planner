@@ -1,16 +1,22 @@
 import { CalendarControlPanel } from 'components/CalendarControlPanel'
-import { WeekList } from 'components/WeekList'
-import { MonthList } from 'components/MonthList'
-import { FC, useState } from 'react'
+// import WeekList from 'components/WeekList'
+// import { MonthList } from 'components/MonthList'
+import { FC, Suspense, useState } from 'react'
+import { Outlet } from 'react-router-dom'
+import { Loader } from 'components/common'
 
 const CalendarView: FC = () => {
-  const [view, setView] = useState<'week' | 'month'>('week')
+  const [view, setView] = useState<'weeks' | 'months'>('weeks')
 
   return (
     <>
       <CalendarControlPanel setView={setView} />
 
-      {view === 'month' ? <MonthList /> : <WeekList />}
+      {/* {view === 'months' ? <MonthList /> : <WeekList />} */}
+
+      <Suspense fallback={<Loader className="large centered" />}>
+        <Outlet />
+      </Suspense>
     </>
   )
 }

@@ -1,1 +1,1 @@
-export { WeekList } from './WeekList'
+export { default } from './WeekList'

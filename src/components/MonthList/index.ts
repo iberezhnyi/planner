@@ -1,1 +1,1 @@
-export { MonthList } from './MonthList'
+export { default } from './MonthList'

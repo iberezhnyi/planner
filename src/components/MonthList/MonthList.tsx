@@ -8,7 +8,7 @@ const days = [
   23, 24, 25, 26, 27, 28, 29, 30, 31,
 ]
 
-export const MonthList: FC = () => {
+const MonthList: FC = () => {
   return (
     <SC.MonthList>
       {days.map((day) => (
@@ -19,3 +19,5 @@ export const MonthList: FC = () => {
     </SC.MonthList>
   )
 }
+
+export default MonthList
