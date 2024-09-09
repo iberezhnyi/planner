@@ -1,16 +1,18 @@
-import { FloatingFocusManager } from '@floating-ui/react'
 import { NavLink } from 'react-router-dom'
 import { styled } from 'styled-components'
-import { btnCommonStyles } from 'styles'
+import { btnCommonStyles, global } from 'styles'
 
-export const FloatingFocusManagerStyled = styled(FloatingFocusManager)`
-  &.Popover {
-    z-index: 1;
-  }
+export const Popover = styled.div`
+  z-index: 1;
 `
 
 export const ButtonAuth = styled.button`
   ${btnCommonStyles}
+
+  @media (max-width: ${global.breakpoint.maxTablet}) {
+    max-width: 220px;
+    font-size: 12px;
+  }
 
   color: ${({ theme }) => theme.global.text.color.white};
 
@@ -42,6 +44,11 @@ export const LinkAuth = styled(NavLink)`
 
 export const Username = styled.p`
   margin-bottom: 0;
+
+  @media (max-width: ${global.breakpoint.maxTablet}) {
+    max-width: 220px;
+    overflow: hidden;
+  }
 `
 
 export const IconUser = styled.svg`
@@ -65,7 +72,6 @@ export const IconDropdown = styled.svg`
 `
 
 export const List = styled.ul`
-  z-index: 1;
   padding: ${({ theme }) => theme.global.spacing(4)};
 
   border-radius: 0.75rem;

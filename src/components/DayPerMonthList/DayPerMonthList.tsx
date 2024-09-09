@@ -2,16 +2,14 @@ import { FC } from 'react'
 import * as SC from './DayPerMonthList.styled'
 import { useIsMobile } from 'hooks'
 import { global } from 'styles'
+import { IMonthsDay } from 'types'
 
-interface DayPerMonthListProps {
-  day: number
-}
-
-export const DayPerMonthList: FC<DayPerMonthListProps> = ({ day }) => {
+export const DayPerMonthList: FC<IMonthsDay> = ({ day, month, year }) => {
   const isDesktop = useIsMobile(global.breakpoint.desktop)
   return (
     <SC.DayContent>
       <SC.Date>{day}</SC.Date>
+      {/* <p>{`${month}.${year}`}</p> */}
       {!isDesktop && <div>Info about day</div>}
     </SC.DayContent>
   )

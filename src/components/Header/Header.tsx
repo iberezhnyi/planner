@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef } from 'react'
-import { MobileMenuButton } from 'components/buttons'
+import { MobileMenuButton, ToggleThemeButton } from 'components/buttons'
 import * as SC from './Header.styled'
 import { AuthPanel } from 'components/AuthPanel'
 import Logo from 'assets/logo/logo-placeholder4.png'
@@ -11,7 +11,11 @@ interface HeaderProps {
   setHeaderHeight: (height: number) => void
 }
 
-export const Header: FC<HeaderProps> = ({ handleClick, mobileMenu, setHeaderHeight }) => {
+export const Header: FC<HeaderProps> = ({
+  handleClick,
+  mobileMenu,
+  setHeaderHeight,
+}) => {
   const isMobile = useIsMobile()
   const headerRef = useRef<HTMLDivElement>(null)
 
@@ -24,11 +28,23 @@ export const Header: FC<HeaderProps> = ({ handleClick, mobileMenu, setHeaderHeig
   return (
     <SC.HeaderSection ref={headerRef}>
       <SC.HeaderContainer>
-        {isMobile && <MobileMenuButton onClick={() => handleClick()} mobileMenu={mobileMenu} />}
+        {isMobile && (
+          <MobileMenuButton
+            onClick={() => handleClick()}
+            mobileMenu={mobileMenu}
+          />
+        )}
 
         {!isMobile && <SC.Logo src={Logo} alt="Logo" width="130" />}
 
-        <AuthPanel />
+        <SC.HeaderWrapper>
+          <SC.HeaderWrapperItem>
+            <AuthPanel />
+          </SC.HeaderWrapperItem>
+          <SC.HeaderWrapperItem>
+            <ToggleThemeButton />
+          </SC.HeaderWrapperItem>
+        </SC.HeaderWrapper>
       </SC.HeaderContainer>
     </SC.HeaderSection>
   )

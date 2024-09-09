@@ -1,3 +1,4 @@
+import { Link, NavLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import { global, secondaryBtn } from 'styles'
 
@@ -12,10 +13,19 @@ export const CalendarControlPanel = styled.div`
   margin-bottom: ${({ theme }) => theme.global.spacing(4)};
 `
 
-export const CurrentDayButton = styled.button`
+export const CurrentPeriod = styled.div`
   ${secondaryBtn}
 
+  min-width: 11rem;
+
   text-transform: uppercase;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: inherit;
+    color: ${({ theme }) => theme.btnTextColor};
+  }
 `
 
 export const ArrowButton = styled.button`
@@ -34,6 +44,9 @@ export const ArrowButton = styled.button`
 
 export const ArrowIcon = styled.svg`
   ${arrowIconCommonStyles}
+
+  fill: ${({ theme }) => theme.btnTextColor};
+  stroke: ${({ theme }) => theme.btnTextColor};
 
   &.left {
     transform: rotate(90deg);
@@ -64,8 +77,11 @@ export const ControlOutWrapper = styled.div`
   }
 `
 
-export const ControlButton = styled.button`
+export const ControlLink = styled(NavLink)`
   ${secondaryBtn}
+
+  /* &:active {
+  } */
 
   &:not(:last-child) {
     margin-right: ${({ theme }) => theme.global.spacing(6)};

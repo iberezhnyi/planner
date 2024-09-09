@@ -1,3 +1,6 @@
 export * from './types'
 export type { IWeekDay } from './weeksTypes.ts'
 export type { IWeeksResponse } from './weeksTypes.ts'
+export type { IMonthsReq } from './monthsTypes.ts'
+export type { IMonthsResponse } from './monthsTypes.ts'
+export type { IMonthsDay } from './monthsTypes.ts'

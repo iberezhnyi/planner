@@ -22,3 +22,17 @@ export const HeaderContainer = styled.div`
 export const Logo = styled.img`
   /* margin-left: 50px; */
 `
+
+export const HeaderWrapper = styled.ul`
+  display: flex;
+`
+
+export const HeaderWrapperItem = styled.li`
+  display: flex;
+
+  @media (min-width: ${global.breakpoint.tablet}) {
+    &:not(:last-child) {
+      margin-right: ${({ theme }) => theme.global.spacing(3)};
+    }
+  }
+`

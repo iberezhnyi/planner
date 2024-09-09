@@ -18,6 +18,7 @@ export default defineConfig({
       guards: '/src/guards',
       routsConfig: '/src/routsConfig',
       helpers: '/src/helpers',
+      constants: '/src/constants',
     },
   },
 

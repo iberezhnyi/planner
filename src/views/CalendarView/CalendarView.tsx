@@ -1,18 +1,18 @@
 import { CalendarControlPanel } from 'components/CalendarControlPanel'
-// import WeekList from 'components/WeekList'
-// import { MonthList } from 'components/MonthList'
-import { FC, Suspense, useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { FC, Suspense } from 'react'
+import { Outlet, useSearchParams } from 'react-router-dom'
 import { Loader } from 'components/common'
+import { useGetWeekInfoQuery } from 'store/weeksApi'
+import { IWeeksResponse } from 'types'
 
 const CalendarView: FC = () => {
-  const [view, setView] = useState<'weeks' | 'months'>('weeks')
+  const [searchParams] = useSearchParams()
+  const date = searchParams.get('date')
+  const { data } = useGetWeekInfoQuery({ date })
 
   return (
     <>
-      <CalendarControlPanel setView={setView} />
-
-      {/* {view === 'months' ? <MonthList /> : <WeekList />} */}
+      <CalendarControlPanel weekData={data as IWeeksResponse} />
 
       <Suspense fallback={<Loader className="large centered" />}>
         <Outlet />

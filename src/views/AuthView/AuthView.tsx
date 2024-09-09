@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { useLoginUserMutation, useRegisterUserMutation } from 'store'
+import { useLoginUserMutation, useRegisterUserMutation } from 'store/authApi'
 import * as path from 'routsConfig'
 import {
   IBasicAuthFormValues,

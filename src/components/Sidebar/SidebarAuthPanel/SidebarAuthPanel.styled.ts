@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { container, global } from 'styles'
 
 export const SidebarAuthPanel = styled.div`
-  padding-top: ${({ theme }) => theme.global.spacing(12)};
+  padding-top: ${({ theme }) => theme.global.spacing(16)};
   padding-bottom: ${({ theme }) => theme.global.spacing(2)};
 
   background-color: ${({ theme }) => theme.secondaryBgColor};

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import * as SC from './SidebarAuthPanel.styled'
-import { selectProfile } from 'store'
+import { selectProfile } from 'store/selectors'
 import { useSelector } from 'react-redux'
 import UserImagePlaceholder from 'assets/images/user/user-image-placeholder.png'
 

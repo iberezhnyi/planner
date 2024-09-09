@@ -5,7 +5,7 @@ import {
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/query/react'
 import { setCredentials, clearCredentials } from './authSlice'
-import { RootState } from '../store'
+import { RootState } from 'store'
 import { IAuthRefreshResponse } from 'types'
 
 const baseQuery = fetchBaseQuery({
@@ -16,6 +16,7 @@ const baseQuery = fetchBaseQuery({
     if (token) {
       headers.set('Authorization', `Bearer ${token}`)
     }
+
     return headers
   },
 })

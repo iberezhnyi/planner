@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { selectTheme, changeThemeAction } from 'store'
+import { changeThemeAction } from 'store/themeSlice'
+import { selectTheme } from 'store/selectors'
 import { ThemeNameType } from 'types'
 
 export const useThemeToggle = (): [

@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import { useSelector } from 'react-redux'
-import { selectProfile } from 'store'
+import { selectProfile } from 'store/selectors'
 import { SidebarAuthPanel } from './SidebarAuthPanel/SidebarAuthPanel'
 import { Navigation } from 'components/Navigation'
-import { ToggleThemeButton } from 'components/buttons'
+// import { ToggleThemeButton } from 'components/buttons'
 import { Footer } from 'components/Footer'
 import { global } from 'styles'
 import * as SC from './Sidebar.styled'
@@ -14,7 +14,11 @@ interface SidebarProps {
   headerHeight: number
 }
 
-export const Sidebar: FC<SidebarProps> = ({ mobileMenu, setMobileMenu, headerHeight }) => {
+export const Sidebar: FC<SidebarProps> = ({
+  mobileMenu,
+  setMobileMenu,
+  headerHeight,
+}) => {
   const profile = useSelector(selectProfile)
 
   return (
@@ -31,7 +35,7 @@ export const Sidebar: FC<SidebarProps> = ({ mobileMenu, setMobileMenu, headerHei
 
         <Navigation setMobileMenu={setMobileMenu} />
 
-        <ToggleThemeButton />
+        {/* <ToggleThemeButton /> */}
       </SC.SidebarWrapper>
 
       {profile && <Footer />}

@@ -1,14 +1,13 @@
 import { FC } from 'react'
 import * as SC from './WeekList.styled'
 import { DayPerWeekList } from 'components/DayPerWeekList'
-import { useGetWeekInfoQuery } from 'store'
-// import { Loader } from 'components/common'
+import { useGetWeekInfoQuery } from 'store/weeksApi'
+import { useSearchParams } from 'react-router-dom'
 
 const WeekList: FC = () => {
-  const { data, isFetching } = useGetWeekInfoQuery()
-  console.log('data :>> ', data?.weekDays)
-
-  console.log('isFetching :>> ', isFetching)
+  const [searchParams] = useSearchParams()
+  const date = searchParams.get('date')
+  const { data } = useGetWeekInfoQuery({ date })
 
   return (
     <SC.WeekList>
@@ -18,20 +17,6 @@ const WeekList: FC = () => {
         </SC.DayItem>
       ))}
     </SC.WeekList>
-
-    // <>
-    //   {isFetching ? (
-    //     <Loader className="large centered" />
-    //   ) : (
-    //     <SC.WeekList>
-    //       {data?.weekDays?.map((day) => (
-    //         <SC.DayItem key={day.id}>
-    //           <DayPerWeekList {...day} />
-    //         </SC.DayItem>
-    //       ))}
-    //     </SC.WeekList>
-    //   )}
-    // </>
   )
 }
 

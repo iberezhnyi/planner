@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { SnackbarProvider } from 'notistack'
-import { selectTheme } from 'store'
+import { selectTheme } from 'store/selectors'
 import { Global, global, themes } from 'styles'
 import { Notifications } from 'components/common'
 

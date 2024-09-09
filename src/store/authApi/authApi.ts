@@ -1,7 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-// import { RootState } from 'store/store'
-import { IAuthResponse, ILoginFormValues, IRegisterFormValues } from 'types'
 import { baseQueryWithReauth } from './baseQueryWithReauth'
+import { IAuthResponse, ILoginFormValues, IRegisterFormValues } from 'types'
 
 export const authApi = createApi({
   reducerPath: 'authApi',
@@ -38,11 +37,11 @@ export const authApi = createApi({
       providesTags: ['Auth'],
     }),
 
-    refreshUser: builder.query<IAuthResponse, void>({
-      query: () => 'auth/refresh',
+    // refreshUser: builder.query<IAuthResponse, void>({
+    //   query: () => 'auth/refresh',
 
-      providesTags: ['Auth'],
-    }),
+    //   providesTags: ['Auth'],
+    // }),
 
     logoutUser: builder.mutation<{ message: string }, void>({
       query: () => ({
@@ -63,8 +62,8 @@ export const useLoginUserMutation: typeof authApi.endpoints.loginUser.useMutatio
 export const useGetProfileQuery: typeof authApi.endpoints.getProfile.useQuery =
   authApi.endpoints.getProfile.useQuery
 
-export const useRefreshUserQuery: typeof authApi.endpoints.refreshUser.useQuery =
-  authApi.endpoints.refreshUser.useQuery
+// export const useRefreshUserQuery: typeof authApi.endpoints.refreshUser.useQuery =
+//   authApi.endpoints.refreshUser.useQuery
 
 export const useLogoutUserMutation: typeof authApi.endpoints.logoutUser.useMutation =
   authApi.endpoints.logoutUser.useMutation

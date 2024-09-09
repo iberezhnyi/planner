@@ -27,5 +27,6 @@ export interface IWeekDay {
 
 export interface IWeeksResponse {
   message: string
+  weekPerYear: number
   weekDays: IWeekDay[]
 }

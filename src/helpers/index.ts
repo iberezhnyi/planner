@@ -1,3 +1,6 @@
 export { calculateSpacing } from './calculateSpasing'
 export { getErrorMessage } from './getErrorMessage'
 export { successNotification, errorNotification } from './notifications'
+export { getCurrentDate } from './getCurrentDate'
+export { getCurrentMonth } from './getCurrentMonth'
+export { getCurrentYear } from './getCurrentYear'

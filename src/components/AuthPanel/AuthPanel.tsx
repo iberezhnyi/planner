@@ -12,11 +12,11 @@ import {
   useId,
 } from '@floating-ui/react'
 import {
-  selectProfile,
   useLoginUserMutation,
   useLogoutUserMutation,
   useRegisterUserMutation,
-} from 'store'
+} from 'store/authApi'
+import { selectProfile } from 'store/selectors'
 import { Loader } from 'components/common'
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './AuthPanel.styled'
@@ -86,8 +86,8 @@ export const AuthPanel: FC = () => {
 
       {isOpen && (
         <FloatingFocusManager context={context} modal={false} initialFocus={-1}>
-          <div
-            className="Popover"
+          <SC.Popover
+            // className="Popover"
             ref={refs.setFloating}
             style={floatingStyles}
             aria-labelledby={headingId}
@@ -111,7 +111,7 @@ export const AuthPanel: FC = () => {
                 </SC.ListLink>
               </SC.ListItem>
             </SC.List>
-          </div>
+          </SC.Popover>
         </FloatingFocusManager>
       )}
     </>

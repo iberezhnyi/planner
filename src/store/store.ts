@@ -10,11 +10,11 @@ import {
   REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { themeReducer } from './themeSlice/themeSlice'
-import { authReducer } from './authSlice/authSlice.ts'
-import { authApi } from './authSlice/authApi.ts'
-import { weeksApi } from './weeksSlice/weeksApi.ts'
-import { weeksReducer } from './weeksSlice/weeksSlice.ts'
+
+import { authApi, authReducer } from './authApi'
+import { weeksApi } from './weeksApi'
+import { themeReducer } from './themeSlice'
+import { monthsApi } from './monthsApi'
 
 const themePersistConfig = {
   key: 'theme',
@@ -33,7 +33,7 @@ const reducer = {
   auth: persistReducer(authPersistConfig, authReducer),
   [authApi.reducerPath]: authApi.reducer,
   [weeksApi.reducerPath]: weeksApi.reducer,
-  weeks: weeksReducer,
+  [monthsApi.reducerPath]: monthsApi.reducer,
 }
 
 export const store = configureStore({
@@ -43,7 +43,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(authApi.middleware, weeksApi.middleware),
+    }).concat(authApi.middleware, weeksApi.middleware, monthsApi.middleware),
 })
 
 export const persistor = persistStore(store)

@@ -1,6 +1,8 @@
 const ROUTES = {
-  register: "/register",
-  login: "/login",
+  register: '/register',
+  login: '/login',
+  months: '/calendar/months',
+  weeks: '/calendar/weeks',
 }
 
-export const { register, login } = ROUTES
+export const { register, login, months } = ROUTES

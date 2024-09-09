@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Navigate, Outlet, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { selectIsAuth } from 'store'
+import { selectIsAuth } from 'store/selectors'
 
 export const PrivateRoute: FC = () => {
   const isAuth = useSelector(selectIsAuth)

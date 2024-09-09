@@ -23,7 +23,8 @@ export const primaryBtn = css`
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &.active {
     background-color: ${({ theme }) => theme.btnHoverBgColor};
     color: ${({ theme }) => theme.btnHoverTextColor};
   }

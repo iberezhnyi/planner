@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Formik } from 'formik'
-import { useLoginUserMutation, useRegisterUserMutation } from 'store'
+import { useLoginUserMutation, useRegisterUserMutation } from 'store/authApi'
 import { ShowPasswordBtn } from './ShowPasswordBtn/ShowPasswordBtn'
 import * as path from 'routsConfig'
 import { loginFormSchema, registerFormSchema } from '../schemas'

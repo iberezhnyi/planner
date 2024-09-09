@@ -1,8 +1,13 @@
 import { FC, useState } from 'react'
-// import { useClickOutside } from 'hooks'
-import sprite from 'assets/icons/sprite.svg'
-import * as SC from './DayPerWeekList.styled'
+import { useFormik } from 'formik'
+import {
+  useAddNoteMutation,
+  useDeleteNoteMutation,
+  useUpdateNoteMutation,
+} from 'store/weeksApi'
 import { IWeekDay } from 'types'
+import * as SC from './DayPerWeekList.styled'
+import sprite from 'assets/icons/sprite.svg'
 
 interface DayPerWeekListProps extends IWeekDay {}
 
@@ -13,13 +18,48 @@ export const DayPerWeekList: FC<DayPerWeekListProps> = ({
   day,
 }) => {
   const [isTextareaVisible, setTextareaVisible] = useState(false)
-  // const textareaRef = useRef<HTMLTextAreaElement>(null)
-
   const toggleTextarea = () => {
     setTextareaVisible((prev) => !prev)
   }
+  const [addNote] = useAddNoteMutation()
+  const [updateNote] = useUpdateNoteMutation()
+  const [deleteNote] = useDeleteNoteMutation()
+  const [initialNote, setInitialNote] = useState(notes?.note || '')
 
-  // useClickOutside(textareaRef, () => setTextareaVisible(false))
+  const formik = useFormik({
+    initialValues: {
+      note: initialNote,
+    },
+
+    onSubmit: async (values) => {
+      if (values.note.trim() !== initialNote) {
+        if (notes?._id) {
+          if (values.note.trim() === '') {
+            await deleteNote({
+              noteId: notes._id,
+            })
+
+            setInitialNote('')
+          } else {
+            await updateNote({
+              noteId: notes._id,
+              note: values.note.trim(),
+              date: date.toString(),
+            })
+
+            setInitialNote(values.note.trim())
+          }
+        } else if (values.note.trim() !== '') {
+          await addNote({
+            note: values.note.trim(),
+            date: date.toString(),
+          })
+
+          setInitialNote(values.note.trim())
+        }
+      }
+    },
+  })
 
   return (
     <>
@@ -51,7 +91,15 @@ export const DayPerWeekList: FC<DayPerWeekListProps> = ({
           ----------
         </SC.ToggleButton>
       </SC.ToggleButtonWrapper>
-      {isTextareaVisible && <SC.Textarea />}
+      {isTextareaVisible && (
+        <form onBlur={formik.handleSubmit}>
+          <SC.Textarea
+            name="note"
+            onChange={formik.handleChange}
+            value={formik.values.note}
+          />
+        </form>
+      )}
       <SC.Text>{notes ? notes.note : 'My note'}</SC.Text>
     </>
   )
