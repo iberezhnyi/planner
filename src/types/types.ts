@@ -53,6 +53,7 @@ export interface ITheme {
   linkActiveColor: string
   linkActiveBgColor: string
   btnTextColor: string
+  btnSecondaryTextColor: string
   btnDisabledTextColor: string
   btnBgColor: string
   btnHoverBgColor: string

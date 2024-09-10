@@ -6,8 +6,16 @@ import { global } from 'styles'
 export const StyledSidebar = styled(Sidebar)<{ $profile: boolean }>`
   &&& {
     z-index: 1;
-
     border: none;
+
+    @media (min-width: ${global.breakpoint.tablet}) {
+      border-top: ${({ theme }) => theme.global.spacing(1)} solid
+        ${({ theme }) => theme.mainBgColor};
+      border-bottom: ${({ theme }) => theme.global.spacing(1)} solid
+        ${({ theme }) => theme.mainBgColor};
+
+      transition: border 0ms;
+    }
 
     @media (min-width: ${global.breakpoint.tablet}) and (max-width: ${global.breakpoint.largeDesktop}) {
       width: 200px;

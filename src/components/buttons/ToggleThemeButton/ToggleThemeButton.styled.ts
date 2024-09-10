@@ -16,7 +16,7 @@ export const ToggleThemeIcon = styled.svg`
 
   fill: ${({ theme }) => theme.global.text.color.white};
 
-  @media (min-width: ${global.breakpoint.tablet}) {
+  @media (min-width: ${global.breakpoint.mobile}) {
     /* fill: ${({ theme }) => theme.textColor}; */
 
     width: 1.5rem;

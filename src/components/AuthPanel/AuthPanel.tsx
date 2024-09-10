@@ -62,7 +62,11 @@ export const AuthPanel: FC = () => {
   return (
     <>
       {profile && (
-        <SC.ButtonAuth ref={refs.setReference} {...getReferenceProps()}>
+        <SC.ButtonAuth
+          className={isOpen ? 'open' : ''}
+          ref={refs.setReference}
+          {...getReferenceProps()}
+        >
           <SC.Username>{profile.email}</SC.Username>
 
           <SC.IconUser>
@@ -87,7 +91,6 @@ export const AuthPanel: FC = () => {
       {isOpen && (
         <FloatingFocusManager context={context} modal={false} initialFocus={-1}>
           <SC.Popover
-            // className="Popover"
             ref={refs.setFloating}
             style={floatingStyles}
             aria-labelledby={headingId}

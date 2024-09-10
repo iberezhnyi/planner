@@ -26,6 +26,13 @@ export const SidebarAuthImg = styled.img`
   border-radius: 50%;
 `
 
+export const UserAvatar = styled.svg`
+  fill: ${({ theme }) => theme.textColorSecondary};
+  stroke: ${({ theme }) => theme.textColorSecondary};
+  width: 7rem;
+  height: 7rem;
+`
+
 export const SidebarAuthInfo = styled.p`
   color: ${({ theme }) => theme.textColorSecondary};
   font-size: ${({ theme }) => theme.global.text.fontSize.xs};

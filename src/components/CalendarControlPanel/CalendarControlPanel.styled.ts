@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import { global, secondaryBtn } from 'styles'
 
@@ -18,13 +18,15 @@ export const CurrentPeriod = styled.div`
 
   min-width: 11rem;
 
+  color: ${({ theme }) => theme.textColor};
+
   text-transform: uppercase;
 
   &:hover,
   &:focus,
   &:active {
     background-color: inherit;
-    color: ${({ theme }) => theme.btnTextColor};
+    color: ${({ theme }) => theme.textColor};
   }
 `
 
@@ -40,13 +42,21 @@ export const ArrowButton = styled.button`
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+
+  &:hover svg,
+  &:focus svg,
+  &:active svg,
+  &.active svg {
+    fill: ${({ theme }) => theme.btnHoverTextColor};
+    stroke: ${({ theme }) => theme.btnHoverTextColor};
+  }
 `
 
 export const ArrowIcon = styled.svg`
   ${arrowIconCommonStyles}
 
-  fill: ${({ theme }) => theme.btnTextColor};
-  stroke: ${({ theme }) => theme.btnTextColor};
+  /* fill: ${({ theme }) => theme.btnTextColor};
+  stroke: ${({ theme }) => theme.btnTextColor}; */
 
   &.left {
     transform: rotate(90deg);
@@ -80,10 +90,16 @@ export const ControlOutWrapper = styled.div`
 export const ControlLink = styled(NavLink)`
   ${secondaryBtn}
 
-  /* &:active {
-  } */
+  color: ${({ theme }) => theme.btnSecondaryTextColor};
 
   &:not(:last-child) {
     margin-right: ${({ theme }) => theme.global.spacing(6)};
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: ${({ theme }) => theme.btnHoverTextColor};
   }
 `

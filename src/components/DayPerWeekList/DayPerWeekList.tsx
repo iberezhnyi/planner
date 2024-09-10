@@ -65,7 +65,7 @@ export const DayPerWeekList: FC<DayPerWeekListProps> = ({
     <>
       <SC.Header>
         <SC.DayName>{day}</SC.DayName>
-        <SC.Date>{date.toString().slice(0, 10)}</SC.Date>
+        <SC.Date>{new Date(date).toLocaleDateString('uk-UA')}</SC.Date>
       </SC.Header>
 
       <SC.LabelTaskWrapper>

@@ -33,8 +33,9 @@ export const themes: IThemes = {
 
     // Button
     btnTextColor: '#FFFFFF',
+    btnSecondaryTextColor: '#000000',
     btnDisabledTextColor: '#707579',
-    btnHoverTextColor: '',
+    btnHoverTextColor: '#FFFFFF',
     btnBgColor: '#137BCD',
     btnHoverBgColor: '#79C4FD',
 
@@ -71,6 +72,7 @@ export const themes: IThemes = {
 
     // Button
     btnTextColor: '#FFFFFF',
+    btnSecondaryTextColor: '#FFFFFF',
     btnDisabledTextColor: '#707579',
     btnHoverTextColor: '#137BCD',
     btnBgColor: '#137BCD',

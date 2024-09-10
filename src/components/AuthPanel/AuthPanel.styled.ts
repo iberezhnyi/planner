@@ -9,7 +9,7 @@ export const Popover = styled.div`
 export const ButtonAuth = styled.button`
   ${btnCommonStyles}
 
-  @media (max-width: ${global.breakpoint.maxTablet}) {
+  @media (max-width: ${global.breakpoint.maxMobile}) {
     max-width: 220px;
     font-size: 12px;
   }
@@ -22,7 +22,8 @@ export const ButtonAuth = styled.button`
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &.open {
     color: ${({ theme }) => theme.linkActiveColor};
   }
 `
@@ -45,18 +46,23 @@ export const LinkAuth = styled(NavLink)`
 export const Username = styled.p`
   margin-bottom: 0;
 
-  @media (max-width: ${global.breakpoint.maxTablet}) {
+  @media (max-width: ${global.breakpoint.maxMobile}) {
     max-width: 220px;
     overflow: hidden;
   }
 `
 
 export const IconUser = styled.svg`
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
 
   fill: transparent;
   stroke: currentColor;
+
+  @media (min-width: ${global.breakpoint.mobile}) {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
 `
 
 export const IconDropdown = styled.svg`
