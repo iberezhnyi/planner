@@ -8,6 +8,7 @@ import sprite from 'assets/icons/sprite.svg'
 
 export const SidebarAuthPanel: FC = () => {
   const profile = useSelector(selectProfile)
+
   return (
     <SC.SidebarAuthPanel>
       <SC.SidebarAuthPanelList>
@@ -23,7 +24,9 @@ export const SidebarAuthPanel: FC = () => {
           /> */}
         </SC.SidebarAuthItem>
         <SC.SidebarAuthItem>
-          <SC.SidebarAuthInfo>{profile?.firstName}</SC.SidebarAuthInfo>
+          <SC.SidebarAuthInfo>
+            {profile?.email.split('@')[0]}
+          </SC.SidebarAuthInfo>
         </SC.SidebarAuthItem>
         <SC.SidebarAuthItem>
           <SC.SidebarAuthInfo>{profile?.email}</SC.SidebarAuthInfo>

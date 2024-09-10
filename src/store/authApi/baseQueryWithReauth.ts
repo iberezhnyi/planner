@@ -9,7 +9,7 @@ import { RootState } from 'store'
 import { IAuthRefreshResponse } from 'types'
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://localhost:3000/api/',
+  baseUrl: 'https://planner-backend-a3p5.onrender.com/api',
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token

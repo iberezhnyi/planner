@@ -4,7 +4,7 @@ import { useIsMobile } from 'hooks'
 import { global } from 'styles'
 import { IMonthsDay } from 'types'
 
-export const DayPerMonthList: FC<IMonthsDay> = ({ day, month, year }) => {
+export const DayPerMonthList: FC<IMonthsDay> = ({ day }) => {
   const isDesktop = useIsMobile(global.breakpoint.desktop)
   return (
     <SC.DayContent>
