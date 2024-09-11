@@ -14,6 +14,7 @@ const ContactsView = lazy(() => import('views/ContactsView'))
 const ServicesView = lazy(() => import('views/ServicesView'))
 const WeekList = lazy(() => import('components/WeekList'))
 const MonthList = lazy(() => import('components/MonthList'))
+const NotFoundView = lazy(() => import('views/NotFoundView'))
 
 export const App = () => {
   const profile = useSelector(selectProfile)
@@ -29,7 +30,7 @@ export const App = () => {
   }, [profileData])
 
   return (
-    <Suspense fallback={<MainLoader isFetching={true} />}>
+    <Suspense fallback={<MainLoader />}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomeView />} />
@@ -50,7 +51,7 @@ export const App = () => {
           </Route>
         </Route>
 
-        <Route path="*" element={<div>404 Not Found page</div>} />
+        <Route path="*" element={<NotFoundView />} />
       </Routes>
     </Suspense>
   )

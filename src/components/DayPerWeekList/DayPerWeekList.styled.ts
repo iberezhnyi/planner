@@ -48,8 +48,13 @@ export const TaskDescription = styled.p`
 export const Textarea = styled.textarea`
   width: 100%;
   min-height: 150px;
-  border: 1px solid #000;
+  border: ${({ theme }) => theme.border};
+  border-radius: 0.5rem;
   margin-bottom: 20px;
+
+  background-color: ${({ theme }) => theme.inputBgColor};
+
+  resize: none;
 `
 
 export const Text = styled.div`

@@ -17,7 +17,7 @@ import {
   useRegisterUserMutation,
 } from 'store/authApi'
 import { selectProfile } from 'store/selectors'
-import { Loader } from 'components/common'
+import { Loader, MainLoader } from 'components/common'
 import sprite from 'assets/icons/sprite.svg'
 import * as SC from './AuthPanel.styled'
 
@@ -32,7 +32,7 @@ export const AuthPanel: FC = () => {
     fixedCacheKey: 'register-user',
   })
 
-  const [logout] = useLogoutUserMutation()
+  const [logout, { isLoading: isLogoutLoading }] = useLogoutUserMutation()
 
   const handleLogOut = async () => {
     await logout()
@@ -61,6 +61,8 @@ export const AuthPanel: FC = () => {
 
   return (
     <>
+      {isLogoutLoading && <MainLoader />}
+
       {profile && (
         <SC.ButtonAuth
           className={isOpen ? 'open' : ''}
@@ -78,7 +80,6 @@ export const AuthPanel: FC = () => {
           </SC.IconDropdown>
         </SC.ButtonAuth>
       )}
-
       {!profile && (
         <SC.LinkAuth to="/login">
           {isLoginLoading || isRegisterLoading ? <Loader /> : <p>Log in</p>}
@@ -87,7 +88,6 @@ export const AuthPanel: FC = () => {
           </SC.IconUser>
         </SC.LinkAuth>
       )}
-
       {isOpen && (
         <FloatingFocusManager context={context} modal={false} initialFocus={-1}>
           <SC.Popover

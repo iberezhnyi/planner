@@ -13,17 +13,18 @@ import {
   successNotification,
 } from 'helpers'
 import { AuthForm } from 'components/forms'
-import { Loader, Modal } from 'components/common'
+import { MainLoader } from 'components/common'
 import * as SC from './AuthView.styled'
 
 const AuthView: FC = () => {
   const [errorMessage, setErrorMessage] = useState('')
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+
   const location = useLocation()
-  const [registerUser] = useRegisterUserMutation({
-    fixedCacheKey: 'register-user',
-  })
-  const [loginUser] = useLoginUserMutation({
+  const [registerUser, { isLoading: isRegisterLoading }] =
+    useRegisterUserMutation({
+      fixedCacheKey: 'register-user',
+    })
+  const [loginUser, { isLoading: isLoginLoading }] = useLoginUserMutation({
     fixedCacheKey: 'login-user',
   })
 
@@ -35,8 +36,6 @@ const AuthView: FC = () => {
 
   const handleAuth = async (body: ILoginFormValues | IBasicAuthFormValues) => {
     try {
-      setModalIsOpen(true)
-
       if (isLoginPage) {
         setErrorMessage('')
         const data = await loginUser(body as ILoginFormValues).unwrap()
@@ -57,47 +56,38 @@ const AuthView: FC = () => {
           `Welcome, ${data.user.email}! Thank you for registering!`
         )
       }
-
-      setModalIsOpen(false)
     } catch (err) {
       console.log('err QQQQQQQQQQ:>> ', err)
 
       setErrorMessage(getErrorMessage(err))
-
-      setModalIsOpen(false)
 
       errorNotification(getErrorMessage(err))
     }
   }
 
   return (
-    <SC.AuthSection>
-      <SC.ContentWrapper>
-        {errorMessage && <SC.ErrorMessage>{errorMessage}</SC.ErrorMessage>}
-        <SC.Title>{isLoginPage ? 'Log in' : 'Register'}</SC.Title>
+    <>
+      {(isRegisterLoading || isLoginLoading) && <MainLoader />}
 
-        <AuthForm auth={handleAuth} />
+      <SC.AuthSection>
+        <SC.ContentWrapper>
+          {errorMessage && <SC.ErrorMessage>{errorMessage}</SC.ErrorMessage>}
+          <SC.Title>{isLoginPage ? 'Log in' : 'Register'}</SC.Title>
 
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={() => setModalIsOpen(false)}
-          shouldCloseOnOverlayClick={false}
-          shouldCloseOnEsc={false}
-        >
-          <Loader className="large" />
-        </Modal>
+          <AuthForm auth={handleAuth} />
 
-        <SC.Text>
-          {isLoginPage
-            ? "Don't have an account yet?"
-            : 'Have you joined us yet?'}
-          {'\u00A0'}
-          <SC.AuthLink to={isLoginPage ? '/register' : '/login'}>
-            {isLoginPage ? 'Register' : 'Log in'}
-          </SC.AuthLink>
-        </SC.Text>
-      </SC.ContentWrapper>
-    </SC.AuthSection>
+          <SC.Text>
+            {isLoginPage
+              ? "Don't have an account yet?"
+              : 'Have you joined us yet?'}
+            {'\u00A0'}
+            <SC.AuthLink to={isLoginPage ? '/register' : '/login'}>
+              {isLoginPage ? 'Register' : 'Log in'}
+            </SC.AuthLink>
+          </SC.Text>
+        </SC.ContentWrapper>
+      </SC.AuthSection>
+    </>
   )
 }
 

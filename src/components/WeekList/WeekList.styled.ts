@@ -17,6 +17,8 @@ export const DayItem = styled.li`
   border: ${({ theme }) => theme.border};
   border-radius: 0.5rem;
 
+  background-color: ${({ theme }) => theme.primaryBgColor};
+
   @media (min-width: ${global.breakpoint.desktop}) {
     width: calc((100% - 1.5rem) / 2);
   }

@@ -12,7 +12,7 @@ const WeekList: FC = () => {
 
   return (
     <SC.WeekList>
-      {isFetching && <MainLoader isFetching={isFetching} />}
+      {isFetching && <MainLoader />}
 
       {data?.weekDays?.map((day) => (
         <SC.DayItem key={day.id}>

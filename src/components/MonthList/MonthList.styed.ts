@@ -18,6 +18,8 @@ export const DayItem = styled.li`
 
   /* background-color: tomato; */
 
+  background-color: ${({ theme }) => theme.primaryBgColor};
+
   width: calc((100% - 4rem) / 5);
 
   @media (min-width: ${global.breakpoint.mobile}) {

@@ -22,16 +22,20 @@ export const CurrentPeriod = styled.div`
 
   text-transform: uppercase;
 
+  background-color: ${({ theme }) => theme.primaryBgColor};
+
   &:hover,
   &:focus,
   &:active {
-    background-color: inherit;
+    background-color: ${({ theme }) => theme.primaryBgColor};
     color: ${({ theme }) => theme.textColor};
   }
 `
 
 export const ArrowButton = styled.button`
   ${secondaryBtn}
+
+  background-color: ${({ theme }) => theme.primaryBgColor};
 
   &.prev {
     border-top-right-radius: 0;
@@ -41,6 +45,8 @@ export const ArrowButton = styled.button`
   &.next {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+
+    border-left: 0.03125rem;
   }
 
   &:hover svg,
@@ -91,6 +97,8 @@ export const ControlLink = styled(NavLink)`
   ${secondaryBtn}
 
   color: ${({ theme }) => theme.btnSecondaryTextColor};
+
+  background-color: ${({ theme }) => theme.primaryBgColor};
 
   &:not(:last-child) {
     margin-right: ${({ theme }) => theme.global.spacing(6)};

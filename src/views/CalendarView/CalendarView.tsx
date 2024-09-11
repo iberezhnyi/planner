@@ -14,7 +14,7 @@ const CalendarView: FC = () => {
     <>
       <CalendarControlPanel weekData={data as IWeeksResponse} />
 
-      <Suspense fallback={<MainLoader isFetching={true} />}>
+      <Suspense fallback={<MainLoader />}>
         <Outlet />
       </Suspense>
     </>

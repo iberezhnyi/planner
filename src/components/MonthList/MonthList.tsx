@@ -14,7 +14,7 @@ const MonthList: FC = () => {
 
   return (
     <SC.MonthList>
-      {isFetching && <MainLoader isFetching={isFetching} />}
+      {isFetching && <MainLoader />}
 
       {data?.monthsDays.map((day) => (
         <SC.DayItem key={day.id}>

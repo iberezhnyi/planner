@@ -1,22 +1,18 @@
-import { FC, useState } from 'react'
-import { Modal } from '../Modal/Modal'
-import { Loader } from '../Loader/Loader'
+import { FC, useEffect } from 'react'
+import * as SC from './MainLoader.styled'
 
-interface MainLoaderProps {
-  isFetching: boolean
-}
+export const MainLoader: FC = () => {
+  useEffect(() => {
+    document.body.classList.add('no-scroll')
 
-export const MainLoader: FC<MainLoaderProps> = ({ isFetching }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(isFetching)
+    return () => {
+      document.body.classList.remove('no-scroll')
+    }
+  }, [])
 
   return (
-    <Modal
-      isOpen={modalIsOpen}
-      onRequestClose={() => setModalIsOpen(false)}
-      shouldCloseOnOverlayClick={false}
-      shouldCloseOnEsc={false}
-    >
-      <Loader className="large" />
-    </Modal>
+    <SC.Backdrop>
+      <SC.LoaderStyled className="large" />
+    </SC.Backdrop>
   )
 }
