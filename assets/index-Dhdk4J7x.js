@@ -1,4 +1,4 @@
-import{p as s,g as r,j as t,B as d,I as c}from"./index-P7y5xxY_.js";import{u as m}from"./useIsMobile-CqgSl5gX.js";const l=s.ul`
+import{p as s,g as r,j as t,A as c,I as m,E as l}from"./index-U6Y2ey4E.js";import{u as p}from"./useIsMobile-SoP82mMV.js";const h=s.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -7,7 +7,7 @@ import{p as s,g as r,j as t,B as d,I as c}from"./index-P7y5xxY_.js";import{u as 
   border-radius: 0.5rem;
 
   padding: 1rem;
-`,p=s.li`
+`,u=s.li`
   display: flex;
   justify-content: center;
 
@@ -18,7 +18,7 @@ import{p as s,g as r,j as t,B as d,I as c}from"./index-P7y5xxY_.js";import{u as 
   @media (min-width: ${r.breakpoint.mobile}) {
     width: calc((100% - 6rem) / 7);
   }
-`,h=s.div`
+`,b=s.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,5 +39,5 @@ import{p as s,g as r,j as t,B as d,I as c}from"./index-P7y5xxY_.js";import{u as 
   @media (min-width: ${r.breakpoint.desktop}) {
     border-radius: 0.5rem;
   }
-`,u=s.span``,b=({day:e})=>{const o=m(r.breakpoint.desktop);return t.jsxs(h,{children:[t.jsx(u,{children:e}),!o&&t.jsx("div",{children:"Info about day"})]})},x=()=>{const[e]=d(),o=parseInt(e.get("month")),i=parseInt(e.get("year")),{data:n}=c({month:o,year:i});return t.jsx(l,{children:n==null?void 0:n.monthsDays.map(a=>t.jsx(p,{children:t.jsx(b,{...a})},a.id))})},y=x;export{y as default};
-//# sourceMappingURL=index-DHyOVETg.js.map
+`,x=s.span``,g=({day:e})=>{const n=p(r.breakpoint.desktop);return t.jsxs(b,{children:[t.jsx(x,{children:e}),!n&&t.jsx("div",{children:"Info about day"})]})},f=()=>{const[e]=c(),n=parseInt(e.get("month")),d=parseInt(e.get("year")),{data:o,isFetching:a}=m({month:n,year:d});return t.jsxs(h,{children:[a&&t.jsx(l,{isFetching:a}),o==null?void 0:o.monthsDays.map(i=>t.jsx(u,{children:t.jsx(g,{...i})},i.id))]})},k=f;export{k as default};
+//# sourceMappingURL=index-Dhdk4J7x.js.map
