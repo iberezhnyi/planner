@@ -1,7 +1,7 @@
 import { CalendarControlPanel } from 'components/CalendarControlPanel'
 import { FC, Suspense } from 'react'
 import { Outlet, useSearchParams } from 'react-router-dom'
-import { Loader } from 'components/common'
+import { MainLoader } from 'components/common'
 import { useGetWeekInfoQuery } from 'store/weeksApi'
 import { IWeeksResponse } from 'types'
 
@@ -14,7 +14,7 @@ const CalendarView: FC = () => {
     <>
       <CalendarControlPanel weekData={data as IWeeksResponse} />
 
-      <Suspense fallback={<Loader className="large centered" />}>
+      <Suspense fallback={<MainLoader isFetching={true} />}>
         <Outlet />
       </Suspense>
     </>

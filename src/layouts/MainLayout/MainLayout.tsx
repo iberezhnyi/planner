@@ -27,6 +27,7 @@ const MainLayout: FC = () => {
         handleClick={handleClick}
         mobileMenu={mobileMenu}
         setHeaderHeight={setHeaderHeight}
+        profile={profile}
       />
 
       <SC.LayoutWrapper>

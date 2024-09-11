@@ -8,8 +8,12 @@ import { setCredentials, clearCredentials } from './authSlice'
 import { RootState } from 'store'
 import { IAuthRefreshResponse } from 'types'
 
+const prodApi = 'https://planner-backend-a3p5.onrender.com/api'
+// const devApi = 'http://localhost:3000/api/'
+
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://planner-backend-a3p5.onrender.com/api',
+  // baseUrl: devApi,
+  baseUrl: prodApi,
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token
@@ -36,6 +40,8 @@ export const baseQueryWithReauth: BaseQueryFn<
       const { access_token }: Pick<IAuthRefreshResponse, 'access_token'> =
         refreshResult.data as IAuthRefreshResponse
       dispatch(setCredentials({ access_token }))
+
+      await new Promise((resolve) => setTimeout(resolve, 500))
 
       result = await baseQuery(args, api, extraOptions)
     } else {

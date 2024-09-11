@@ -30,6 +30,10 @@ export const HeaderWrapper = styled.ul`
 export const HeaderWrapperItem = styled.li`
   display: flex;
 
+  &.is-not-login {
+    margin-right: ${({ theme }) => theme.global.spacing(3)};
+  }
+
   @media (min-width: ${global.breakpoint.mobile}) {
     &:not(:last-child) {
       margin-right: ${({ theme }) => theme.global.spacing(3)};

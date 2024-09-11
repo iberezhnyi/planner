@@ -1,9 +1,9 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { selectProfile } from 'store/selectors'
 import { SidebarAuthPanel } from './SidebarAuthPanel/SidebarAuthPanel'
 import { Navigation } from 'components/Navigation'
-// import { ToggleThemeButton } from 'components/buttons'
+
 import { Footer } from 'components/Footer'
 import { global } from 'styles'
 import * as SC from './Sidebar.styled'
@@ -20,6 +20,12 @@ export const Sidebar: FC<SidebarProps> = ({
   headerHeight,
 }) => {
   const profile = useSelector(selectProfile)
+
+  useEffect(() => {
+    document.body.classList.toggle('no-scroll', mobileMenu)
+
+    return () => document.body.classList.remove('no-scroll')
+  }, [mobileMenu])
 
   return (
     <SC.StyledSidebar

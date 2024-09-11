@@ -35,6 +35,10 @@ body {
   background-image: ${({ theme }) => theme.pageBackground};
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 h1,
 h2,
 h3,

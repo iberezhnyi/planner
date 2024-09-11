@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import { useGetProfileQuery } from 'store/authApi'
 import { selectProfile } from 'store/selectors'
 import { PrivateRoute, PublicRoute } from 'guards'
-import { Loader } from 'components/common'
+import { MainLoader } from 'components/common'
 
 const MainLayout = lazy(() => import('layouts/MainLayout'))
 const HomeView = lazy(() => import('views/HomeView'))
@@ -29,7 +29,7 @@ export const App = () => {
   }, [profileData])
 
   return (
-    <Suspense fallback={<Loader className="large centered" />}>
+    <Suspense fallback={<MainLoader isFetching={true} />}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomeView />} />

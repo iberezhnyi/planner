@@ -4,17 +4,20 @@ import * as SC from './Header.styled'
 import { AuthPanel } from 'components/AuthPanel'
 import Logo from 'assets/logo/logo-placeholder4.png'
 import { useIsMobile } from 'hooks'
+import { IUserProfile } from 'types'
 
 interface HeaderProps {
   handleClick: () => void
   mobileMenu: boolean
   setHeaderHeight: (height: number) => void
+  profile: IUserProfile | null
 }
 
 export const Header: FC<HeaderProps> = ({
   handleClick,
   mobileMenu,
   setHeaderHeight,
+  profile,
 }) => {
   const isMobile = useIsMobile()
   const headerRef = useRef<HTMLDivElement>(null)
@@ -38,7 +41,7 @@ export const Header: FC<HeaderProps> = ({
         {!isMobile && <SC.Logo src={Logo} alt="Logo" width="130" />}
 
         <SC.HeaderWrapper>
-          <SC.HeaderWrapperItem>
+          <SC.HeaderWrapperItem className={!profile ? 'is-not-login' : ''}>
             <AuthPanel />
           </SC.HeaderWrapperItem>
           <SC.HeaderWrapperItem>
