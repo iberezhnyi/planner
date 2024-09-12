@@ -1,4 +1,4 @@
-import{p as n,s as o,c as i,j as t,t as s}from"./index-5fUVdKB-.js";const a=n.div`
+import{p as n,s as o,c as i,j as t,t as s}from"./index-BB4Xbw6T.js";const a=n.div`
   ${o}
 
   margin-left: auto;
@@ -11,4 +11,4 @@ import{p as n,s as o,c as i,j as t,t as s}from"./index-5fUVdKB-.js";const a=n.di
   text-align: center;
   font-size: ${({theme:e})=>e.global.text.fontSize.xl};
 `,c=()=>t.jsx(a,{children:t.jsxs(r,{children:[t.jsx("p",{children:"404 Not Found"}),t.jsx("p",{children:"This page doesn't exist."}),t.jsx(s,{to:"/",children:"Open home page"})]})}),p=c;export{p as default};
-//# sourceMappingURL=index-D_wXcwZs.js.map
+//# sourceMappingURL=index-D93K05dZ.js.map
