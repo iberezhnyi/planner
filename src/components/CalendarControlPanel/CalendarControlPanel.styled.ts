@@ -14,22 +14,39 @@ export const CalendarControlPanel = styled.div`
 `
 
 export const CurrentPeriod = styled.div`
-  ${secondaryBtn}
+  /* ${secondaryBtn} */
 
-  min-width: 11rem;
+  min-width: 3.875rem;
+
+  &.month-page {
+    min-width: 7.25rem;
+  }
+
+  /* min-width: 11rem; */
+  /* min-width: 7.25rem; */
+
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.global.spacing(1)};
+
+  margin-left: ${({ theme }) => theme.global.spacing(4)};
 
   color: ${({ theme }) => theme.textColor};
+  font-weight: ${({ theme }) => theme.global.text.fontWeight.sb};
 
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  /* border: none; */
+  /* background-color: ${({ theme }) => theme.primaryBgColor}; */
 
-  background-color: ${({ theme }) => theme.primaryBgColor};
-
-  &:hover,
+  /* &:hover,
   &:focus,
   &:active {
     background-color: ${({ theme }) => theme.primaryBgColor};
+    background-color: inherit;
     color: ${({ theme }) => theme.textColor};
-  }
+  } */
 `
 
 export const ArrowButton = styled.button`
@@ -76,6 +93,10 @@ export const ArrowIcon = styled.svg`
 export const ControlWrapper = styled.div`
   display: flex;
   justify-content: center;
+
+  /* position: absolute;
+  top: 0;
+  left: 312px; */
 `
 
 export const ArrowWrapper = styled.div`
@@ -90,6 +111,7 @@ export const ControlOutWrapper = styled.div`
 
   @media (min-width: ${global.breakpoint.mobile}) {
     margin-bottom: 0;
+    /* position: relative; */
   }
 `
 

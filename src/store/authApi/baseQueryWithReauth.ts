@@ -41,7 +41,7 @@ export const baseQueryWithReauth: BaseQueryFn<
         refreshResult.data as IAuthRefreshResponse
       dispatch(setCredentials({ access_token }))
 
-      await new Promise((resolve) => setTimeout(resolve, 1050))
+      // await new Promise((resolve) => setTimeout(resolve, 500))
 
       result = await baseQuery(args, api, extraOptions)
     } else {

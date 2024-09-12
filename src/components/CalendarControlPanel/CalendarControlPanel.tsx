@@ -76,19 +76,24 @@ export const CalendarControlPanel: FC<CalendarControlPanelProps> = ({
   return (
     <SC.CalendarControlPanel>
       <SC.ControlOutWrapper>
-        <SC.CurrentPeriod>
-          {isMonthsPage
-            ? `${monthsNamesList[month - 1]}-${year}`
-            : `Week-${weekData?.weekPerYear} year-${new Date(
-                date
-              ).getFullYear()}`}
+        <SC.CurrentPeriod className={isMonthsPage ? 'month-page' : ''}>
+          {isMonthsPage ? (
+            <p>
+              {monthsNamesList[month - 1]} {year}
+            </p>
+          ) : (
+            <>
+              <p>Week {weekData?.weekPerYear}</p>
+              <p>{new Date(date).getFullYear()}</p>
+            </>
+          )}
         </SC.CurrentPeriod>
 
         {!isMobile && (
           <SC.ControlWrapper>
-            <SC.ControlLink to={'months'}>Місяць</SC.ControlLink>
+            <SC.ControlLink to={'months'}>Month</SC.ControlLink>
 
-            <SC.ControlLink to={'weeks'}>Тиждень</SC.ControlLink>
+            <SC.ControlLink to={'weeks'}>Week</SC.ControlLink>
           </SC.ControlWrapper>
         )}
 
@@ -121,9 +126,9 @@ export const CalendarControlPanel: FC<CalendarControlPanelProps> = ({
 
       {isMobile && (
         <SC.ControlWrapper>
-          <SC.ControlLink to={'months'}>Місяць</SC.ControlLink>
+          <SC.ControlLink to={'months'}>Month</SC.ControlLink>
 
-          <SC.ControlLink to={'weeks'}>Тиждень</SC.ControlLink>
+          <SC.ControlLink to={'weeks'}>Week</SC.ControlLink>
         </SC.ControlWrapper>
       )}
     </SC.CalendarControlPanel>
