@@ -18,7 +18,7 @@ export const DayItem = styled.li`
 
   /* background-color: tomato; */
 
-  background-color: ${({ theme }) => theme.primaryBgColor};
+  background-color: ${({ theme }) => theme.transparent};
 
   width: calc((100% - 4rem) / 5);
 

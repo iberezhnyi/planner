@@ -11,6 +11,11 @@ export const Navigation = styled(Menu)`
 export const NavigationItem = styled(MenuItem)`
   a.${menuClasses.button} {
     padding: ${({ theme }) => theme.global.spacing(3, 0, 3, 4)};
+    background-color: ${({ theme }) => theme.transparent};
+    color: inherit;
+
+    transition: background-color ${({ theme }) => theme.transitionDuration},
+      color ${({ theme }) => theme.transitionDuration};
 
     &:hover,
     &:focus,

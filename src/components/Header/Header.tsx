@@ -5,6 +5,7 @@ import { AuthPanel } from 'components/AuthPanel'
 import Logo from 'assets/logo/logo-placeholder4.png'
 import { useIsMobile } from 'hooks'
 import { IUserProfile } from 'types'
+// import { Link } from 'react-router-dom'
 
 interface HeaderProps {
   handleClick: () => void
@@ -38,7 +39,11 @@ export const Header: FC<HeaderProps> = ({
           />
         )}
 
-        {!isMobile && <SC.Logo src={Logo} alt="Logo" width="130" />}
+        {!isMobile && (
+          <SC.LinkStyled to={'/'}>
+            <SC.Logo src={Logo} alt="Logo" width="130" />
+          </SC.LinkStyled>
+        )}
 
         <SC.HeaderWrapper>
           <SC.HeaderWrapperItem className={!profile ? 'is-not-login' : ''}>

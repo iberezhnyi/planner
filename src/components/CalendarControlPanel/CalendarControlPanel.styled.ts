@@ -66,6 +66,16 @@ export const ArrowButton = styled.button`
     border-left: 0.03125rem;
   }
 
+  & svg {
+    transition: fill ${({ theme }) => theme.transitionDuration},
+      stroke ${({ theme }) => theme.transitionDuration};
+  }
+
+  &:hover svg {
+    fill: ${({ theme }) => theme.btnSecondaryTextColor};
+    stroke: ${({ theme }) => theme.btnSecondaryTextColor};
+  }
+
   &:hover svg,
   &:focus svg,
   &:active svg,

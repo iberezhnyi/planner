@@ -24,7 +24,15 @@ export const Input = styled(Field)`
 
   background-color: ${({ theme }) => theme.inputBgColor};
 
+  outline: 2px solid ${({ theme }) => theme.transparent};
+
   color: inherit;
+
+  transition: outline ${({ theme }) => theme.transitionDuration};
+
+  &:focus {
+    outline: ${({ theme }) => theme.outline};
+  }
 `
 
 export const FormText = styled.p`

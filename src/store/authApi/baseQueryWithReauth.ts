@@ -12,8 +12,8 @@ const prodApi = 'https://planner-backend-a3p5.onrender.com/api'
 // const devApi = 'http://localhost:3000/api/'
 
 const baseQuery = fetchBaseQuery({
-  // baseUrl: devApi,
   baseUrl: prodApi,
+  // baseUrl: devApi,
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token

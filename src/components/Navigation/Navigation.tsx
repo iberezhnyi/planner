@@ -29,7 +29,7 @@ export const Navigation: FC<NavigationProps> = ({ setMobileMenu }) => {
       >
         Calendar
       </SC.NavigationItem>
-      <SC.NavigationItem
+      {/* <SC.NavigationItem
         component={
           <NavLink to="/services" onClick={() => setMobileMenu(false)} />
         }
@@ -42,7 +42,7 @@ export const Navigation: FC<NavigationProps> = ({ setMobileMenu }) => {
         }
       >
         Contacts
-      </SC.NavigationItem>
+      </SC.NavigationItem> */}
     </SC.Navigation>
   )
 }

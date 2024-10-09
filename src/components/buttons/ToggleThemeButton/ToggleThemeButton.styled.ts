@@ -3,18 +3,26 @@ import { global } from 'styles'
 import { btnCommonStyles } from 'styles'
 
 export const ToggleThemeButton = styled.button`
-  ${btnCommonStyles}/* @media (max-width: ${global.breakpoint.maxTablet}) {
-    position: absolute;
-    top: 2.5%;
-    right: 5%;
-  } */
+  ${btnCommonStyles}
+
+  color: ${({ theme }) => theme.global.text.color.white};
+
+  transition: color ${({ theme }) => theme.transitionDuration};
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: ${({ theme }) => theme.linkActiveColor};
+  }
 `
 
 export const ToggleThemeIcon = styled.svg`
   width: 1rem;
   height: 1rem;
 
-  fill: ${({ theme }) => theme.global.text.color.white};
+  /* fill: ${({ theme }) => theme.global.text.color.white}; */
+  fill: currentColor;
 
   @media (min-width: ${global.breakpoint.mobile}) {
     /* fill: ${({ theme }) => theme.textColor}; */

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useLoginUserMutation, useRegisterUserMutation } from 'store/authApi'
 import * as path from 'routsConfig'
@@ -17,7 +17,7 @@ import { MainLoader } from 'components/common'
 import * as SC from './AuthView.styled'
 
 const AuthView: FC = () => {
-  const [errorMessage, setErrorMessage] = useState('')
+  // const [errorMessage, setErrorMessage] = useState('')
 
   const location = useLocation()
   const [registerUser, { isLoading: isRegisterLoading }] =
@@ -29,7 +29,7 @@ const AuthView: FC = () => {
   })
 
   useEffect(() => {
-    setErrorMessage('')
+    // setErrorMessage('')
   }, [location.pathname])
 
   const isLoginPage = location.pathname === path.login
@@ -37,7 +37,7 @@ const AuthView: FC = () => {
   const handleAuth = async (body: ILoginFormValues | IBasicAuthFormValues) => {
     try {
       if (isLoginPage) {
-        setErrorMessage('')
+        // setErrorMessage('')
         const data = await loginUser(body as ILoginFormValues).unwrap()
 
         successNotification(`Welcome back, ${data.user.email}!`)
@@ -49,19 +49,27 @@ const AuthView: FC = () => {
           firstName,
         }
 
-        setErrorMessage('')
+        // setErrorMessage('')
         const data = await registerUser(registerBody).unwrap()
 
         successNotification(
           `Welcome, ${data.user.email}! Thank you for registering!`
         )
       }
-    } catch (err) {
-      console.log('err QQQQQQQQQQ:>> ', err)
+    } catch (err: unknown) {
+      console.log('Error:', err)
 
-      setErrorMessage(getErrorMessage(err))
+      if (err && typeof err === 'object' && 'data' in err) {
+        const errorObj = err as { data?: { message?: string } }
+        const message = errorObj?.data?.message
 
-      errorNotification(getErrorMessage(err))
+        if (message) {
+          console.log('Error message:', message)
+          errorNotification(getErrorMessage(message))
+        }
+      }
+
+      return err
     }
   }
 
@@ -71,7 +79,7 @@ const AuthView: FC = () => {
 
       <SC.AuthSection>
         <SC.ContentWrapper>
-          {errorMessage && <SC.ErrorMessage>{errorMessage}</SC.ErrorMessage>}
+          {/* {errorMessage && <SC.ErrorMessage>{errorMessage}</SC.ErrorMessage>} */}
           <SC.Title>{isLoginPage ? 'Log in' : 'Register'}</SC.Title>
 
           <AuthForm auth={handleAuth} />

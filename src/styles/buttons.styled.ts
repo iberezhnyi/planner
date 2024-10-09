@@ -21,6 +21,9 @@ export const primaryBtn = css`
   border-radius: 0.5rem;
   background-color: ${({ theme }) => theme.btnBgColor};
 
+  transition: background-color ${({ theme }) => theme.transitionDuration},
+    color ${({ theme }) => theme.transitionDuration};
+
   &:hover,
   &:focus,
   &:active,

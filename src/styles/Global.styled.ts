@@ -32,7 +32,11 @@ body {
   font-size: ${({ theme }) => theme.global.text.fontSize.s};
   line-height: ${({ theme }) => theme.global.text.lineHeight.xl};
   
-  background-image: ${({ theme }) => theme.pageBackground};
+  /* background-image: ${({ theme }) => theme.pageBackground}; */
+  background-color: ${({ theme }) => theme.primaryBgColor};
+
+
+  transition: background-color ${({ theme }) => theme.transitionDuration};
 }
 
 body.no-scroll {

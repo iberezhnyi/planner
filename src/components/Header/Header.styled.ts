@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { container, global } from 'styles'
 
@@ -21,6 +22,24 @@ export const HeaderContainer = styled.div`
 `
 export const Logo = styled.img`
   /* margin-left: 50px; */
+
+  /* border-radius: 10px; */
+`
+
+export const LinkStyled = styled(Link)`
+  padding: ${({ theme }) => theme.global.spacing(3)};
+
+  border-radius: 10px;
+  border: ${({ theme }) => theme.border};
+  border-color: ${({ theme }) => theme.transparent};
+
+  transition: border-color ${({ theme }) => theme.transitionDuration};
+
+  &:hover {
+    border-color: ${({ theme }) => theme.borderColor};
+
+    /* transition: border-color ${({ theme }) => theme.transitionDuration}; */
+  }
 `
 
 export const HeaderWrapper = styled.ul`

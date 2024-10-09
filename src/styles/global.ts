@@ -15,6 +15,7 @@ export const global: IGlobalStyles = {
       bxl: '32px',
       bxxl: '40px',
       bxxxl: '44px',
+      b4xl: '3.75rem', // 60px
     },
 
     fontWeight: {

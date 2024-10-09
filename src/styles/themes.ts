@@ -28,6 +28,7 @@ export const themes: IThemes = {
 
     // Link
     linkColor: '#137BCD',
+    linkBgColor: '',
     linkActiveColor: '#79C4FD', //'#4CCCFF'
     linkActiveBgColor: '#DCEBF7', //'#4CCCFF'
 
@@ -45,9 +46,14 @@ export const themes: IThemes = {
 
     // Form
     inputBgColor: 'rgb(220,235,247, 0.8)',
+    borderColor: '#7D8D9A',
     border: '0.0625rem solid #7D8D9A',
+    outline: '2px solid #5288C1',
 
     accent: '#79C4FD', //
+    transparent: 'transparent',
+    // transitionDuration: 'linear 5s',
+    transitionDuration: '0.3s ease',
   },
 
   dark: {
@@ -67,6 +73,7 @@ export const themes: IThemes = {
 
     // Link
     linkColor: '#137BCD',
+    linkBgColor: '',
     linkActiveColor: '#79C4FD', // '#4CCCFF'
     linkActiveBgColor: '#141C27',
 
@@ -84,9 +91,14 @@ export const themes: IThemes = {
 
     // Form
     inputBgColor: 'rgb(220,227,229, 0.1)',
+    borderColor: 'rgba(220, 227, 229, 0.8)',
     border: '0.0625rem solid rgba(220, 227, 229, 0.8)',
+    outline: '2px solid #5288C1',
 
     accent: '#79C4FD', // "#8774E1"
+    transparent: 'transparent',
+    // transitionDuration: 'linear 5s',
+    transitionDuration: '0.3s ease',
   },
 }
 

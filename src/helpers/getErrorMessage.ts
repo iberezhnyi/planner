@@ -1,3 +1,4 @@
+import { isErrorNotObject } from './isErrorNotObject'
 import {
   isErrorWithMessage,
   isFetchBaseQueryError,
@@ -17,6 +18,8 @@ export const getErrorMessage = (err: unknown): string => {
     return 'error' in err ? `${err.error}. Please try later` : errMsg.data.error
   } else if (isErrorWithMessage(err)) {
     return err.message
+  } else if (isErrorNotObject(err)) {
+    return err
   } else {
     return 'An unknown error occurred'
   }

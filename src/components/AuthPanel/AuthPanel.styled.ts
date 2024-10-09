@@ -16,6 +16,8 @@ export const ButtonAuth = styled.button`
 
   color: ${({ theme }) => theme.global.text.color.white};
 
+  transition: color ${({ theme }) => theme.transitionDuration};
+
   &.logout {
     color: ${({ theme }) => theme.textColor};
   }
@@ -34,6 +36,8 @@ export const LinkAuth = styled(NavLink)`
   padding-right: 0;
 
   color: ${({ theme }) => theme.global.text.color.white};
+
+  transition: color ${({ theme }) => theme.transitionDuration};
 
   &:hover,
   &:focus,

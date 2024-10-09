@@ -105,14 +105,14 @@ export const AuthPanel: FC = () => {
                   Log out
                 </SC.ButtonAuth>
               </SC.ListItem>
-              <SC.ListItem role="menuitem">
+              {/* <SC.ListItem role="menuitem">
                 <SC.ListLink to={'/settings'}>
                   <SC.IconListItem>
                     <use href={`${sprite}#settings`} />
                   </SC.IconListItem>
                   Settings
                 </SC.ListLink>
-              </SC.ListItem>
+              </SC.ListItem> */}
             </SC.List>
           </SC.Popover>
         </FloatingFocusManager>

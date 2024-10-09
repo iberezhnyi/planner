@@ -50,6 +50,7 @@ export interface ITheme {
   footerTextColor: string
   textColorSecondary: string
   linkColor: string
+  linkBgColor: string
   linkActiveColor: string
   linkActiveBgColor: string
   btnTextColor: string
@@ -60,9 +61,13 @@ export interface ITheme {
   btnHoverTextColor: string
   accent: string
   inputBgColor: string
+  borderColor: string
   border: string
+  outline: string
   iconColor: string
   iconActiveColor: string
+  transparent: string
+  transitionDuration: string
 }
 
 export interface IThemes {

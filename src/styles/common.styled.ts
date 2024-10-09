@@ -34,6 +34,8 @@ export const container = css`
 export const siteLink = css`
   color: ${({ theme }) => theme.linkColor};
 
+  transition: color ${({ theme }) => theme.transitionDuration};
+
   &:hover,
   &:focus,
   &:active {

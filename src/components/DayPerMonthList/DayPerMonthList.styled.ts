@@ -11,6 +11,7 @@ export const DayContent = styled.div`
 
   text-align: center;
 
+  background-color: ${({ theme }) => theme.global.form.inputBgColor};
   border: ${({ theme }) => theme.border};
   border-radius: 50%;
 
