@@ -53,7 +53,7 @@ export const themes: IThemes = {
     accent: '#79C4FD', //
     transparent: 'transparent',
     // transitionDuration: 'linear 5s',
-    transitionDuration: '0.3s ease',
+    transitionDuration: '5s ease',
   },
 
   dark: {
@@ -98,7 +98,7 @@ export const themes: IThemes = {
     accent: '#79C4FD', // "#8774E1"
     transparent: 'transparent',
     // transitionDuration: 'linear 5s',
-    transitionDuration: '0.3s ease',
+    transitionDuration: '5s ease',
   },
 }
 

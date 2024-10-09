@@ -58,6 +58,8 @@ h1 {
   color: ${({ theme }) => theme.titleColor};
   font-size: ${({ theme }) => theme.global.text.fontSize.l};
   font-weight: ${({ theme }) => theme.global.text.fontWeight.sb};
+
+  transition: color ${({ theme }) => theme.transitionDuration};
 }
 
 ul {
@@ -77,6 +79,8 @@ button {
 
   border: none;
   cursor: pointer;
+
+  transition: background-color ${({ theme }) => theme.transitionDuration};
 }
 
 img {
