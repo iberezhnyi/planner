@@ -1,4 +1,4 @@
-import{p as V,s as fo,c as on,j as $,u as pi,a as Tt,b as vi,d as tr,e as an,g as pe,L as po,r as b,f as hi,R as mi,N as qt,h as sn,i as gi,k as bi,l as yi,m as xi,M as wi,n as Ci,o as R,q as ki,t as Si,O as Ei}from"./index-BYG2Dzz5.js";import{u as vo}from"./useIsMobile-BrMfGrRx.js";import{s as lt}from"./sprite-CR3z7qaS.js";const Ri=V.div`
+import{p as V,s as fo,c as on,j as $,u as pi,a as Tt,b as vi,d as tr,e as an,g as pe,L as po,r as b,f as hi,R as mi,N as qt,h as sn,i as gi,k as bi,l as yi,m as xi,M as wi,n as Ci,o as R,q as ki,t as Si,O as Ei}from"./index-Qi9TZNPr.js";import{u as vo}from"./useIsMobile-BELNDj2Z.js";import{s as lt}from"./sprite-CR3z7qaS.js";const Ri=V.div`
   display: flex;
   flex-grow: 1;
 `,Oi=V.main`
@@ -794,4 +794,4 @@ PERFORMANCE OF THIS SOFTWARE.
     display: none;
   }
 `,iu=({mobileMenu:e,setMobileMenu:t,headerHeight:n})=>{const r=Tt(sn);return b.useEffect(()=>(document.body.classList.toggle("no-scroll",e),()=>document.body.classList.remove("no-scroll")),[e]),$.jsxs(nu,{toggled:e,customBreakPoint:`${pe.breakpoint.maxTablet}`,onBackdropClick:()=>t(!1),$profile:!!r,children:[!r&&$.jsx(ou,{$headerHeight:n}),$.jsxs(ru,{children:[r&&$.jsx(Rs,{}),$.jsx(Zl,{setMobileMenu:t})]}),r&&$.jsx(di,{})]})},au=()=>{const[e,t]=b.useState(!1),[n,r]=b.useState(0),o=vo(),i=Tt(sn),a=()=>t(s=>!s);return b.useEffect(()=>{!o&&t(!1)},[o]),$.jsxs($.Fragment,{children:[$.jsx(Cs,{handleClick:a,mobileMenu:e,setHeaderHeight:r,profile:i}),$.jsxs(Ri,{children:[$.jsx(iu,{setMobileMenu:t,mobileMenu:e,headerHeight:n}),$.jsx(Oi,{children:$.jsx(Ei,{})})]}),!i&&$.jsx(di,{$isMainLayout:!0})]})},uu=au;export{uu as default};
-//# sourceMappingURL=index-BwBiGSJ3.js.map
+//# sourceMappingURL=index-CtX9fH2i.js.map

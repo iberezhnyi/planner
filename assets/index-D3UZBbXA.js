@@ -1,4 +1,4 @@
-import{p as o,g as r,j as t,A as c,H as l,M as m}from"./index-BYG2Dzz5.js";import{u as p}from"./useIsMobile-BrMfGrRx.js";const h=o.ul`
+import{p as o,g as r,j as t,A as c,H as l,M as m}from"./index-Qi9TZNPr.js";import{u as p}from"./useIsMobile-BELNDj2Z.js";const h=o.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -43,4 +43,4 @@ import{p as o,g as r,j as t,A as c,H as l,M as m}from"./index-BYG2Dzz5.js";impor
     border-radius: 0.5rem;
   }
 `,g=o.span``,x=({day:e})=>{const s=p(r.breakpoint.desktop);return t.jsxs(b,{children:[t.jsx(g,{children:e}),!s&&t.jsx("div",{children:"Info about day"})]})},f=()=>{const[e]=c(),s=parseInt(e.get("month")),i=parseInt(e.get("year")),{data:n,isFetching:d}=l({month:s,year:i});return t.jsxs(h,{children:[d&&t.jsx(m,{}),n==null?void 0:n.monthsDays.map(a=>t.jsx(u,{children:t.jsx(x,{...a})},a.id))]})},k=f;export{k as default};
-//# sourceMappingURL=index-Bvj8Ch0A.js.map
+//# sourceMappingURL=index-D3UZBbXA.js.map
