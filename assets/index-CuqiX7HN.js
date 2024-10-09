@@ -1,4 +1,4 @@
-import{p as o,g as m,e as f,r as x,E as j,F as k,G as w,j as t,A as y,D as $,M as C}from"./index-BB4Xbw6T.js";import{u as D}from"./formik.esm-DRsDvjpx.js";import{s as T}from"./sprite-CR3z7qaS.js";const N=o.ul`
+import{p as o,g as m,e as f,r as x,E as j,F as k,G as w,j as t,A as y,D as $,M as C}from"./index-BbAwQ9Xb.js";import{u as D}from"./formik.esm-DSMh5-6n.js";import{s as T}from"./sprite-CR3z7qaS.js";const N=o.ul`
   display: flex;
   flex-wrap: wrap;
   gap: ${({theme:e})=>e.global.spacing(6)};
@@ -90,4 +90,4 @@ import{p as o,g as m,e as f,r as x,E as j,F as k,G as w,j as t,A as y,D as $,M a
     stroke: ${({theme:e})=>e.linkActiveColor};
   }
 `,U=({notes:e,tasks:a,date:n,day:l})=>{const[r,s]=x.useState(!1),g=()=>{s(i=>!i)},[h]=j(),[u]=k(),[b]=w(),[p,c]=x.useState((e==null?void 0:e.note)||""),d=D({initialValues:{note:p},onSubmit:async i=>{i.note.trim()!==p&&(e!=null&&e._id?i.note.trim()===""?(await b({noteId:e._id}),c("")):(await u({noteId:e._id,note:i.note.trim(),date:n.toString()}),c(i.note.trim())):i.note.trim()!==""&&(await h({note:i.note.trim(),date:n.toString()}),c(i.note.trim())))}});return t.jsxs(t.Fragment,{children:[t.jsxs(W,{children:[t.jsx(L,{children:l}),t.jsx(v,{children:new Date(n).toLocaleDateString("uk-UA")})]}),t.jsx(I,{children:a&&a.map(i=>t.jsxs(M,{children:[t.jsx(A,{type:"checkbox"}),t.jsx(B,{children:i.title}),t.jsx(F,{children:i.description})]},i._id))}),t.jsx(P,{children:t.jsxs(V,{onClick:g,className:r?"open":"",children:["----------",t.jsx(G,{className:r?"open":"",children:t.jsx("use",{href:`${T}#arrow`})}),"----------"]})}),r&&t.jsx("form",{onBlur:d.handleSubmit,children:t.jsx(_,{name:"note",onChange:d.handleChange,value:d.values.note})}),t.jsx(E,{children:e?e.note:"My note"})]})},z=()=>{var r;const[e]=y(),a=e.get("date"),{data:n,isFetching:l}=$({date:a});return t.jsxs(N,{children:[l&&t.jsx(C,{}),(r=n==null?void 0:n.weekDays)==null?void 0:r.map(s=>t.jsx(S,{children:t.jsx(U,{...s})},s.id))]})},q=z;export{q as default};
-//# sourceMappingURL=index-BWbIPKy4.js.map
+//# sourceMappingURL=index-CuqiX7HN.js.map
