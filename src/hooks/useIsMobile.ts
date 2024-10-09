@@ -12,7 +12,7 @@ export const useIsMobile = (
   useEffect(() => {
     const handleResize = debounce(() => {
       setIsMobile(window.matchMedia(`(max-width: ${maxWidth})`).matches)
-      console.log('handleResize')
+      // console.log('handleResize')
     }, 400)
 
     window.addEventListener('resize', handleResize)
