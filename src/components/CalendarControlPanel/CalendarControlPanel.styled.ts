@@ -5,6 +5,7 @@ import { global, secondaryBtn } from 'styles'
 const arrowIconCommonStyles = css`
   width: 1rem;
   height: 1rem;
+
   fill: ${({ theme }) => theme.textColor};
   stroke: ${({ theme }) => theme.textColor};
 `
